@@ -1,0 +1,17 @@
+<<<<<<< HEAD
+ours
+asdfa
+=======
+theirs
+asdfa
+>>>>>>> deadbeef0123
+
+
+<<<<<<< HEAD
+ours
+asdfa
+=======
+theirs
+asdfa
+>>>>>>> deadbeef0123
+

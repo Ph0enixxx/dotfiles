@@ -1,0 +1,494 @@
+#=============================================================================
+# basic.toml --- basic configuration example for SpaceVim
+#s Copyright (c) 2016-2017 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
+
+# All SpaceVim option below [option] section
+[options]
+  # colorscheme = 'NeoSolarized'
+
+  colorscheme = 'solarized8'
+  colorscheme_bg = 'dark'
+  enable_guicolors = true
+  # guifont = 'DejaVuSansMonoNerdFontComplete-Book:h15'
+
+  autocomplete_method = 'coc'
+  autocomplete_parens = true
+  snippet_engine = ''
+
+  filemanager = ''
+  filetree_direction = 'left'
+  home_files_number = 10
+  sidebar_width = 35
+
+  # Statusline
+  # statusline_separator = 'arrow'
+  # statusline_iseparator = 'arrow'
+  # enable_statusline_bfpath = true
+  # enable_statusline_mode = true
+  # enable_statusline_tag = false
+
+  enable_tabline_ft_icon = true
+
+  enable_neomake = false
+
+  buffer_index_type = 0
+  windows_index_type = 3
+  # statusline_unicode_symbols = true
+
+
+  enable_cursorcolumn = true
+  enable_cursorline = true
+  commandline_prompt = '➭'
+  max_column = 120
+
+  # realtime_leader_guide = false
+  # relativenumber = true
+  # update_retry_cnt = 3
+
+  # statusline_left_sections = [
+    # 'winnr',
+    # 'major mode',
+    # 'filename',
+    # 'fileformat',
+    # 'minor mode lighters',
+    # 'version control info',
+    # 'search status'
+  # ]
+  # statusline_right_sections = [
+    # 'syntax checking',
+    # 'cursorpos',
+    # 'percentage',
+    # 'input method',
+    # 'date',
+    # 'time',
+    # 'battery status',
+  # ]
+
+  # error_symbol = "+"
+  # warning_symbol = '!'
+  # info_symbol = 'i'
+
+  enable_key_frequency = true
+  escape_key_binding = 'zz'
+  windows_leader = 's'
+  # windows_smartclose = 'q'
+
+  vim_help_language = 'en'
+  vimcompatible = false
+
+  # data_dir = "~/.cache"
+  # plugin_bundle_dir = "~/.cache/vimfiles"
+
+  # todo label
+  todo_labels = ['TODO', 'FIXME', 'IDEA', 'WHY']
+
+  # bootstrap functions
+  bootstrap_before = 'myspacevim#before'
+  bootstrap_after = 'myspacevim#after'
+
+  smartcloseignoreft = [
+    'calendar', 'coc-explorer', 'vista',
+    'tagbar',
+    'vimfiler',
+    'defx',
+    'SpaceVimRunner',
+    'SpaceVimREPL',
+    'SpaceVimQuickFix',
+    'HelpDescribe',
+    'VebuggerShell',
+    'VebuggerTerminal',
+    'SpaceVimTabsManager'
+  ]
+
+  disabled_plugins = [
+    'deoplete.nvim', 'deoplete-dictionary', 
+    'nvim-typescript', 'typescript-vim', 'vim-jsx-typescript',
+    'indent-blankline.nvim',
+    # 'vim-airline',
+    'vim-snippets', 'vnote', 'vimloo',
+    # 'vim-better-whitespace','vim-jsx-improve', 'vim-matchup', 'vim-bookmarks'
+    'tagbar', 'tagbar-makefile.vim', 'tagbar-proto.vim',
+    'nerdtree', 'neomake'
+  ]
+
+  project_rooter_patterns = ['.git/', 'package.json']
+  project_rooter_outermost = false
+  enable_projects_cache = true
+  projects_cache_num = 40
+
+############################# Layers #############################
+[[layers]]
+  name = 'autocomplete'
+  auto_complete_parens = true
+  auto_completion_return_key_behavior = 'nil'
+# auto_completion_tab_key_behavior = 'smart'
+  auto_completion_delay = 50
+  auto_completion_complete_with_key_sequence = 'nil'
+  auto_completion_complete_with_key_sequence_delay = 0.1
+
+[[layers]]
+  name = 'checkers'
+  show_cursor_error = false
+  enable = false
+
+[[layers]]
+  name = 'core'
+  filetree_show_hidden = true
+
+[[layers]]
+  name = 'core#statusline'
+  enable = false
+
+[[layers]]
+  name = 'core#tabline'
+  enable = false
+
+[[layers]]
+  name = 'colorscheme'
+
+[[layers]]
+  name = 'format'
+
+[[layers]]
+  name = 'edit'
+
+[[layers]]
+  name = 'git'
+  git-plugin = 'fugitive'
+
+[[layers]]
+  name = 'ui'
+  enable_scrollbar = false
+  enable_sidebar = false
+  enable_indentline = false
+  enable_cursorword = true
+
+[[layers]]
+  name = 'shell'
+  default_position = 'bottom'
+  default_height = 30
+
+[[layers]]
+  name = 'lang#javascript'
+  auto_fix = true
+
+# [[layers]]
+  # name  = 'lang#typescript'
+
+# [[layers]]
+  # name  = 'lang#python'
+
+[[layers]]
+  name  = 'lang#vim'
+
+# [[layers]]
+  # name  = 'lang#go'
+#
+# [[layers]]
+  # name  = 'lang#rust'
+
+# [[layers]]
+  # name = "lsp"
+  # filetypes = [
+    # "rust"
+  # ]
+  # [layers.override_cmd]
+    # rust = ["rls"]
+
+[[layers]]
+  name = 'tools'
+
+# [[layers]]
+  # name = 'tools#dash'
+
+[[layers]]
+  name = 'fzf'
+
+[[layers]]
+  name = 'VersionControl'
+  enable-gtm-status = true
+
+[[layers]]
+  name = 'tmux'
+  enable = false
+
+############################# Plugins #############################
+# ------------ Tools ----------------------------
+[[custom_plugins]]
+  repo = 'gelguy/wilder.nvim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'chaoren/vim-wordmotion'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'easymotion/vim-easymotion'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'haya14busa/incsearch.vim'
+  merged = false
+
+# [[custom_plugins]]
+ # repo = 'haya14busa/incsearch-fuzzy.vim'
+ # merged = false
+
+[[custom_plugins]]
+  repo = 'haya14busa/incsearch-easymotion.vim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'haya14busa/vim-easyoperator-phrase'
+  merged = false
+
+#[[custom_plugins]]
+# repo = 'romainl/flattened'
+# merge = 1
+
+##[[custom_plugins]]
+##repo = 'vim-ctrlspace/vim-ctrlspace'
+
+[[custom_plugins]]
+  repo = 'junegunn/vim-peekaboo'
+  merged = false
+
+
+#[[custom_plugins]]
+#repo = 'junegunn/gv.vim'
+
+[[custom_plugins]]
+  repo = 'xolox/vim-misc'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'junegunn/vim-slash'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'liuchengxu/vista.vim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'wakatime/vim-wakatime'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'moll/vim-bbye'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'voldikss/vim-skylight'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'airblade/vim-rooter'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'tpope/vim-dadbod'
+  merged = false
+
+# ------------ Edit ----------------------------
+[[custom_plugins]]
+  repo = 'itchyny/vim-qfedit'
+  merged = false
+
+# ------------ Navigation -----------------------
+[[custom_plugins]]
+  repo =  'junegunn/fzf.vim'
+  merged = false
+
+# [[custom_plugins]]
+  # repo = 'yuki-ycino/fzf-preview.vim'
+  # merged = false
+  # rev = 'release/rpc'
+
+[[custom_plugins]]
+  repo = 'jlanzarotta/bufexplorer'
+  merged = false
+
+# ------------ UI -------------------------------
+# ------------ UI - Statusline ------------------
+[[custom_plugins]]
+  repo = 'vim-airline/vim-airline'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'vim-airline/vim-airline-themes'
+  merged = false
+
+# ------------ UI - Colorscheme -----------------
+[[custom_plugins]]
+  repo = 'xolox/vim-colorscheme-switcher'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'lifepillar/vim-solarized8'
+  merged = false
+
+# ------------ UI - Window ----------------------
+[[custom_plugins]]
+  repo = 't9md/vim-choosewin'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'simeji/winresizer'
+  merged = false
+
+# ------------ UI - Icons -----------------------
+[[custom_plugins]]
+  repo = 'vim-geek/vim-devicons'
+  merged = false
+
+# ------------ UI - Buffer ----------------------
+[[custom_plugins]]
+  repo = 'azabiong/vim-highlighter'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'IngoMeyer441/coc_current_word'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'nathanaelkane/vim-indent-guides'
+  merged = false
+
+# [[custom_plugins]]
+  # repo = 'wfxr/minimap.vim'
+  # build = 'cargo install --locked code-minimap'
+  # merged = false
+
+[[custom_plugins]]
+  repo = 'RRethy/vim-hexokinase'
+  build = 'make hexokinase'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'nvim-lua/plenary.nvim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'nvim-telescope/telescope.nvim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'mrjones2014/dash.nvim'
+  build = 'make install'
+  merged = false
+
+# ------------ Git ------------------------------
+[[custom_plugins]]
+  repo = 'gregsexton/gitv'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'will133/vim-dirdiff'
+  merged = false
+
+# [[custom_plugins]]
+  # repo = 'rhysd/conflict-marker.vim'
+  # merged = false
+
+[[custom_plugins]]
+  repo = 'christoomey/vim-conflicted'
+  merged = false
+
+# ------------ Autocomplete ---------------------
+[[custom_plugins]]
+  repo = 'tpope/vim-endwise'
+  merged = false
+
+# [[custom_plugins]]
+  # repo = 'SirVer/ultisnips'
+  # merged = false
+
+[[custom_plugins]]
+  repo = 'honza/vim-snippets'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'alvan/vim-closetag'
+  merged = false
+
+# ------------ Language & Filetype --------------
+[[custom_plugins]]
+  repo = 'vim-jp/syntax-vim-ex'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'HerringtonDarkholme/yats.vim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'neoclide/npm.nvim'
+  merged = false
+  build = 'npm install'
+
+[[custom_plugins]]
+  repo = 'neoclide/jsonc.vim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'gianarb/vim-flux'
+  merged = false
+
+# [[custom_plugins]]
+  # repo = 'yardnsm/vim-import-cost'
+  # on_cmd = ['ImportCost', 'ImportCostSingle']
+  # build = 'yarn'
+  # merged = false
+
+# [[custom_plugins]]
+  # repo = 'pangloss/vim-javascript'
+  # merged = false
+
+# [[custom_plugins]]
+  # repo = 'peitalin/vim-jsx-typescript'
+  # merged = false
+
+# [[custom_plugins]]
+  # repo = 'MaxMEllon/vim-jsx-pretty'
+  # merged = false
+
+[[custom_plugins]]
+  repo = 'chr4/nginx.vim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'cespare/vim-toml'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'MTDL9/vim-log-highlighting'
+  merged = false
+
+# [[custom_plugins]]
+  # repo = 'lervag/vimtex'
+  # merged = false
+
+[[custom_plugins]]
+  repo = 'stephenway/postcss.vim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'tpope/vim-liquid'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'iamcco/markdown-preview.nvim'
+  merged = false
+
+# [[custom_plugins]]
+  # repo = 'tjdevries/coc-zsh'
+  # merged = false
+
+# ------------ Vimscript --------------
+[[custom_plugins]]
+  repo = 'vim-jp/vital.vim'
+  merged = false
+

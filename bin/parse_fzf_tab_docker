@@ -1,0 +1,68 @@
+#!/usr/bin/env zsh
+
+local desc=$1
+local word=$2
+local group=$3
+local realpath=$4
+
+local mancmd=man
+
+if { command -v batman &> /dev/null } {
+  mancmd="batman --color"
+}
+
+if [[ -e $realpath ]] {
+  local type=$(file -b --mime $realpath)
+    if [[ $type =~ directory ]] {
+      exa --tree --all --color=always --group-directories-first -I "node_modules|.git|.DS_Store" --icons $realpath
+    } elif [[ $type =~ image ]] {
+      if [[ $System == 'Darwin' ]] {
+        chafa --size=80x25 $realpath
+        exiftool $realpath
+      } else {
+        echo $realpath is an image file
+      }
+    } elif [[ $type =~ binary ]] {
+      echo $realpath is a bianry file
+    } else {
+      highlight -O ansi -s solarized-dark $realpath
+    }
+} else {
+  if [[ $group == "[parameter]" ]] {
+    echo "$"$word=${(P)word} | highlight -O ansi -s solarized-dark --syntax=zsh
+  } elif [[ $group == "[external command]" ]] {
+    if { ! eval "$mancmd $word" 2> /dev/null } {
+      echo "No manual entry for $word"
+      if { ! eval "$word -h" 2> /dev/null } {
+        echo "-h option is unuseable for $word" 
+        if { ! eval "$word --help" 2> /dev/null } {
+          echo "--help option is unuseable for $word" 
+          if { ! eval "$word help" 2> /dev/null } {
+            echo "help command is unuseable form $word" 
+            echo $word
+          }
+        }
+      }
+    }
+  } elif [[ $group == "[shell function]" ]] {
+    echo $word is a shell function
+  } elif [[ $group == "[alias]" ]] {
+    echo $word is a shell alias
+  } elif [[ $group == "[named directory]" ]] {
+    echo $word is a named directory
+  } elif [[ $group == "[docker command]" ]] {
+    eval "docker help $word"
+  } else {
+    echo $desc
+  }
+}
+
+echo
+echo
+echo
+echo "=========DEBUG========="
+echo "desc: [$desc]"
+echo "word: [$word]"
+echo "group: [$group]"
+echo "realpath: [$realpath]"
+echo "=========DEBUG========="

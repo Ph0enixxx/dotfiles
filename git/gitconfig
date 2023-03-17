@@ -1,0 +1,118 @@
+[user]
+  name = "Phoenix Tsui"
+  email = xusiyuan841028@gmail.com
+[alias]
+  br       = branch
+  ci       = commit
+  clg      = "!f() { git clone \"git@github.com:$1.git\";  }; f"
+  co       = checkout
+  cft      = !nvim +Conflicted
+  lg       = log -p
+  graph    = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --graph --abbrev-commit --date=relative
+  la       = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --decorate
+  ls       = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --decorate --no-merges
+  ll       = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --decorate --first-parent --no-merges
+  lf       = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --decorate --first-parent --no-merges --numstat
+  cfg      = config --global
+  mail     = config user.email xusiyuan841028@gmail.com
+  name     = config user.name "Phoenix Tsui"
+  pl       = pull --rebase
+  st       = status
+  stv      = status -v
+  stage    = add
+  stat     = "!f() { if [[ $1 ]]; then author=$1 ; else author=$(git config --get user.name); fi; git log --author=\"$author\" --no-merges --pretty=tformat: --numstat \
+    | gawk 'BEGIN { printf \"\\033[34m%-25s\t\\033[32m%-10s\t\\033[31m%-10s\t\\033[36m%-10s\\n\", \"AUTHOR\", \"ADD(+)\", \"DELETE(-)\", \"TOTAL\" } { add += $2 ; subs += $2 ; loc += $1 - $2  } END { printf \"\\033[34m%-25s\t\\033[32m%-10s\t\\033[31m%-10s\t\\033[36m%-10s\\n\",author,add,subs,loc }' author=\"$author\" ; }; f"
+  statl    = "!f() { gawk 'BEGIN { printf \"\\033[34m%-25s\t\\033[32m%-10s\t\\033[31m%-10s\t\\033[36m%-10s\\n\", \"AUTHOR\", \"ADD(+)\", \"DELETE(-)\", \"TOTAL\" }'; git log --format='%aN' --no-merges | sort -u | while read name; do  git log --author=\"$name\" --no-merges --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"\\033[34m%-25s\t\\033[32m%-10s\t\\033[31m%-10s\t\\033[36m%-10s\\n\", author, add, subs, loc }' author=\"$name\" -; done; }; f"
+  statf    = "!f() { git log --format='%aN' --no-merges | sort -u | while read name; do  git log --author=\"$name\" --no-merges --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"\\033[34m%-25s\t\\033[32m%-10s\t\\033[31m%-10s\t\\033[36m%-10s\\n\", author, add, subs, loc }' author=\"$name\" -; done; }; f | fzf --ansi --no-preview"
+  subs     = submodule foreach git pull origin master
+  unstage  = reset HEAD
+  dt       = difftool
+  save     = stash --include-untracked
+[color]
+  ui = always
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+;[color "diff"]
+  ;meta = yellow bold
+  ;frag = magenta bold
+  ;old = red bold
+  ;new = green bold
+[color "diff"]
+  meta = 227
+  frag = magenta bold
+  commit = 227 bold
+  old = red bold
+  new = cyan bold
+  whitespace = red reverse
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+[push]
+  default = current
+[core]
+  excludesfile = ~/.gitignore_global
+  autocrlf = false
+  safecrlf = false
+  ; pager = diff-so-fancy | less --tab=4 -RFX
+  pager = delta
+  editor = nvim
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+[gui]
+  encoding = utf-8
+  ;recentrepo = /Users/manjun/Workspace/VimProjects/ai-lab/urania */
+[i18n]
+  commitencoding = utf-8
+[filter "media"]
+  required = true
+  clean = git media clean %f
+  smudge = git media smudge %f
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+[pull]
+  rebase = false
+[diff]
+  colorMoved = default
+[difftool]
+  prompt = false
+[merge]
+  tool = vim-conflicted
+  conflictstyle = diff3
+[mergetool "splice"]
+  cmd = "vi -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+  trustExitCode = true
+[mergetool "vim-conflicted"]
+  cmd = vim +Conflicted
+[delta]
+  navigate = true
+  features = side-by-side line-numbers decorations
+  ; syntax-theme = Dracula
+  syntax-theme = Solarized (dark)
+  plus-style = syntax "#003800"
+  minus-style = syntax "#3f0001"
+[delta "interactive"]
+  keep-plus-minus-markers = false
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold blue ul
+  file-decoration-style = none
+  hunk-header-decoration-style = cyan box ul
+  hunk-header-style = line-number syntax
+[delta "line-numbers"]
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-numbers-minus-style = 124
+  line-numbers-plus-style = 28
+
+;# vim: filetype=gitconfig

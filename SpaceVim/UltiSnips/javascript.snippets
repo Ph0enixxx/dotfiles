@@ -1,0 +1,19 @@
+# Add JavaScript Snippets
+
+extends ecmascript
+extends eslint
+
+snippet strict "Strict Mode"
+'use strict';
+
+$0
+endsnippet
+
+snippet clg "console.log" b
+console.log(${VISUAL}$0);
+endsnippet
+
+snippet rq "Require a CMD module"
+const ${1:var_name} = require('$1');
+endsnippet
+

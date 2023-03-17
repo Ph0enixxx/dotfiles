@@ -1,0 +1,37 @@
+# Don't let ripgrep vomit really long lines to my terminal, and show a preview.
+--max-columns=150
+--max-columns-preview
+
+# flollow symlink
+--follow
+
+# case insensitive
+--ignore-file-case-insensitive
+
+# type
+--type-add=vim:*.nvim
+--type-add=vimscript:*.nvim
+--type-add=web:*.{html,css,js}*
+--type-add=css:*.less
+
+# Using glob patterns to include/exclude files or folders
+--glob=!.git/*
+--glob=!**/node_modules/*
+--glob=!yarn.lock
+--glob=!.DS_Store
+--glob=!tags
+
+# search hidden files
+--hidden
+
+# line number
+--line-number
+
+# set colors
+--colors=line:none
+--colors=line:style:bold
+
+# Because who cares about case!?
+--smart-case
+
+# encoding

@@ -1,0 +1,36 @@
+#!/usr/bin/env zsh
+
+export DEBUG_LEVEL=0
+
+local desc=$1
+local word=${2/% /}
+local group=$3
+local realpath=$4
+
+local FZF_GIT_LOG_FORMAT="format:%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]"
+
+local mancmd=man
+if { command -v batman &> /dev/null } {
+  mancmd="batman --color"
+}
+
+if [[ -e $realpath ]] {
+  parse_fzf_tab $@
+  return
+} elif [[ $group =~ "commands" ]] {
+  eval "$mancmd git-$word"
+} elif [[ -z $group ]] {
+  # It is a ref (commit/branch/tag)
+  if { ! git --no-pager log -150 --pretty=$FZF_GIT_LOG_FORMAT $word 2> /dev/null } {
+    git --no-pager log -150 --pretty=$FZF_GIT_LOG_FORMAT origin/$word
+  }
+}
+
+echo
+echo
+debug "parse sript: $ZSH_ARGZERO"
+debug "desc: [$desc]"
+debug "word: [$word]"
+debug "group: [$group]"
+debug "realpath: [$realpath]"
+debug "words: [$words]"

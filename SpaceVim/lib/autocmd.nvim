@@ -1,0 +1,26 @@
+function! s:is_float(winnr)
+  let winid = win_getid(a:winnr)
+  return !empty(nvim_win_get_config(winid)['relative'])
+endfunction
+
+function! s:quit_pre()
+  let cur_nr = winnr()
+  if s:is_float(cur_nr)
+    return
+  endif
+  let last_nr = winnr('$')
+  for nr in range(last_nr, 1, -1)
+    if s:is_float(nr)
+      continue
+    endif
+    if nr == 1
+      only
+    else
+      break
+    endif
+  endfor
+endfunction
+
+augroup FloatError
+  autocmd QuitPre * call <SID>quit_pre()
+augroup END

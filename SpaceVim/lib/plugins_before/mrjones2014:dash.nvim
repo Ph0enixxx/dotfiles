@@ -1,0 +1,5 @@
+if !has('macunix')
+  finish
+endif
+
+call SpaceVim#custom#SPC('nnoremap', ['a', 'd'], ':Dash ', 'Dash doc', 0)

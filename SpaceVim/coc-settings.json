@@ -1,0 +1,1409 @@
+{
+  // Completion
+  "suggest.noselect": false,
+  "suggest.selection": "first",
+  "suggest.formatItems": [
+    "abbr",
+    "menu",
+    "kind",
+    "shortcut"
+  ],
+  "suggest.enablePreselect": true,
+  "suggest.floatConfig": {
+
+  },
+  "suggest.labelMaxLength": 200,
+  "suggest.detailField": "preview",
+  "suggest.autoTrigger": "always",
+  "suggest.languageSourcePriority": 99,
+  "suggest.snippetIndicator": " ",
+  "suggest.maxCompleteItemCount": 50,
+  "suggest.preferCompleteThanJumpPlaceholder": false,
+  "suggest.snippetsSupport": true,
+  "suggest.fixInsertedWord": true,
+  "suggest.localityBonus": true,
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.timeout": 5000,
+  "suggest.minTriggerInputLength": 1,
+  "suggest.triggerCompletionWait": 0,
+  "suggest.acceptSuggestionOnCommitCharacter": false,
+  "suggest.lowPrioritySourceLimit": 90,
+  "suggest.removeDuplicateItems": true,
+  "suggest.defaultSortMethod": "alphabetical",
+  "suggest.invalidInsertCharacters": [
+    " ",
+    "(",
+    "<",
+    "{",
+    "[",
+    "\r",
+    "\n"
+  ],
+  "suggest.asciiCharactersOnly": false,
+  "suggest.ignoreRegexps": [],
+  "suggest.virtualText": true,
+  "suggest.completionItemKindLabels": {
+    "keyword": "",
+    "variable": "",
+    "value": "",
+    "operator": "",
+    "constructor": "",
+    "function": "",
+    "reference": "",
+    "constant": "",
+    "method": "",
+    "struct": "פּ",
+    "class": "",
+    "interface": "",
+    "text": "",
+    "enum": "",
+    "enumMember": "",
+    "module": "",
+    "color": "",
+    "property": "",
+    "field": "פּ",
+    "unit": "",
+    "event": "ﳅ",
+    "file": "",
+    "folder": "",
+    "snippet": "ﴬ",
+    "typeParameter": "",
+    "default": ""
+  },
+
+  // Document highlight
+  "documentHighlight.priority": -1,
+  "documentHighlight.timeout": 500,
+
+  // Colors highlight
+  "colors.filetypes": ["*"],
+  "colors.highlightPriority": 1000,
+
+  // Links
+  "links.tooltip": true,
+
+  // Diagnostic
+  "diagnostic.enable": true,
+  "diagnostic.autoRefresh": true,
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.level": "hint",
+  "diagnostic.highlightLimit": 1000,
+  "diagnostic.highlightPriority": 4096,
+  "diagnostic.enableSign": true,
+  "diagnostic.signPriority": 10,
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.hintSign": "",
+  "diagnostic.enableHighlightLineNumber": true,
+  "diagnostic.locationlistUpdate": true,
+  "diagnostic.enableMessage": "always",
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.messageDelay": 200,
+  "diagnostic.messageTarget":"float",
+  "diagnostic.format": "[%source%code] [%severity] %message",
+  "diagnostic.floatConfig": {
+  },
+  // "diagnostic.filetypeMap": {},
+  "diagnostic.virtualText": false,
+  "diagnostic.virtualTextLevel": "error",
+  "diagnostic.virtualTextWinCol": 160,
+  "diagnostic.virtualTextCurrentLineOnly": true,
+  "diagnostic.virtualTextPrefix": " ",
+  "diagnostic.virtualTextLines": 3,
+  "diagnostic.virtualTextLineSeparator": " \\ ",
+  "diagnostic.separateRelatedInformationAsDiagnostics": false,
+
+  // Signature
+  "signature.enable": true,
+  "signature.floatConfig": {},
+  "signature.triggerSignatureWait": 500,
+  "signature.target":"float",
+  "signature.preferShownAbove": true,
+  "signature.hideOnTextChange": false,
+
+  // Multiple cursors
+  /* "cursors.nextKey": "<c-j>", */
+  /* "cursors.previousKey": "<c-k>", */
+
+  // Refactor buffer
+  "refactor.saveToFile": true,
+  "refactor.openCommand": "vsplit",
+  "refactor.beforeContext": 3,
+  "refactor.afterContext": 3,
+  "refactor.showMenu": "<Tab>",
+
+  // Hover
+  "hover.target": "float",
+  "hover.previewMaxHeight": 12,
+  "hover.autoHide": true,
+
+  // Dialog
+  "dialog.maxWidth": 160,
+  "dialog.maxHeight": 30,
+  "dialog.rounded": true,
+  "dialog.confirmKey": "<cr>",
+  "dialog.pickerButtons": true,
+  "dialog.pickerButtonShortcut": true,
+  "dialog.floatHighlight": "CocFloating",
+  "dialog.floatBorderHighlight": "CocFloating",
+  "dialog.shortcutHighlight": "MoreMsg",
+
+  // Notification
+  "notification.maxWidth": 120,
+  "notification.maxHeight": 10,
+  "notification.minProgressWidth": 30,
+  "notification.highlightGroup": "CocFloating",
+  "notification.winblend": 30,
+  "notification.border": true,
+  "notification.timeout": 10000,
+  "notification.marginRight": 10,
+  "notification.focusable": true,
+
+  // CodeLens
+  "codeLens.enable": false,
+  "codeLens.position": "right_align",
+  "codeLens.separator": "‣",
+  "codeLens.subseparator": "/",
+
+  //Workspace related
+  "workspace.openOutputCommand": "vs",
+  "workspace.openResourceCommand": "tab drop",
+  "workspace.ignoredFiletypes": [],
+  "workspace.ignoredFolders": [
+    "$HOME"
+  ],
+  "workspace.bottomUpFiletypes": [],
+  "workspace.workspaceFolderCheckCwd": true,
+  "workspace.workspaceFolderFallbackCwd": true,
+
+  // List
+  "list.indicator": ">",
+  "list.alignColumns": true,
+  "list.menuAction": false,
+  "list.height": 20,
+  "list.signOffset": 900,
+  "list.selectedSignText": "",
+  "list.maxPreviewHeight": 12,
+  "list.previewHighlightGroup": "Search",
+  "list.previewToplineStyle": "offset",
+  "list.previewToplineOffset": 3,
+  "list.nextKeymap": "<C-j>",
+  "list.previousKeymap": "<C-k>",
+  "list.extendedSearchMode": true,
+  "list.normalMappings": {},
+  "list.insertMappings": {},
+  "list.interactiveDebounceTime": 100,
+  "list.previewSplitRight": false,
+
+  // Preferences
+  "coc.preferences.enableLinkedEditing": false,
+  "coc.preferences.enableMessageDialog": true,
+  "coc.preferences.maxFileSize": "10MB",
+  "coc.preferences.useQuickfixForLocations": false,
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  // "coc.preferences.snippetHighlight": false,
+  // "coc.preferences.snippetStatusText": "",
+
+  /* "coc.preferences.hoverTarget": "float", */
+  "coc.preferences.jumpCommand": "tab drop",
+  "coc.preferences.rootPatterns": [
+    "package.json", "*.pom", "requirements.txt", "Rakefile", "Makefile", "Cargo.toml", "go.mod", ".git"
+  ],
+
+  // source - file
+  "coc.source.file.trimSameExts": ["ts", "js", "tsx", "jsx"],
+
+
+  "languageserver": {
+    "flow": {
+      "command": "flow",
+      "args": ["lsp"],
+      "filetypes": ["flow"],
+      "initializationOptions": {},
+      "requireRootPattern": true,
+      /* "trace.server": "verbose", */
+      "settings": {},
+      "rootPatterns": [".flowconfig"]
+    },
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "usePlaceholders": true
+      }
+    },
+    "flux": {
+      "command": "flux-lsp",
+      "args": ["-l", "/tmp/fluxlsp"],
+      "filetypes": ["flux"]
+    }
+  },
+
+  // extensions: coc-snippets
+  "snippets.userSnippetsDirectory": "~/.SpaceVim.d/UltiSnips",
+  "snippets.extends": {
+    "cpp": ["c"],
+    "javascriptreact": ["javascript"],
+    "typescriptreact": ["typescript"],
+    "flow": ["javascript"]
+  },
+  "snippets.ultisnips.enable": true,
+  "snippets.ultisnips.trace": true,
+  "snippets.ultisnips.directories": [
+    "UltiSnips"
+  ],
+
+  // extensions: coc-todolist
+  "todolist.monitor": true,
+
+  // extensions: coc-explorer
+  "explorer.sources": [
+    {
+      "name": "buffer",
+      "expand": true
+    },
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.root.strategies": ["workspace", "custom:project", "custom:vcs"],
+  "explorer.root.customRules": {
+    "vcs": {
+      "patterns": [".git", ".hg", ".projections.json"]
+    },
+    "project": {
+      "patterns": ["package.json", "go.mod", "Cargo.xml"]
+    }
+  },
+
+  /* "explorer.floating.width": 400, */
+  // "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS",
+  "explorer.file.root.template": "[icon] [title] [git & 1][hidden & 1][root] [fullpath]",
+  // "explorer.file.root.template": "[icon & 1] PROJECT ([root])",
+  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [link growRight 1 omitCenter 5]",
+  "explorer.file.showHiddenFiles": false,
+  "explorer.file.hiddenRules": {
+    "filenames": [
+      ".DS_Store",
+      "node_modules",
+      ".git",
+      "tmp",
+      "package-lock",
+      "Library"
+    ],
+    "extensions": [
+      "swp",
+      "o",
+      "a",
+      "obj",
+      "pyc",
+      "lock"
+    ],
+    "patternMatches": [
+    ]
+  },
+  "explorer.file.reveal.auto": true,
+  "explorer.file.reveal.whenOpen": true,
+  /* "explorer.floating.border.chars": ["─","│","─","│","┌","┐","┘","└"], */
+  // "explorer.openAction.strategy": "vsplit.intelligent",
+  "explorer.openAction.strategy": "tab",
+  "explorer.keyMappings.global": {
+    "i": false, // cancel default mapkey
+
+    "*": "toggleSelection",
+    "<tab>": "actionMenu",
+
+    "gk": ["wait", "expandablePrev"],
+    "gj": ["wait", "expandableNext"],
+    "h": ["wait", "collapse"],
+    "l": ["wait", "expandable?", "expand", "open"],
+    "J": ["wait", "toggleSelection", "normal:j"],
+    "K": ["wait", "toggleSelection", "normal:k"],
+    "gl": ["wait", "expand:recursive"],
+    "gh": ["wait", "collapse:recursive"],
+    "<2-LeftMouse>": [
+      "expandable?",
+      ["expanded?", "collapse", "expand"],
+      "open"
+    ],
+    "o": ["wait", "expanded?", "collapse", "expand"],
+    "<cr>": ["wait", "expandable?", "cd", "open"],
+    "e": "open",
+    "s": "open:split",
+    "v": "open:vsplit",
+    "t": "open:tab",
+    "<bs>": ["wait", "gotoParent"],
+    "gs": ["wait", "reveal:select"],
+    "il": "preview:labeling",
+    "ic": "preview:content",
+    "Il": "previewOnHover:toggle:labeling",
+    "Ic": "previewOnHover:toggle:content",
+    "II": "previewOnHover:disable",
+
+    "yp": "copyFilepath",
+    "yn": "copyFilename",
+    "yy": "copyFile",
+    "dd": "cutFile",
+    "p": "pasteFile",
+    "df": "delete",
+    "dF": "deleteForever",
+
+    "a": "addFile",
+    "A": "addDirectory",
+    "r": "rename",
+
+    "g.": "toggleHidden",
+    "gc": "toggleOnlyGitChange",
+    "R": "refresh",
+
+    "?": "help",
+    "q": "quit",
+    "<esc>": "esc",
+    "X": "systemExecute",
+    "gd": "listDrive",
+
+    "f": "search",
+    "F": "searchRecursive",
+
+    "gf": "gotoSource:file",
+    "gb": "gotoSource:buffer",
+
+    "[[": ["wait", "sourcePrev"],
+    "]]": ["wait", "sourceNext"],
+
+    "[i": ["wait", "indentPrev"],
+    "]i": ["wait", "indentNext"],
+    "u":  ["wait", "indentPrev:insideSource"],
+
+    "[m": ["wait", "markPrev:modified"],
+    "]m": ["wait", "markNext:modified"],
+
+    "[d": ["wait", "markPrev:diagnosticError:diagnosticWarning"],
+    "]d": ["wait", "markNext:diagnosticError:diagnosticWarning"],
+    "[D": ["wait", "markPrev:diagnosticError"],
+    "]D": ["wait", "markNext:diagnosticError"],
+
+    "[c": ["wait", "markPrev:git"],
+    "]c": ["wait", "markNext:git"],
+    "<<": "gitStage",
+    ">>": "gitUnstage"
+  },
+  "explorer.icon.enableNerdfont": true,
+  /* "explorer.icon.source": "vim-devicons", */
+  /* "explorer.icon.source": "nerdfont.vim", */
+  "explorer.icon.source": "builtin",
+
+  // "explorer.icon.hidden": "﬒",
+  "explorer.icon.selected": "",
+  "explorer.icon.customIcons": {
+      "icons": {
+        "folderClosed": {
+          "code": "",
+          "color": "#258bd2"
+        },
+        "folderOpened": {
+          "code": "",
+          "color": "#00afaf"
+        },
+        "folderSymlink": {
+          "code": "",
+          "color": "#00afaf"
+        },
+        "folderConfig": {
+          "code": "",
+          "color": "#0fbfcf"
+        },
+        "folderNpm": {
+          "code": "",
+          "color": "#6a9e66"
+        },
+        "folderGit": {
+          "code": "",
+          "color": "#41535b"
+        },
+        "folderGithub": {
+          "code": "",
+          "color": "#546e7b"
+        },
+        "folderPackage": {
+          "code": "",
+          "color": "#00afaf"
+        },
+        "folderDownload": {
+          "code": "",
+          "color": "#00afaf"
+        },
+        "folderSource": {
+          "code": "ﮛ",
+          "color": "#019833"
+        },
+        "folderVim": {
+          "code": "",
+          "color": "#019833"
+        },
+        "book": {
+          "code": "",
+          "color": "#bd0f6d"
+        },
+        "pdf": {
+          "code": "",
+          "color": "#b10f10"
+        },
+        "file": {
+          "code": "",
+          "color": "#aaaaaa"
+        },
+        "fileSymlink": {
+          "code": "",
+          "color": "#32a198"
+        },
+        "fileHidden": {
+          "code": "﬒",
+          "color": "#888888"
+        },
+        "excel": {
+          "code": "",
+          "color": "#207245"
+        },
+        "word": {
+          "code": "",
+          "color": "#185abd"
+        },
+        "ppt": {
+          "code": "",
+          "color": "#cb4a32"
+        },
+        "stylus": {
+          "code": "",
+          "color": "#8dc149"
+        },
+        "sass": {
+          "code": "",
+          "color": "#f55385"
+        },
+        "html": {
+          "code": "",
+          "color": "#e37933"
+        },
+        "xml": {
+          "code": "",
+          "color": "#e37933"
+        },
+        "ejs": {
+          "code": "",
+          "color": "#b5ca65"
+        },
+        "liquid": {
+          "code": "",
+          "color": "#0e83ce"
+        },
+        "art": {
+          "code": "",
+          "color": "#003db1"
+        },
+        "handlebars": {
+          "code": "",
+          "color": "#f0772b"
+        },
+        "njk": {
+          "code": "",
+          "color": "#3d8137"
+        },
+        "css": {
+          "code": "",
+          "color": "#2950DA"
+        },
+        "less": {
+          "code": "",
+          "color": "#468CC8"
+        },
+        "webpack": {
+          "code": "ﰩ",
+          "color": "#2270AD"
+        },
+        "markdown": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "json": {
+          "code": "",
+          "color": "#f7df38"
+        },
+        "javascript": {
+          "code": "",
+          "color": "#f7df38"
+        },
+        "nodejs": {
+          "code": "",
+          "color": "#6ace66"
+        },
+        "javascriptreact": {
+          "code": "ﰆ",
+          "color": "#67dbf9"
+        },
+        "sourcemap": {
+          "code": "",
+          "color": "#5d7076"
+        },
+        "ruby": {
+          "code": "",
+          "color": "#ca3633"
+        },
+        "php": {
+          "code": "",
+          "color": "#7478ab"
+        },
+        "python": {
+                 // 
+          "code": "",
+          "color": "#3aa7f9"
+        },
+        "coffee": {
+          "code": "",
+          "color": "#f7df38"
+        },
+        "mustache": {
+          "code": "",
+          "color": "#e37933"
+        },
+        "conf": {
+          "code": "",
+          "color": "#0fbfcf"
+        },
+        "image": {
+          "code": "",
+          "color": "#a074c4"
+        },
+        "ico": {
+          "code": "",
+          "color": "#cbcb41"
+        },
+        "twig": {
+          "code": "",
+          "color": "#8dc149"
+        },
+        "cpp": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "c": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "h": {
+          "code": "",
+          "color": "#a074c4"
+        },
+        "haskell": {
+          "code": "",
+          "color": "#a074c4"
+        },
+        "lua": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "java": {
+          "code": "",
+          "color": "#cc3e44"
+        },
+        "terminal": {
+          "code": "",
+          "color": "#7d8a8e"
+        },
+        "zsh": {
+          "code": "",
+          "color": "#C1D23C"
+        },
+        "ignore": {
+          "code": "",
+          "color": "#4d5a5e"
+        },
+        "history": {
+          "code": "",
+          "color": "#4d5a5e"
+        },
+        "log": {
+          "code": "",
+          "color": "#4d5a5e"
+        },
+        "ml": {
+          "code": "λ",
+          "color": "#e37933"
+        },
+        "diff": {
+          "code": "",
+          "color": "#41535b"
+        },
+        "sql": {
+          "code": "",
+          "color": "#f55385"
+        },
+        "clojure": {
+          "code": "",
+          "color": "#8dc149"
+        },
+        "edn": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "scala": {
+          "code": "",
+          "color": "#cc3e44"
+        },
+        "go": {
+          "code": "ﳑ",
+          "color": "#519aba"
+        },
+        "dart": {
+          "code": "",
+          "color": "#03589C"
+        },
+        "firefox": {
+          "code": "",
+          "color": "#e37933"
+        },
+        "vs": {
+          "code": "﬏",
+          "color": "#854CC7"
+        },
+        "perl": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "rss": {
+          "code": "",
+          "color": "#FB9D3B"
+        },
+        "csharp": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "fsharp": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "rust": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "dlang": {
+          "code": "",
+          "color": "#cc3e44"
+        },
+        "erlang": {
+          "code": "",
+          "color": "#A90533"
+        },
+        "elixir": {
+          "code": "",
+          "color": "#a074c4"
+        },
+        "elm": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "mix": {
+          "code": "",
+          "color": "#cc3e44"
+        },
+        "mvn": {
+          "code": "",
+          "color": "#ca2037"
+        },
+        "vim": {
+          "code": "",
+          "color": "#019833"
+        },
+        "nvim": {
+          "code": "",
+          "color": "#52ff52"
+        },
+        "ai": {
+          "code": "",
+          "color": "#cbcb41"
+        },
+        "psd": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "psb": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "typescript": {
+          "code": "",
+          "color": "#367ac4"
+        },
+        "tsConfig": {
+          "code": "ﯤ",
+          "color": "#367ac4"
+        },
+        "julia": {
+          "code": "",
+          "color": "#a074c4"
+        },
+        "puppet": {
+          "code": "",
+          "color": "#cbcb41"
+        },
+        "vue": {
+          "code": "﵂",
+          "color": "#47b785"
+        },
+        "swift": {
+          "code": "",
+          "color": "#e37933"
+        },
+        "git": {
+          "code": "",
+          "color": "#f34e32"
+        },
+        "yaml": {
+          "code": "",
+          "color": "#0192a2"
+        },
+        "toml": {
+          "code": "",
+          "color": "#904222"
+        },
+        "bashrc": {
+          "code": "",
+          "color": "#29F62E"
+        },
+        "zshrc": {
+          "code": "",
+          "color": "#C1D23C"
+        },
+        "zshColor": {
+          "code": "",
+          "color": "#ea005a"
+        },
+        "favicon": {
+          "code": "",
+          "color": "#cbcb41"
+        },
+        "docker": {
+          "code": "",
+          "color": "#519aba"
+        },
+        "gruntfile": {
+          "code": "",
+          "color": "#e37933"
+        },
+        "gulpfile": {
+          "code": "",
+          "color": "#cc3e44"
+        },
+        "dropbox": {
+          "code": "",
+          "color": "#0061FE"
+        },
+        "drive": {
+          "code": "",
+          "color": "#26a162"
+        },
+        "license": {
+          "code": "",
+          "color": "#cbcb41"
+        },
+        "privateToken": {
+          "code": "",
+          "color": "#E23237"
+        },
+        "publilcToken": {
+          "code": "",
+          "color": "#22ff22"
+        },
+        "procfile": {
+          "code": "",
+          "color": "#a074c4"
+        },
+        "jquery": {
+          "code": "",
+          "color": "#1B75BB"
+        },
+        "angular": {
+          "code": "",
+          "color": "#E23237"
+        },
+        "backbone": {
+          "code": "",
+          "color": "#0071B5"
+        },
+        "requirejs": {
+          "code": "",
+          "color": "#F44A41"
+        },
+        "materialize": {
+          "code": "",
+          "color": "#EE6E73"
+        },
+        "mootools": {
+          "code": "",
+          "color": "#ECECEC"
+        },
+        "vagrant": {
+          "code": "",
+          "color": "#1563FF"
+        },
+        "svg": {
+          "code": "ﰟ",
+          "color": "#FFB13B"
+        },
+        "font": {
+          "code": "ﯔ",
+          "color": "#999999"
+        },
+        "text": {
+          "code": "",
+          "color": "#999999"
+        },
+        "tex": {
+          "code": "ﭨ",
+          "color": "#999999"
+        },
+        "changeList": {
+          "code": "",
+          "color": "#999999"
+        },
+        "authorList": {
+          "code": "",
+          "color": "#999999"
+        },
+        "readme": {
+          "code": "",
+          "color": "#999999"
+        },
+        "disk": {
+          "code": "",
+          "color": "#cc9999"
+        },
+        "bin": {
+          "code": "",
+          "color": "#cccc99"
+        },
+        "archive": {
+          "code": "",
+          "color": "#cc3e44"
+        },
+        "lock": {
+          "code": "",
+          "color": "#999999"
+        },
+        "gitlab": {
+          "code": "",
+          "color": "#e14532"
+        },
+        "github": {
+          "code": "",
+          "color": "#bbbbbb"
+        },
+        "travis": {
+          "code": "",
+          "color": "#36b35d"
+        },
+        "android": {
+          "code": "",
+          "color": "#47d987"
+        },
+        "command": {
+          "code": "גּ",
+          "color": "#2e8ccf"
+        },
+        "color": {
+          "code": "",
+          "color": "#f72d74"
+        },
+        "snippet": {
+          "code": "ﴬ",
+          "color": "#6dbfc5"
+        },
+        "audio": {
+          "code": "",
+          "color": "#dd433d"
+        },
+        "audioList": {
+          "code": "",
+          "color": "#dd433d"
+        },
+        "video": {
+          "code": "",
+          "color": "#3d43dd"
+        },
+        "windows": {
+          "code": "",
+          "color": "#22afbc"
+        },
+        "google": {
+          "code": "",
+          "color": "#e7443c"
+        },
+        "chrome": {
+          "code": "",
+          "color": "#229f60"
+        },
+        "test": {
+          "code": "",
+          "color": "#0286cc"
+        }
+      },
+      "extensions": {
+        "styl": "stylus",
+        "sass": "sass",
+        "scss": "sass",
+        "htm": "html",
+        "html": "html",
+        "slim": "html",
+        "xml": "xml",
+        "xaml": "xml",
+        "plist": "xml",
+        "ejs": "ejs",
+        "liquid": "liquid",
+        "art": "art",
+        "css": "css",
+        "less": "less",
+        "md": "markdown",
+        "mdx": "markdown",
+        "markdown": "markdown",
+        "rmd": "markdown",
+        "lock": "lock",
+        "json": "json",
+        "js": "javascript",
+        "cjs": "javascript",
+        "mjs": "javascript",
+        "es6": "javascript",
+        "jsx": "javascriptreact",
+        "rb": "ruby",
+        "ru": "ruby",
+        "php": "php",
+        "py": "python",
+        "pyc": "python",
+        "pyo": "python",
+        "pyd": "python",
+        "coffee": "coffee",
+        "mustache": "mustache",
+        "hbs": "mustache",
+        "config": "conf",
+        "conf": "conf",
+        "ini": "conf",
+        "yml": "conf",
+        "yaml": "conf",
+        "toml": "toml",
+        "cfg": "conf",
+        "jpg": "image",
+        "jpeg": "image",
+        "bmp": "image",
+        "png": "image",
+        "gif": "image",
+        "webp": "image",
+        "mp3": "audio",
+        "wma": "audio",
+        "ncm": "audio",
+        "ape": "audio",
+        "flac": "audio",
+        "cue": "audioList",
+        "m3u": "audioList",
+        "rm": "video",
+        "ico": "ico",
+        "twig": "twig",
+        "cpp": "cpp",
+        "c++": "cpp",
+        "cxx": "cpp",
+        "cc": "cpp",
+        "cp": "cpp",
+        "c": "c",
+        "h": "h",
+        "hh": "h",
+        "hpp": "h",
+        "hxx": "h",
+        "hs": "haskell",
+        "lhs": "haskell",
+        "lua": "lua",
+        "java": "java",
+        "jar": "java",
+        "sh": "terminal",
+        "fish": "terminal",
+        "bash": "terminal",
+        "zsh": "zsh",
+        "zsh-theme": "zshColor",
+        "ksh": "terminal",
+        "csh": "terminal",
+        "awk": "terminal",
+        "ps1": "terminal",
+        "bat": "terminal",
+        "cmd": "terminal",
+        "ml": "ml",
+        "mli": "ml",
+        "diff": "diff",
+        "db": "sql",
+        "sql": "sql",
+        "dump": "sql",
+        "accdb": "sql",
+        "sqlite": "sql",
+        "dat": "sql",
+        "data": "sql",
+        "clj": "clojure",
+        "cljc": "clojure",
+        "cljs": "clojure",
+        "edn": "edn",
+        "scala": "scala",
+        "go": "go",
+        "dart": "dart",
+        "xul": "firefox",
+        "pl": "perl",
+        "pm": "perl",
+        "t": "perl",
+        "rss": "rss",
+        "sln": "vs",
+        "suo": "vs",
+        "csproj": "vs",
+        "cs": "csharp",
+        "fsscript": "fsharp",
+        "fsx": "fsharp",
+        "fs": "fsharp",
+        "fsi": "fsharp",
+        "rs": "rust",
+        "rlib": "rust",
+        "d": "dlang",
+        "erl": "erlang",
+        "hrl": "erlang",
+        "ex": "elixir",
+        "eex": "elixir",
+        "exs": "elixir",
+        "exx": "elixir",
+        "leex": "elixir",
+        "vim": "vim",
+        "nvim": "nvim",
+        "swp": "fileHidden",
+        "ai": "ai",
+        "psd": "psd",
+        "psb": "psd",
+        "pdf": "pdf",
+        "chm": "book",
+        "djvu": "book",
+        "azw3": "book",
+        "epub": "book",
+        "mobi": "book",
+        "ts": "typescript",
+        "tsx": "javascriptreact",
+        "jl": "julia",
+        "pp": "puppet",
+        "vue": "vue",
+        "elm": "elm",
+        "swift": "swift",
+        "xcplayground": "swift",
+        "svg": "svg",
+        "otf": "font",
+        "ttf": "font",
+        "fnt": "font",
+        "txt": "text",
+        "text": "text",
+        "tex": "tex",
+        "snippets": "snippet",
+        "log": "log",
+        "zip": "archive",
+        "tar": "archive",
+        "gz": "archive",
+        "gzip": "archive",
+        "rar": "archive",
+        "bz2": "archive",
+        "7z": "archive",
+        "pkg": "disk",
+        "iso": "disk",
+        "dmg": "disk",
+        "img": "disk",
+        "bin": "bin",
+        "out": "bin",
+        "wasm": "wasm",
+        "alfredworkflow": "command",
+        "alfred3workflow": "command",
+        "itermcolors": "color",
+        "crx": "chrome",
+        "proto": "google",
+        "apk": "android",
+        "exe": "windows",
+        "pem": "privateToken",
+        "pub": "publilcToken",
+        "gitconfig": "git",
+        "doc": "word",
+        "docx": "word",
+        "docm": "word",
+        "pages": "word",
+        "csv": "excel",
+        "xls": "excel",
+        "xlsx": "excel",
+        "xlsm": "excel",
+        "numbers": "excel",
+        "ppt": "ppt",
+        "pptx": "ppt",
+        "pptm": "ppt",
+        "key": "ppt"
+      },
+      "filenames": {
+        "tsconfig.json": "tsConfig",
+        "jsconfig.json": "tsConfig",
+        "package.json": "nodejs",
+        "package-lock.json": "lock",
+        "gruntfile": "gruntfile",
+        "gulpfile": "gulpfile",
+        "gemfile": "ruby",
+        "guardfile": "ruby",
+        "capfile": "ruby",
+        "rakefile": "ruby",
+        "mix": "mix",
+        "vimrc": "vim",
+        ".vimrc": "vim",
+        ".gvimrc": "vim",
+        "_vimrc": "vim",
+        "_gvimrc": "vim",
+        "license": "license",
+        "authors": "authorList",
+        "changes": "changeList",
+        "readme": "readme",
+        "procfile": "procfile",
+        "vagrantfile": "vagrant",
+        "docker-compose.yml": "docker",
+        ".gitconfig": "git",
+        "gitconfig": "git",
+        ".gitignore": "git",
+        "gitignore": "git",
+        ".gitmodules": "git",
+        ".gitattributes": "git",
+        ".gitkeep": "git",
+        ".gitlab-ci.yml": "gitlab",
+        ".travis.yml": "travis",
+        ".bashrc": "bashrc",
+        ".zshrc": "zshrc",
+        "zshrc": "zshrc",
+        ".bashprofile": "bashrc",
+        ".editorconfig": "conf",
+        "favicon.ico": "favicon",
+        "pom.xml": "mvn",
+        "makefile": "conf",
+        "dockerfile": "docker"
+      },
+      "patternMatches": {
+        "id_rsa$": "privateToken",
+        "id_dsa$": "privateToken",
+        "^webpack.*\\.config\\.js$": "webpack",
+        "^webpack.*\\.config\\.ts$": "webpack",
+        "tsconfig\\..*\\.json$": "tsConfig",
+        "\\.js.map$": "sourcemap",
+        ".gitignore$": "git",
+        ".*ignore$": "ignore",
+        "\\.config\\.js$": "conf",
+        "\\.config\\.ts$": "conf",
+        ".*rc$": "conf",
+        "\\.config$": "conf",
+        ".*jquery.*.js$": "jquery",
+        ".*angular.*.js$": "angular",
+        ".*backbone.*.js$": "backbone",
+        ".*require.*.js$": "requirejs",
+        ".*materialize.*.js$": "materialize",
+        ".*materialize.*.css$": "materialize",
+        ".*mootools.*.js$": "mootools",
+        ".*history$": "history",
+        "\\.test\\.": "test",
+        "\\.spec\\.": "test"
+      },
+      "dirnames": {
+        "src": "folderSource",
+        "library": "folderConfig",
+        ".config": "folderConfig",
+        "downloads": "folderDownload",
+        ".jenv": "java",
+        ".rustup": "rust",
+        ".rvm": "ruby",
+        ".pyenv": "python",
+        "packages": "folderPackage",
+        ".spacevim": "folderVim",
+        ".spacevim.d": "folderVim",
+        ".vim": "folderVim",
+        "test": "test",
+        "tests": "test",
+        "__tests__": "test",
+        "log": "log",
+        "logs": "log",
+        "dropbox": "dropbox",
+        "drive": "drive",
+        ".git": "folderGit",
+        ".github": "folderGithub",
+        ".circleci": "folderConfig",
+        ".ssh": "terminal",
+        ".tmux": "terminal",
+        ".npm": "folderNpm",
+        "node_modules": "folderNpm"
+      },
+      "dirPatternMatches": {}
+  },
+  "explorer.git.icon.rootStatus.added": "✚",
+  "explorer.git.icon.rootStatus.conflicted": "=",
+  "explorer.git.icon.rootStatus.deleted": "✖",
+  "explorer.git.icon.rootStatus.modified": "❇︎",
+  "explorer.git.icon.rootStatus.renamed": "➜",
+  "explorer.git.icon.rootStatus.stashed": "✚",
+  "explorer.git.icon.rootStatus.untracked": "✸",
+  "explorer.git.icon.status.mixed": "✿",
+  "explorer.git.icon.status.modified": "❇︎",
+  "explorer.git.icon.status.added": "✚",
+  "explorer.git.icon.status.deleted": "✘",
+  "explorer.git.icon.status.renamed": "➜",
+  "explorer.git.icon.status.copied": "",
+  "explorer.git.icon.status.unmerged": "=",
+  "explorer.git.icon.status.untracked": "✸",
+  "explorer.git.icon.status.ignored": "⦻",
+
+  // extensions: coc-git
+  "git.addGBlameToVirtualText": true,
+  "git.enableGutters": false,
+
+  // extensions: coc-tsserver
+  "tsserver.trace.server": "messages",
+  "tsserver.log": "normal",
+  /* "javascript.validate.enable": false, */
+
+  // extensions: coc-css
+  "css.lint.universalSelector": "warning",
+  "less.lint.universalSelector": "warning",
+  "scss.lint.universalSelector": "warning",
+  "css.lint.duplicateProperties": "warning",
+  "less.lint.duplicateProperties": "warning",
+  "scss.lint.duplicateProperties": "warning",
+  "css.lint.idSelector": "warning",
+  "less.lint.idSelector": "warning",
+  "scss.lint.idSelector": "warning",
+  "css.lint.propertyIgnoredDueToDisplay": "warning",
+  "less.lint.propertyIgnoredDueToDisplay": "warning",
+  "scss.lint.propertyIgnoredDueToDisplay": "warning",
+
+  // extensions: coc-cssmodule
+  "cssmodules.hintName": "CSS M",
+
+  // extensions: coc-floatinput
+  "floatinput.status.enabled": false,
+
+  // extensions: coc-json
+  /* "json.schemas": [ */
+    /* { */
+      /* "fileMatch":[".prettierrc"], */
+      /* "url": "/user.schema.json" */
+    /* } */
+  /* ], */
+
+  /* // extensions: coc-import-cost */
+  /* // File extensions to be parsed by the Typescript parser */
+  /* "importCost.typescriptExtensions": [ */
+    /* "\\.tsx?$" */
+  /* ], */
+  /* // File extensions to be parsed by the Javascript parser */
+  /* "importCost.javascriptExtensions": [ */
+    /* "\\.jsx?$" */
+  /* ], */
+  /* // Which bundle size to display */
+  /* "importCost.bundleSizeDecoration": "both", */
+  /* // Display the 'calculating' decoration */
+  /* "importCost.showCalculatingDecoration": true, */
+  /* // Print debug messages in output channel */
+  /* "importCost.debug": false, */
+
+  // extensions: coc-eslint
+  "eslint.enable": true,
+  "eslint.execArgv": [],
+  "eslint.fixOnSaveTimeout": 1000,
+  "eslint.packageManager": "pnpm",
+  "eslint.alwaysShowStatus": true,
+  "eslint.nodeEnv": null,
+  "eslint.nodePath": null,
+  "eslint.options": {},
+  "eslint.trace.server": "messages",
+  "eslint.run": "onType",
+  "eslint.autoFixOnSave": false,
+  "eslint.probe": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "html",
+    "vue",
+    "markdown"
+  ],
+  "eslint.debug": false,
+  "eslint.codeAction.disableRuleComment": {
+    "enable": true,
+    "location": "separateLine"
+  },
+  "eslint.codeAction.showDocumentation": {
+    "enable": true
+  },
+  "eslint.codeActionsOnSave.mode": "all",
+  // "eslint.codeActionsOnSave.rules":
+  "eslint.format.enable": true,
+  "eslint.lintTask.options": ["."],
+
+  // extensions: coc-project
+  "project.enable": true,
+  "project.dbpath": "~/.config/coc/coc-project.json",
+  "project.rootPatterns": [
+    ".git",
+    "package.json",
+    "*.pom",
+    "requirements.txt",
+    "Rakefile",
+    "Makefile",
+    "Cargo.toml",
+    "go.mod"
+  ],
+
+  // extensions: coc-tailwind-intellisense
+  "tailwindCSS.enable": true,
+  // "tailwindCSS.experimental.showPixelValues": true,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.lint.cssConflict": "error",
+  "tailwindCSS.validate": true,
+
+  // extensions: coc-imselect
+  "imselect.defaultInput": "com.apple.keylayout.US",
+  "imselect.enableFloating": true,
+  "imselect.enableStatusItem": true,
+
+  // extensions: coc-cspell-dicts
+  "cSpell.allowCompoundWords": true,
+  "cSpell.fixSpellingWithRenameProvider": true,
+  "cSpell.userWords": [
+    "Fastify",
+    "LOONG",
+    "SHOPLAZZA",
+    "ahooks",
+    "airbnb",
+    "esbuild",
+    "expl",
+    "futu",
+    "gstatus",
+    "nestjs",
+    "nvim",
+    "onlogin",
+    "sonarqube",
+    "sortby",
+    "tldr",
+    "ttfb"
+  ],
+
+  // coc-sql
+  "sql.database": "bigquery",
+  "sql.formatOptions": {
+    "language": "bigquery",
+    "keywordCase": "upper",
+    "tabulateAlias": true,
+    "newlineBeforeOpenParen": false,
+    "newlineBeforeCloseParen": true,
+    "lineWidth": 120
+  },
+  // coc-tabnine
+  "tabnine.priority": 10,
+
+  // coc-marketplace
+  "marketplace.npmsio": false
+}

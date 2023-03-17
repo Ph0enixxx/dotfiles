@@ -1,0 +1,6 @@
+call SpaceVim#custom#SPCGroupName(['g', 'm'], '+Merge Conflict')
+call SpaceVim#custom#SPC('nmap', ['g', 'm', 'u'], 'ConflictMarkerOurselves', 'Apply ours', 1)
+call SpaceVim#custom#SPC('nmap', ['g', 'm', 't'], 'ConflictMarkerThemselves', 'Apply theirs', 1)
+call SpaceVim#custom#SPC('nmap', ['g', 'm', 'b'], 'ConflictMarkerBoth', 'Apply both', 1)
+call SpaceVim#custom#SPC('nmap', ['g', 'm', 'r'], 'ConflictMarkerBoth!', 'Apply both in reverse order', 1)
+call SpaceVim#custom#SPC('nmap', ['g', 'm', 'n'], 'ConflictMarkerNone', 'Apply none', 1)

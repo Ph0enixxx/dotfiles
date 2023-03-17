@@ -1,0 +1,80 @@
+# React Snippets
+
+snippet setS "React setState()" b
+this.setState({
+	${VISUAL}$0
+});
+endsnippet
+
+snippet render "React render()"
+render() {
+	return (
+		${VISUAL}$0
+	);
+}
+endsnippet
+
+
+snippet rcp "React Pure Component" b
+// npm modules
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+
+// Styles
+import './`!p snip.rv = snip.fn.rsplit('.', 1)[0]`.less';
+
+export default class `!p snip.rv = snip.fn.rsplit('.', 1)[0]` extends PureComponent {
+	static propTypes = {
+		${VISUAL}$0
+	};
+
+	static defaultProps = {
+
+	};
+
+	constructor(props) {
+		super(props);
+
+	}
+
+	render() {
+		return (
+			<div styleName="`!p snip.rv = snip.fn.rsplit('.', 1)[0]`">
+			</div>
+		);
+	}
+}
+
+endsnippet
+
+snippet rc "React Component" b
+// npm modules
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
+// Styles
+import './`!p snip.rv = snip.fn.rsplit('.', 1)[0]`.less';
+
+export default class `!p snip.rv = snip.fn.rsplit('.', 1)[0]` extends Component {
+	static propTypes = {
+		${VISUAL}$0
+	}
+
+	static defaultProps = {
+
+	}
+
+	constructor(props) {
+		super(props);
+
+	}
+
+	render() {
+		return (
+			<div styleName="`!p snip.rv = snip.fn.rsplit('.', 1)[0]`">
+			</div>
+		);
+	}
+}
+
+endsnippet

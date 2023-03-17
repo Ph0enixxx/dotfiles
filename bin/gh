@@ -1,0 +1,42 @@
+#!/usr/bin/env zx
+import path from 'path';
+
+let octokit;
+
+try {
+  octokit = require('octokit');
+} catch(e) {
+  console.log(e)
+  await $`npm i -g octokit`;
+  octokit = require('octokit');
+}
+
+console.log(octokit)
+
+
+const configFolder = 'fzf';
+
+if (await $`[[ -d $HOME/.config/${configFolder} ]]`.exitCode) {
+  await $`mkdir $HOME/.config/${configFolder}`;
+};
+
+const args = process.argv[3] + '';
+
+if (args) {
+  const [group, repo] = args.split(path.sep);
+  if (repo) {
+    await $`git clone git@github.com:${args}`;
+    await $`echo -n "[user]\n  name = Phoenix Tsui\n  email = xusiyuan841028@gmail.com" >> "${repo}/.git/config"`
+  } else {
+  }
+} else {
+  console.log('loadHistory');
+}
+
+function loadHistory() {
+}
+
+// let count = parseInt(await $`ls -1 | wc -l`)
+// console.log(`Files count: ${count}`)
+//
+// vim: ft=javascript

@@ -1,0 +1,2 @@
+#!/usr/bin/env zsh
+(brew leaves; brew list --cask) | awk '{ names = names $1 " " } END { print names}' > list.txt

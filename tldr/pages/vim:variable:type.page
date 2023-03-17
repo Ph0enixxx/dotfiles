@@ -1,0 +1,41 @@
+# NeoVim Variables
+
+> Expression evaluation: expression expr E15 eval
+> Using expressions is introduced in chapter 41 of the user manual usr_41.txt <https://neovim.io/doc/user/usr_41.html#usr_41.txt>.
+
+- Number: A 32 or 64 bit signed number
+
+`-123  0x10  0177 0b1011`
+
+- Float: A floating point number
+
+`123.456  1.15e-6  -1.1e3`
+
+- String: A NUL terminated string of 8-bit unsigned characters (bytes)
+
+`"ab\txx\"--"  'x-z''a,c'`
+
+- Funcref: A reference to a function
+
+`function("strlen")`
+`function("Callback", [arg], myDict) " Partial function`
+
+- List: An ordered sequence of items
+
+`[1, 2, ['a', 'b']]`
+
+- Dictionary: An associative, unordered array: Each entry has a key and a value.
+
+`{"blue": "#0000ff", "red": "#ff0000"}`
+`#{blue: "#0000ff", red: "#ff0000"}`
+
+- Blob: Binary Large Object. Stores any sequence of bytes.
+
+`0zFF00ED015DAF`
+
+- Number => String
+
+`Number 123  -->  String "123"`
+`Number 0    -->  String "0"`
+`Number -1   -->  String "-1"`
+

@@ -1,0 +1,41 @@
+#!/usr/bin/env zsh
+
+export DEBUG_LEVEL=0
+
+local desc=$1
+local word=$2
+local group=$3
+local realpath=$4
+local words=$5
+
+local mancmd=man
+
+if { command -v batman &> /dev/null } {
+  mancmd="batman --color"
+}
+
+if [[ $group == "[shell function]" ]] {
+  echo $word is a shell function
+} elif { ! eval "$mancmd $word" 2> /dev/null } {
+  debug "No manual entry for $word"
+  if { ! eval "$word -h" 2> /dev/null } {
+    debug "-h option is unuseable for $word"
+    eval "$word --help"
+    if { ! eval "$word --help" 2> /dev/null } {
+      debug "--help option is unuseable for $word"
+      if { ! eval "$word help" 2> /dev/null } {
+        debug "help command is unuseable form $word"
+        echo "The help documentation is not existed from commnd '$word'"
+      }
+    }
+  }
+}
+
+echo
+echo
+debug "parse sript: $ZSH_ARGZERO"
+debug "desc: [$desc]"
+debug "word: [$word]"
+debug "group: [$group]"
+debug "realpath: [$realpath]"
+debug "words: [$words]"

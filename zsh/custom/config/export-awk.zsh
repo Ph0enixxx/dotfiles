@@ -1,0 +1,7 @@
+export AWK_SPLIT_COLON="awk -F: '{ for (i=1; i<=NF; i++) print \$i}'"
+export AWK_SPLIT_SPACE="awk -F' ' '{ for (i=1; i<=NF; i++) print \$i}'"
+export AWK_JOIN="awk 'BEGIN {items=\"\"} {items=items\$0\" \";} END {print substr(items, 0, length(items) - 1) }'"
+export AWK_NR="awk 'END {print NR}'"
+export AWK_TRIM="awk '{print \$1}'"
+export AWK_HEADER="awk '{ if (NR == 1) print \$0 }'"
+export AWK_REMOVE_HEADER="awk '{ if (NR > 1) print \0 }'"

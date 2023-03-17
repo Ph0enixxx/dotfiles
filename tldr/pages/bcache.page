@@ -1,0 +1,47 @@
+# Bcache
+
+> /dev/sdd is a hard driver device
+> /dev/md0 is a soft raid device
+> /dev/nvme0n1 is a NVME SSD device
+
+- Create block device; This will create `/dev/bcache0`
+
+`make-bcache -B /dev/sdd`
+`make-bcache -B /dev/md0`
+
+- Create cache device
+
+`make-bcache -C /dev/nvme0n1`
+
+- Register the cache device against your backing device (/dev/bcache0).
+
+`echo f0e01318-f4fd-4fab-abbb-d76d870503ec > /sys/block/bcache0/bcache/attach`
+
+- Check backing device status
+
+`cat /sys/block/bcache0/bcache/state`
+
+- Check caching mode
+
+`cat /sys/block/bcache0/bcache/cache_mode`
+
+- Show info about a bcached device
+
+`bcache-super-show /dev/nvme0n1`
+`bcache-super-show /dev/nvme0n1 | grep cset`
+
+- Stop the backing device
+
+`echo 1 > /sys/block/sdX/sdX[Y]/bcache/stop`
+
+- Detach a caching device
+
+`echo 1 > /sys/block/sdX/sdX[Y]/bcache/detach`
+
+- Safely remove the cache device
+
+`echo [cache-set-uuid] > /sys/block/bcache0/bcache/detach`
+
+- Release attached devices
+
+`echo 1 > /sys/fs/bcache/[cache-set-uuid]/stop`

@@ -8,7 +8,7 @@ mkdir -p $HOME/.SpaceVim.d
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 VIMRC=$HOME/.SpaceVim.d
 
-if [[ ! -d $VIMRC ]]; then
+if [[ ! -d $HOME/.SpaceVim ]]; then
   curl -fLs https://spacevim.org/install.sh | bash
 fi
 

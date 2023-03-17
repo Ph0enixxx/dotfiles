@@ -30,6 +30,7 @@ sudo apt-get install \
 # Install dev tools
 sudo apt-get install \
   apache2-utils \
+  python3-venv python3-pip \
   podman
 
 cd ~

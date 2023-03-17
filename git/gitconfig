@@ -64,6 +64,8 @@
   ; pager = diff-so-fancy | less --tab=4 -RFX
   pager = delta
   editor = nvim
+[credential]
+  helper = store
 [interactive]
   diffFilter = delta --color-only --features=interactive
 [gui]

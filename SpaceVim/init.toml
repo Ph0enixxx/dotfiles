@@ -202,9 +202,6 @@
 [[layers]]
   name = 'tools'
 
-# [[layers]]
-  # name = 'tools#dash'
-
 [[layers]]
   name = 'fzf'
 
@@ -375,10 +372,11 @@
 [[custom_plugins]]
   repo = 'nvim-telescope/telescope.nvim'
   merged = false
-
+  
 [[custom_plugins]]
   repo = 'mrjones2014/dash.nvim'
-  build = 'make install'
+  build = "[[ $(uname -s) == 'Darwin' ]] && make install"
+  if = "has('macunix')"
   merged = false
 
 # ------------ Git ------------------------------

@@ -211,6 +211,8 @@
     "package.json", "*.pom", "requirements.txt", "Rakefile", "Makefile", "Cargo.toml", "go.mod", ".git"
   ],
 
+  "npm.binPath": "pnpm",
+
   // source - file
   "coc.source.file.trimSameExts": ["ts", "js", "tsx", "jsx"],
 
@@ -1385,6 +1387,7 @@
     "nestjs",
     "nvim",
     "onlogin",
+    "pnpm",
     "sonarqube",
     "sortby",
     "tldr",

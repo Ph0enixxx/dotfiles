@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 source ./utils.sh
-source ./zsh/custom/config/functions.zsh
 
 mklink $PWD/utils.sh ~/.utils.sh
 
@@ -9,7 +8,7 @@ mklink $PWD/utils.sh ~/.utils.sh
 mkdir -p ~/.config
 
 # Zsh
-info zsh "Initialize Zsh config ..."
+echo "Initialize Zsh config ..."
 source ./zsh/init.sh
 
 # Tmux
@@ -17,16 +16,16 @@ source ./zsh/init.sh
 # source ./tmux/init.sh
 
 # Git
-info zsh "Initialize Git config ..."
+echo "Initialize Git config ..."
 mklink $PWD/git/gitconfig ~/.gitconfig
 mklink $PWD/git/gitignore ~/.gitignore
 
 # Maven
-info zsh "Initialize Maven config ..."
+echo "Initialize Maven config ..."
 mkdir -p ~/.m2
 mklink $PWD/config/maven-settings.xml ~/.m2/settings.xml
 
-info zsh "Initialize eslint/taskwarrior/ripgrep/archey/wego/range/bottom/cheat config ..."
+echo "Initialize eslint/taskwarrior/ripgrep/archey/wego/range/bottom/cheat config ..."
 
 # eslint
 mklink $PWD/config/eslintrc.json ~/.eslintrc.json
@@ -48,6 +47,7 @@ fi
 mklink $PWD/config/wego ~/.wegorc
 
 # ranger
+mkdir -p ~/.config/ranger
 mklink $PWD/config/ranger.conf ~/.config/ranger/rc.conf
 
 # bottom

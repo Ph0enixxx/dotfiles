@@ -4,7 +4,7 @@ FZF_NVM_OPTIONS="--border --inline-info --ansi --reverse --no-preview --tac"
 
 # [N]vm [L]atest LTS versions
 zni() {
-  local items=$(nvm list-remote --lts | awk '/\(Latest LTS:/{print $0}' | FZF_DEFAULT_OPTS="$FZF_NVM_OPTIONS" fzf-tmux --multi)
+  local items=$(nvm list-remote --lts | awk '/\(Latest LTS:/{print $0}' | FZF_DEFAULT_OPTS="$FZF_NVM_OPTIONS" fzf ${=FZF_FULLSCREEN_OPTIONS} --multi)
 
   if [[ $items ]] {
     items=$(echo $items | eval $AWK_NVM_VERSION | eval $AWK_JOIN)
@@ -20,7 +20,7 @@ zni() {
 
 # [N]vm [A]ll [I]nstall
 znai() {
-  local items=$(nvm list-remote $1 | FZF_DEFAULT_OPTS="$FZF_NVM_OPTIONS" fzf-tmux --multi)
+  local items=$(nvm list-remote $1 | FZF_DEFAULT_OPTS="$FZF_NVM_OPTIONS" fzf ${=FZF_FULLSCREEN_OPTIONS} --multi)
 
   if [[ $items ]] {
     items=$(echo $items | eval $AWK_NVM_VERSION | eval $AWK_JOIN)
@@ -37,7 +37,7 @@ znai() {
 # [N]vm [R]emove
 znr() {
   local version
-  local item=$(nvm list --no-alias | FZF_DEFAULT_OPTS="$FZF_NVM_OPTIONS" fzf-tmux)
+  local item=$(nvm list --no-alias | FZF_DEFAULT_OPTS="$FZF_NVM_OPTIONS" fzf ${=FZF_FULLSCREEN_OPTIONS})
   if [[ $item ]] {
     if [[ $item == '->'* ]] {
       version=$(echo $item | awk '{ print $2 }')
@@ -54,7 +54,7 @@ znr() {
 # [N]vm [U]se
 znu() {
   local version
-  local item=$(nvm list --no-alias | FZF_DEFAULT_OPTS="$FZF_NVM_OPTIONS" fzf-tmux)
+  local item=$(nvm list --no-alias | FZF_DEFAULT_OPTS="$FZF_NVM_OPTIONS" fzf ${=FZF_FULLSCREEN_OPTIONS})
   if [[ $item ]] {
     if [[ $item == '->'* ]] {
       version=$(echo $item | awk '{ print $2 }')
@@ -71,7 +71,7 @@ znu() {
 
 # mnemonic F[Z]F [N]vm [R]e[I]nstall packages
 znri() {
-  local inst=$(nvm list --no-alias | fzf-tmux --ansi -r +m --no-preview)
+  local inst=$(nvm list --no-alias | fzf ${=FZF_FULLSCREEN_OPTIONS} --ansi -r +m --no-preview)
 
   if [[ $inst ]]; then
     echo "nvm reinstall-packages $inst"

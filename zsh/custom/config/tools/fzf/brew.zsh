@@ -10,7 +10,7 @@ zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' 
 zbi() {
   local formulae="-"
   while [[ -n $formulae ]] {
-    formulae=$(brew formulae | fzf-tmux -m --query="$1" --preview 'brew info {}') || return
+    formulae=$(brew formulae | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}') || return
     local formulaeStr=$(echo $formulae | eval $AWK_JOIN)
     echo "$fg[blue]brew install $fg_bold[green]$formulaeStr$reset_color"
     brew install $formulaeStr
@@ -23,7 +23,7 @@ zbi() {
 zbci() {
   local formulae="-"
   while [[ -n $formulae ]] {
-    formulae=$(brew casks | fzf-tmux -m --query="$1" --preview 'brew info --cask {}') || return
+    formulae=$(brew casks | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info --cask {}') || return
     echo "$fg[blue]brew install --cask $fg_bold[green]${(f)formulae}$reset_color"
     brew install --cask ${(f)formulae}
   }
@@ -33,7 +33,7 @@ zbci() {
 # [B]rew [U]pdate
 zbu() {
   local formulae
-  formulae=$(brew leaves | fzf-tmux -m --query="$1" --preview 'brew list {}') || return
+  formulae=$(brew leaves | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew list {}') || return
 
   echo "brew upgrade 1${formulae}1"
   brew upgrade ${(f)formulae}
@@ -43,24 +43,24 @@ zbu() {
 # [B]rew [R]emove
 zbr() {
   local all=$(brew leaves)
-  local formulae=$(echo $all | fzf-tmux -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}')
+  local formulae=$(echo $all | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}')
   while [[ "$formulae" != "" ]] {
     local formulaeStr=$(echo $formulae | eval $AWK_JOIN)
     echo "brew uninstall $formulaeStr"
     eval "brew uninstall $formulaeStr"
-    formulae=$(echo $all | fzf-tmux -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}')
+    formulae=$(echo $all | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}')
   }
 }
 
 # [B]rew [C]ask [R]emove
 zbcr() {
   local all=$(brew list --cask)
-  local formulae=$(echo $all | fzf-tmux -m --query="$1" --preview 'brew info {}')
+  local formulae=$(echo $all | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}')
   while [[ -n $formulae ]] {
     local formulaeStr=$(echo $formulae | eval $AWK_JOIN)
     echo "brew uninstall $formulaeStr"
     eval "brew uninstall --cask $formulaeStr"
-    formulae=$(echo $all | fzf-tmux -m --query="$1" --preview 'brew info {}')
+    formulae=$(echo $all | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}')
   }
 }
 
@@ -71,7 +71,7 @@ zbcr() {
 function zbs() {
   local service="$"
   while [[ -n service ]] {
-    service=$(brew services list | fzf-tmux +m --header-lines="1" --query="$1" --no-preview) || return
+    service=$(brew services list | fzf ${=FZF_FULLSCREEN_OPTIONS} +m --header-lines="1" --query="$1" --no-preview) || return
     echo $service
   }
 

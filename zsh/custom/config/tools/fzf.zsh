@@ -27,6 +27,8 @@ export FZF_BINDINGS="--bind 'ctrl-a:toggle-all'
 
 export FZF_DEFAULT_COMMAND="$FD --type f --hidden --no-ignore-vcs --follow -E .git -E node_modules -E .DS_Store -E tags"
 
+export FZF_FULLSCREEN_OPTIONS="--height=100%"
+
 export FZF_OPTIONS="--layout=reverse --info=inline --separator='' --border=bold --ansi
   --height=50%
   --cycle --scroll-off=2
@@ -112,7 +114,7 @@ zcdp() {
       get_parent_dirs $(dirname "$1")
     fi
   }
-  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf-tmux --tac)
+  local DIR=$(get_parent_dirs $(realpath "${1:-$PWD}") | fzf --tac)
   cd "$DIR"
 }
 

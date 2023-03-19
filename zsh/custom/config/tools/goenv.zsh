@@ -12,3 +12,5 @@ eval "$(goenv init -)"
 
 path=($GOROOT/bin "$path[@]")
 path=("$path[@]" $GOPATH/bin)
+
+alias goenv-upgrade="cd $GOENV_ROOT && git fetch --all && git pull"

@@ -1,5 +1,5 @@
 _fzf_git_fzf() {
-  fzf-tmux -p100%,100% --border \
+  fzf -p100%,100% --border \
     --layout=reverse --multi \
     --color='header:italic:underline' \
     --preview-window='right,60%,border-left' \

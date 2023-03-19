@@ -2,11 +2,11 @@ if ! command -v goenv &> /dev/null; then
   return
 fi
 
-FZF_GOENV_OPTIONS="--border --inline-info --ansi --reverse --no-preview --tac"
+FZF_GOENV_OPTIONS="$FZF_FULLSCREEN_OPTIONS --no-preview --tac"
 AWK_GOENV_FORMAT="awk '{ if (NR >1) print \$0 }'"
 
 function zgoi() {
-  local items=$(goenv install -l | eval $AWK_GOENV_FORMAT | FZF_DEFAULT_OPTS="$FZF_GOENV_OPTIONS" fzf --query="$1")
+  local items=$(goenv install -l | eval $AWK_GOENV_FORMAT | fzf ${=FZF_GOENV_OPTIONS} --query="$1")
 
   if [[ $items ]] {
     for version in $(echo $items); do
@@ -18,7 +18,7 @@ function zgoi() {
 }
 
 function zgor() {
-  local item=$(goenv versions | awk '$0 !~ /system/' | FZF_DEFAULT_OPTS="$FZF_GOENV_OPTIONS" fzf-tmux --query="$1")
+  local item=$(goenv versions | awk '$0 !~ /system/' | FZF_DEFAULT_OPTS="$FZF_GOENV_OPTIONS" fzf ${=FZF_FULLSCREEN_OPTIONS} --query="$1")
 
   if [[ $item ]] {
     if [[ $item == '*'* ]] {
@@ -34,7 +34,7 @@ function zgor() {
 }
 
 function zgo() {
-  local item=$(goenv versions | FZF_DEFAULT_OPTS="$FZF_GOENV_OPTIONS" fzf-tmux --query="$1")
+  local item=$(goenv versions | FZF_DEFAULT_OPTS="$FZF_GOENV_OPTIONS" fzf ${=FZF_FULLSCREEN_OPTIONS} --query="$1")
 
   if [[ $item ]] {
     local version=$(echo $item | awk '{ if ($0 ~ /^[*]/) print $2; else print $1 }')

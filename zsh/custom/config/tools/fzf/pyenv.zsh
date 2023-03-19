@@ -2,7 +2,7 @@
 # using "brew search" as source input
 # mnemonic [B]rew [I]nstall [P]lugin
 zpi() {
-  local inst=$(pyenv install --list | sed "{1d;s/^[ ]*//;}" | fzf-tmux -m --query="$1" --no-preview)
+  local inst=$(pyenv install --list | sed "{1d;s/^[ ]*//;}" | fzf -m --query="$1" --no-preview)
 
   if [[ $inst ]]; then
     for prog in $(echo $inst);

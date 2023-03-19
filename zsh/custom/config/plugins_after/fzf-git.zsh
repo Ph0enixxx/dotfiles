@@ -5,3 +5,4 @@ _fzf_git_fzf() {
     --preview-window='right,60%,border-left' \
     --bind='ctrl-/:change-preview-window(down,50%,border-top|hidden|)' "$@"
 }
+

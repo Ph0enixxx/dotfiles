@@ -43,9 +43,9 @@ curl -L -o lsd.deb "https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd
 sudo dpkg -i lsd.deb
 yes | rm lsd.deb
 
-curl -LO "https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb"
-sudo dpkg -i nvim-linux64.deb
-yes | rm nvim-linux64.deb
+curl -L -o nvim.deb "https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb"
+sudo dpkg -i nvim.deb
+yes | rm nvim.deb
 
 curl -L -o git-delta.deb "https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb"
 sudo dpkg -i git-delta.deb
@@ -54,6 +54,12 @@ yes | rm git-delta.deb
 curl -L -o bottom.deb https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb
 sudo dpkg -i bottom.deb
 yes | rm bottom.deb
+
+mkdir $HOME/bin
+curl -L -o fzf.tar.gz "https://github.com/junegunn/fzf/releases/download/0.38.0/fzf-0.38.0-linux_amd64.tar.gz" && tar -x -f fzf.tar.gz
+tar -x -f fzf.tar.gz
+mv fzf bin/
+yes | rm fzf.tar.gz
 
 # Python
 curl https://pyenv.run | bash

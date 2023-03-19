@@ -98,6 +98,7 @@ if [[ $System == 'Darwin' ]] {
 }
 
 path=($DOTFILES/bin "$path[@]")
+path=($HOME/bin "$path[@]")
 
 if [[ -d $HOME/.cargo ]] {
   path=($HOME/.cargo/bin "$path[@]")
@@ -114,8 +115,6 @@ path=($PNPM_HOME "$path[@]")
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
-path=($HOME/bin "$path[@]")
-path=($HOME/Workspace/bin "$path[@]")
 path=(./node_modules/.bin "$path[@]")
 
 # test -e /Users/xusiyuan/.iterm2_shell_integration.zsh && source /Users/xusiyuan/.iterm2_shell_integration.zsh || true

@@ -8,5 +8,7 @@ if [[ $System == 'Darwin' ]] {
   alias man='batman'
   alias bgrep='batgrep'
 } elif [[ $System == 'Linux' ]] {
-  alias bat='batcat'
+  if { command -v batcat &> /dev/null } {
+    alias bat='batcat'
+  }
 }

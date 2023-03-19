@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
-source ../utils.sh
-
-mkdir -p $HOME/.config/coc
-mkdir -p $HOME/.SpaceVim.d
 
 # link config files
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 VIMRC=$HOME/.SpaceVim.d
+
+source $DIR/../utils.sh
+
+mkdir -p $HOME/.config/coc
+mkdir -p $HOME/.SpaceVim.d
 
 if [[ ! -d $HOME/.SpaceVim ]]; then
   curl -fLs https://spacevim.org/install.sh | bash

@@ -1,3 +1,3 @@
-let g:Hexokinase_highlighters = ['backgroundfull']
+let g:Hexokinase_highlighters = ['foregroundfull', 'virtual']
 let g:Hexokinase_ftDisabled = ['coc-explorer', 'startify']
 

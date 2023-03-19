@@ -30,6 +30,7 @@ sudo apt-get install \
 # Install dev tools
 sudo apt-get install \
   apache2-utils \
+  build-essential \
   python3-venv python3-pip \
   podman
 
@@ -53,11 +54,6 @@ yes | rm git-delta.deb
 curl -L -o bottom.deb https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb
 sudo dpkg -i bottom.deb
 yes | rm bottom.deb
-
-# Install base runtimes
-# Nodejs
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-sudo apt-get install -y nodejs
 
 # Python
 curl https://pyenv.run | bash

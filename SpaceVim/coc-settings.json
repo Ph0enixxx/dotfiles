@@ -211,7 +211,7 @@
     "package.json", "*.pom", "requirements.txt", "Rakefile", "Makefile", "Cargo.toml", "go.mod", ".git"
   ],
 
-  "npm.binPath": "pnpm",
+  // "npm.binPath": "/Users/xusiyuan/Library/pnpm/pnpm",
 
   // source - file
   "coc.source.file.trimSameExts": ["ts", "js", "tsx", "jsx"],

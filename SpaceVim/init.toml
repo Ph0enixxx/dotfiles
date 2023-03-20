@@ -105,6 +105,7 @@
   ]
 
   disabled_plugins = [
+    # 'calendar.vim',
     'deoplete.nvim', 'deoplete-dictionary', 
     'nvim-typescript', 'typescript-vim', 'vim-jsx-typescript',
     'indent-blankline.nvim',
@@ -215,6 +216,12 @@
 
 ############################# Plugins #############################
 # ------------ Tools ----------------------------
+[[custom_plugins]]
+  repo = 'itchyny/calendar.vim'
+  merged = false
+  on_cmd = 'Calendar'
+  if = "has('macunix')"
+
 [[custom_plugins]]
   repo = 'gelguy/wilder.nvim'
   merged = false

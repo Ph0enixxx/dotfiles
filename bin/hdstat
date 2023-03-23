@@ -6,7 +6,9 @@
 #function-4:增加 if 嵌套语句判断除开 active 和 standby 之外状态的硬盘，并将其标记为 unknown
 
 dsk=`ls /dev/sd* | grep -Po 'sd(a{2}|[a-z]+)$'`
+echo
 echo `date +%c`
+echo
 printf "%-11s %-10s %-40s %-10s\n" Disk Stats DiskLable Capacity 
 standby=0
 active=0
@@ -19,7 +21,7 @@ do
 #echo -e "-----------------------";
 printf "%-11s"  /dev/$i:;
 #echo -n -e "/dev/$i :\t" ;
-stats=`smartctl -i -n standby /dev/$i|grep "mode"|awk '{print $4}'`;
+stats=`sudo smartctl -i -n standby /dev/$i|grep "mode"|awk '{print $4}'`;
 #echo $stats
 if [[ $stats == STANDBY ]]||[[ $stats == ACTIVE ]]||[[ $stats == IDLE_A ]]
 then

@@ -14,9 +14,11 @@ sudo apt-get install \
 
 # Install tools
 sudo apt-get install \
-  bat bcache-tools \
+  bcache-tools \
+  curl \
   exa \
   fd-find fio fzf \
+  git \
   hardinfo hdparm highlight htop \
   iotop \
   jnettop \
@@ -43,6 +45,10 @@ curl -L -o lsd.deb "https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd
 sudo dpkg -i lsd.deb
 yes | rm lsd.deb
 
+curl -L -o bat.deb "https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-musl_0.22.1_amd64.deb"
+sudo dpkg -i bat.deb
+yes | rm bat.deb
+
 curl -L -o nvim.deb "https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb"
 sudo dpkg -i nvim.deb
 yes | rm nvim.deb
@@ -57,7 +63,6 @@ yes | rm bottom.deb
 
 mkdir $HOME/bin
 curl -L -o fzf.tar.gz "https://github.com/junegunn/fzf/releases/download/0.38.0/fzf-0.38.0-linux_amd64.tar.gz" && tar -x -f fzf.tar.gz
-tar -x -f fzf.tar.gz
 mv fzf bin/
 yes | rm fzf.tar.gz
 

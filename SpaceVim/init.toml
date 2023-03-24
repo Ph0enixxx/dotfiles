@@ -405,6 +405,10 @@
 
 # ------------ Autocomplete ---------------------
 [[custom_plugins]]
+  repo = 'github/copilot.vim'
+  merged = false
+
+[[custom_plugins]]
   repo = 'tpope/vim-endwise'
   merged = false
 

@@ -1405,7 +1405,7 @@
     "lineWidth": 120
   },
   // coc-tabnine
-  "tabnine.priority": 10,
+  "tabnine.priority": 999,
 
   // coc-marketplace
   "marketplace.npmsio": false

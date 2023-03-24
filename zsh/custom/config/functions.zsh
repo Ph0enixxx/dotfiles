@@ -174,7 +174,7 @@ function _log_init() {
 # Outputs:
 #   Write formatted message to stdout
 # Usages:
-#   debug $message" ($scope = "debug")
+#   debug $message ($scope = "debug")
 #   debug $scope $message
 #######################################
 _log_init 0 debug
@@ -190,7 +190,7 @@ _log_init 0 debug
 # Outputs:
 #   Write formatted message to stdout
 # Usages:
-#   info $message" ($scope = "info")
+#   info $message ($scope = "info")
 #   info $scope $message
 #######################################
 _log_init 1 info
@@ -206,7 +206,7 @@ _log_init 1 info
 # Outputs:
 #   Write formatted message to stdout
 # Usages:
-#   info $message" ($scope = "warn")
+#   info $message ($scope = "warn")
 #   info $scope $message
 #######################################
 _log_init 2 warn
@@ -222,7 +222,7 @@ _log_init 2 warn
 # Outputs:
 #   Write formatted message to stderr
 # Usages:
-#   error $message" ($scope = "error")
+#   error $message ($scope = "error")
 #   error $scope $message
 #######################################
 _log_init 3 error
@@ -415,18 +415,83 @@ function ls_large() {
   echo "$fg_bold[blue]Total: $(du -hs .)$reset_color"
 }
 
-function study() {
-  zparseopts -E -D -- \
-           -include:=o_include \
-           -exclude-file-ext:=o_exclude \
-           -show-only=o_show
+#######################################
+# list all network ports with status 
+# Globals:
+# Arguments:
+#   $status {string} The text of log message
+# Outputs:
+#   Open a fzf with filtered ports
+# Usages:
+#   port ($status = "LISTEN")
+#   port ESTABLISHED
+#######################################
+function port() {
+  local ipOpts
+  local stateOpts
+  local protocolOpts
+  local portOpts
+  local arg_filename=(myfile)  # set a default
+  local help
 
-  echo "include: ${o_include[2]}"
-  echo "${o_include[0]}"
-  echo "${o_include[1]}"
-  echo "${o_include[2]}"
-  echo "exclude: ${o_exclude[2]}"
-  echo "show? ${o_show}"
+  zmodload zsh/zutil
+  zparseopts -D -F -K -- \
+    {h,-help}=help \
+    -ip:=ipOpts \
+    -state:=stateOpts \
+    -protocol:=protocolOpts \
+    -port:=portOpts \
+    {v,-ip-ver}:=ipVersionOpts \
+    {f,-filename}:=arg_filename || return 1
+
+  local usage=(
+    "port [-h|--help]"
+    "port [--ip-ver 4|6] [--ip <ip>] [--protocol <protocol>[ --state <state>]] [--port <port>] [<query-string>]"
+  )
+
+  [[ -z "$help" ]] || { print -l $usage && return }
+
+  local ip=$ipOpts[-1]
+  local state=$stateOpts[-1]
+  local protocol=$protocolOpts[-1]
+  local port=$portOpts[-1]
+  local ipVersion=$ipVersionOpts[-1]
+
+  debug "port" "ip: $ip state: $state protocol: $protocol port: $port ipVersion: $ipVersion"
+
+  if [[ $ipVersion != "4" ]]&&[[ $ipVersion != "6" ]]&&[[ -n $ipVersion ]]; then
+    echo "IP version should be 4(IPv4) or 6(IPv6)!"
+  fi
+
+  local s=${1}
+
+  local sOpts
+  if [[ -n $state ]]; then
+    if [[ -z $protocol ]]; then
+      echo "Please specify both state and protocol!"
+      return
+    else
+      sOpts="-s $protocol:$state"
+    fi
+  fi
+
+  local iOpts="-i $ipVersion"
+  if [[ -n protocol ]]; then
+    iOpts+="$protocol"
+  fi
+  if [[ -n $ip ]]; then
+    iOpts+="@$ip"
+  fi
+  if [[ -n $port ]]; then
+    iOpts+=":$port"
+  fi
+
+  local cmd="lsof -Pn ${=iOpts} ${=sOpts} 2> /dev/null"
+
+  if [[ $System == 'Linux' ]]; then
+    cmd="sudo $cmd"
+  fi
+  eval $cmd | fzf --query=$s --header-lines=1 --height=100%
 }
 
 # vim:ft=zsh:

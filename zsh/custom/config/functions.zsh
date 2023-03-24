@@ -394,6 +394,17 @@ function enable_node_pkg_manager() {
   }
 }
 
+function ls_large() {
+  local f
+  for f in ./\.*; do
+    du -hs $f | awk '/^([0-9. ]+G|[ ]*[0-9]{3}\.*[0-9]*M)/'
+  done
+  for f in ./*; do
+    du -hs $f | awk '/^([0-9. ]+G|[ ]*[0-9]{3}\.*[0-9]*M)/'
+  done
+  echo "Total: $(du -hs .)"
+}
+
 function study() {
   zparseopts -E -D -- \
            -include:=o_include \

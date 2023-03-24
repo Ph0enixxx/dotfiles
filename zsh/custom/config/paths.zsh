@@ -19,7 +19,7 @@ hash -d pnpm="$PNPM_HOME/global/5/node_modules"
 
 # Home
 hash -d doc="$HOME/Documents"
-hash -d doc="$HOME/Library"
+hash -d lib="$HOME/Library"
 
 # Config
 hash -d zconf="$DOTFILES/zsh/custom"

@@ -36,6 +36,8 @@ alias vim='nvim'
 
 # Systee Status
 alias port='lsof -Pni4 | grep LISTEN'
+alias ds='du -hs ./*'
+alias das='du -hs ./\.* ./*'
 
 # Git
 alias g='git'

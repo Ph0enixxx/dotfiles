@@ -5,7 +5,20 @@
 #function-3:原for循环语句中加入判断和循环计数方式,统计active和standby的数量
 #function-4:增加 if 嵌套语句判断除开 active 和 standby 之外状态的硬盘，并将其标记为 unknown
 
-dsk=`ls /dev/sd* | grep -Po 'sd(a{2}|[a-z]+)$'`
+RED="\033[31m"
+GREEN="\033[32m"
+ENDCOLOR="\033[0m"
+
+system="$(uname -s)"
+if [[ $system != 'Linux' ]]; then
+  echo -e "${GREEN}Don't Support ${RED}$system${GREEN} system, exit...${ENDCOLOR}"
+  exit 1
+elif ! command -v smartct &> /dev/null; then
+  echo -e "${RED}smartctl${ENDCOLOR} ${GREEN}tool could not be found, exit...${ENDCOLOR}"
+  exit 1
+fi
+
+dsk=`sudo ls /dev/sd* | grep -Po 'sd(a{2}|[a-z]+)$'`
 echo
 echo `date +%c`
 echo

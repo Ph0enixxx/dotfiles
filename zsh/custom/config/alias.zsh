@@ -27,6 +27,7 @@ alias lS='ls -AlS'
 alias la='ls -A'
 alias lla='ls -Al'
 alias lt='ls --tree'
+alias lsl='ls_large'
 
 # Vim
 alias ss='source ~/.zshrc'

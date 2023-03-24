@@ -13,7 +13,7 @@ system="$(uname -s)"
 if [[ $system != 'Linux' ]]; then
   echo -e "${GREEN}Don't Support ${RED}$system${GREEN} system, exit...${ENDCOLOR}"
   exit 1
-elif ! command -v smartct &> /dev/null; then
+elif ! command -v smartctl &> /dev/null; then
   echo -e "${RED}smartctl${ENDCOLOR} ${GREEN}tool could not be found, exit...${ENDCOLOR}"
   exit 1
 fi

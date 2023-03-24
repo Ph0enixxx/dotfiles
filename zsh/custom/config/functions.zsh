@@ -395,14 +395,24 @@ function enable_node_pkg_manager() {
 }
 
 function ls_large() {
-  local f
-  for f in ./\.*; do
-    du -hs $f | awk '/^([0-9. ]+G|[ ]*[0-9]{3}\.*[0-9]*M)/'
+  local file
+  local message
+  local filtered 
+  for file in `lso . | tr " " "\?"`; do
+    file=`tr "\?" " " <<<$file`
+    message=`du -hs "./$file"`
+    filtered=`awk '/^[0-9. ]+G/' <<<$message`
+    if [[ $filtered != "" ]]; then
+      echo "$fg_bold[red]$filtered$reset_color"
+    else
+      filtered=`awk '/^[ ]*[0-9]{3}\.*[0-9]*M/' <<<$message`
+      if [[ $filtered != "" ]]; then
+        echo "$fg_bold[yellow]$filtered$reset_color"
+      fi
+    fi
   done
-  for f in ./*; do
-    du -hs $f | awk '/^([0-9. ]+G|[ ]*[0-9]{3}\.*[0-9]*M)/'
-  done
-  echo "Total: $(du -hs .)"
+  echo
+  echo "$fg_bold[blue]Total: $(du -hs .)$reset_color"
 }
 
 function study() {

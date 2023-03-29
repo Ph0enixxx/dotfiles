@@ -1,5 +1,8 @@
 debug 'zshrc' 'source ~/.zshrc'
 
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -83,11 +86,6 @@ plugins+=(docker docker-compose docker-machine)
 # python
 # plugins+=(pyenv)
 
-# You may need to manually set your language environment
-#export LANG=en_US.UTF-8
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-#
-
 typeset -gU path
 if [[ $Distribution == "Debian" ]] {
   path=(/usr/sbin "$path[@]")
@@ -103,6 +101,7 @@ path=($HOME/bin "$path[@]")
 if [[ -d $HOME/.cargo ]] {
   path=($HOME/.cargo/bin "$path[@]")
 }
+
 
 source $ZSH/oh-my-zsh.sh
 

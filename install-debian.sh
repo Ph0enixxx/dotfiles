@@ -8,17 +8,16 @@ if [[ $Distribution != "Debian" ]]; then
 fi
 
 # Install zsh & tmux
-sudo apt-get install \
-  sudo zsh \
+apt-get install \
+  sudo zsh git build-essential \
   tmux tmux-plugin-manager
 
 # Install tools
-sudo apt-get install \
-  bcache-tools \
+apt-get install \
+  bcache-tools  \
   curl \
   exa \
-  fd-find fio fzf \
-  git \
+  f2fs-tools fd-find fio fzf \
   hardinfo hdparm highlight htop \
   iotop \
   jnettop \
@@ -32,7 +31,6 @@ sudo apt-get install \
 # Install dev tools
 sudo apt-get install \
   apache2-utils \
-  build-essential \
   python3-venv python3-pip \
   podman
 

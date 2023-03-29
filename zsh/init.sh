@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+DIR=`cd $(dirname $0); pwd`
+
 if ! command -v mklink &> /dev/null; then
   source ../utils.sh
 fi
@@ -17,8 +19,6 @@ function switch_shell_zsh() {
 }
 
 switch_shell_zsh
-
-DIR=`cd $(dirname $0); pwd`
 
 if [[ -z $ZSH ]]; then
   echo "Install oh-my-zsh ..."

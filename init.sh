@@ -15,6 +15,9 @@ source ./zsh/init.sh
 # info zsh "Initialize Tmux config ..."
 # source ./tmux/init.sh
 
+# SpaceVim
+source ./SpaceVim/init.sh
+
 # Git
 echo "Initialize Git config ..."
 mklink $PWD/git/gitconfig ~/.gitconfig

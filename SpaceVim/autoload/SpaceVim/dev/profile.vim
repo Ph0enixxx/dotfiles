@@ -32,7 +32,6 @@ let s:levels = [
       \ 'Test your might',
       \ ]
 
-
 function! s:plugin_sort(a, b) abort
   return len(a:b[0]) - len(a:a[0])
 endfunction

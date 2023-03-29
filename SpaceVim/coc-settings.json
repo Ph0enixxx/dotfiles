@@ -1,47 +1,132 @@
 {
-  // Completion
-  "suggest.noselect": false,
-  "suggest.selection": "first",
-  "suggest.formatItems": [
-    "abbr",
-    "menu",
-    "kind",
-    "shortcut"
-  ],
-  "suggest.enablePreselect": true,
-  "suggest.floatConfig": {
+  // Call hierarchy
+  "callHierarchy.enableTooltip": true,
+  "callHierarchy.openCommand": "vsplit",
+  "callHierarchy.splitCommand": "botright 30vs",
+  
+  // CodeLens
+  "codeLens.enable": true,
+  "codeLens.position": "right_align",
+  "codeLens.separator": "‣",
+  "codeLens.subseparator": "/",
 
+  // Colors highlight
+  "colors.enable": false,
+  "colors.highlightPriority": 1000,
+
+  // Cursors
+  "cursors.cancelKey": "<esc>",
+  "cursors.nextKey": "<c-j>",
+  "cursors.previousKey": "<c-k>",
+  "cursors.wrapscan": true,
+
+  // Diagnostic
+  "diagnostic.autoRefresh": true,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.displayByAle": false,
+  "diagnostic.enable": true,
+  "diagnostic.enableHighlightLineNumber": true,
+  "diagnostic.enableMessage": "always",
+  "diagnostic.enableSign": true,
+  "diagnostic.errorSign": "",
+  "diagnostic.filetypeMap": {},
+  "diagnostic.floatConfig": {
+    "border": true,
+    // "rounded": true,
+    // "highlight": "CocFloating",
+    // "borderhighlight": "CocFloating",
+    // "close": false,
+    // "maxWidth": 160,
+    // "maxHeight": 10,
+    // "winblend": 30,
+    // "focusable": false,
+    // "shadow": false,
   },
-  "suggest.labelMaxLength": 200,
-  "suggest.detailField": "preview",
+  "diagnostic.format": "[%source%code][%severity] %message",
+  "diagnostic.highlightLimit": 1000,
+  "diagnostic.highlightPriority": 4096,
+  "diagnostic.hintSign": "",
+  "diagnostic.infoSign": "",
+  "diagnostic.level": "hint",
+  "diagnostic.locationlistLevel": "hint",
+  "diagnostic.locationlistUpdate": true,
+  "diagnostic.messageDelay": 150,
+  "diagnostic.messageLevel": "hint",
+  "diagnostic.messageTarget":"float",
+  "diagnostic.refreshOnInsertMode": false,
+  "diagnostic.separateRelatedInformationAsDiagnostics": false,
+  "diagnostic.showDeprecated": true,
+  "diagnostic.showUnused": true,
+  "diagnostic.signLevel": "hint",
+  "diagnostic.signPriority": 0,
+  "diagnostic.virtualText": false,
+  "diagnostic.virtualTextAlign": "after",
+  "diagnostic.virtualTextCurrentLineOnly": true,
+  "diagnostic.virtualTextFormat": "[%source%code][%severity] %message",
+  "diagnostic.virtualTextLevel": "error",
+  "diagnostic.virtualTextLimitInOneLine": 999,
+  "diagnostic.virtualTextLineSeparator": " \\ ",
+  "diagnostic.virtualTextLines": 3,
+  "diagnostic.virtualTextPrefix": " ",
+  "diagnostic.virtualTextWinCol": 160,
+  "diagnostic.warningSign": "",
+
+  // Dialog
+  "dialog.confirmKey": "<cr>",
+  "dialog.floatBorderHighlight": "CocFloating",
+  "dialog.floatHighlight": "CocFloating",
+  "dialog.maxHeight": 30,
+  "dialog.maxWidth": 160,
+  "dialog.pickerButtonShortcut": true,
+  "dialog.pickerButtons": true,
+  "dialog.rounded": true,
+  "dialog.shortcutHighlight": "MoreMsg",
+
+  // DocumentHighlight
+  "documentHighlight.priority": -1,
+  "documentHighlight.timeout": 500,
+
+  // FloatFactory
+  "floatFactory.floatConfig": {
+    "border": true,
+    "rounded": false,
+    "highlight": "CocFloating",
+    "borderhighlight": "CocFloating",
+    "close": false,
+    "maxWidth": 160,
+    // "maxHeight": 10,
+    "winblend": 0,
+    "focusable": false,
+    "shadow": false,
+  },
+
+  // Hover
+  "hover.autoHide": true,
+  "hover.floatConfig": {},
+  "hover.previewMaxHeight": 12,
+  "hover.target": "float",
+
+  // Http Proxy
+  // "http.proxy": "",
+  // "http.proxyAuthorization": null,
+  // "http.proxyCA": null,
+  // "http.proxyStrictSSL": false,
+
+  // InlayHint
+  "inlayHint.enable": true,
+  "inlayHint.enableParameter": true,
+  "inlayHint.display": true,
+  "inlayHint.parameterSeparator": "",
+  "inlayHint.refreshOnInsertMode": true,
+  "inlayHint.subSeparator": " ",
+  "inlayHint.typeSeparator": "",
+
+
+  // Completion
   "suggest.autoTrigger": "always",
-  "suggest.languageSourcePriority": 99,
-  "suggest.snippetIndicator": " ",
-  "suggest.maxCompleteItemCount": 50,
-  "suggest.preferCompleteThanJumpPlaceholder": false,
-  "suggest.snippetsSupport": true,
-  "suggest.fixInsertedWord": true,
-  "suggest.localityBonus": true,
-  "suggest.triggerAfterInsertEnter": true,
-  "suggest.timeout": 5000,
-  "suggest.minTriggerInputLength": 1,
-  "suggest.triggerCompletionWait": 0,
-  "suggest.acceptSuggestionOnCommitCharacter": false,
-  "suggest.lowPrioritySourceLimit": 90,
-  "suggest.removeDuplicateItems": true,
-  "suggest.defaultSortMethod": "alphabetical",
-  "suggest.invalidInsertCharacters": [
-    " ",
-    "(",
-    "<",
-    "{",
-    "[",
-    "\r",
-    "\n"
-  ],
+  "suggest.acceptSuggestionOnCommitCharacter": true,
   "suggest.asciiCharactersOnly": false,
-  "suggest.ignoreRegexps": [],
-  "suggest.virtualText": true,
+  "suggest.asciiMatch": true,
   "suggest.completionItemKindLabels": {
     "keyword": "",
     "variable": "",
@@ -71,48 +156,46 @@
     "default": ""
   },
 
-  // Document highlight
-  "documentHighlight.priority": -1,
-  "documentHighlight.timeout": 500,
-
-  // Colors highlight
-  "colors.filetypes": ["*"],
-  "colors.highlightPriority": 1000,
+  "suggest.noselect": false,
+  "suggest.selection": "first",
+  "suggest.formatItems": [
+    "abbr",
+    "menu",
+    "kind",
+    "shortcut"
+  ],
+  "suggest.enablePreselect": true,
+  "suggest.floatConfig": {},
+  "suggest.labelMaxLength": 200,
+  "suggest.detailField": "preview",
+  "suggest.languageSourcePriority": 99,
+  "suggest.snippetIndicator": " ",
+  "suggest.maxCompleteItemCount": 50,
+  "suggest.preferCompleteThanJumpPlaceholder": false,
+  "suggest.snippetsSupport": true,
+  "suggest.localityBonus": true,
+  "suggest.triggerAfterInsertEnter": true,
+  "suggest.timeout": 5000,
+  "suggest.minTriggerInputLength": 1,
+  "suggest.triggerCompletionWait": 0,
+  "suggest.lowPrioritySourceLimit": 90,
+  "suggest.removeDuplicateItems": true,
+  "suggest.defaultSortMethod": "alphabetical",
+  "suggest.invalidInsertCharacters": [
+    " ",
+    "(",
+    "<",
+    "{",
+    "[",
+    "\r",
+    "\n"
+  ],
+  "suggest.ignoreRegexps": [],
+  "suggest.virtualText": true,
 
   // Links
   "links.tooltip": true,
 
-  // Diagnostic
-  "diagnostic.enable": true,
-  "diagnostic.autoRefresh": true,
-  "diagnostic.refreshOnInsertMode": false,
-  "diagnostic.level": "hint",
-  "diagnostic.highlightLimit": 1000,
-  "diagnostic.highlightPriority": 4096,
-  "diagnostic.enableSign": true,
-  "diagnostic.signPriority": 10,
-  "diagnostic.errorSign": "",
-  "diagnostic.warningSign": "",
-  "diagnostic.infoSign": "",
-  "diagnostic.hintSign": "",
-  "diagnostic.enableHighlightLineNumber": true,
-  "diagnostic.locationlistUpdate": true,
-  "diagnostic.enableMessage": "always",
-  "diagnostic.checkCurrentLine": true,
-  "diagnostic.messageDelay": 200,
-  "diagnostic.messageTarget":"float",
-  "diagnostic.format": "[%source%code] [%severity] %message",
-  "diagnostic.floatConfig": {
-  },
-  // "diagnostic.filetypeMap": {},
-  "diagnostic.virtualText": false,
-  "diagnostic.virtualTextLevel": "error",
-  "diagnostic.virtualTextWinCol": 160,
-  "diagnostic.virtualTextCurrentLineOnly": true,
-  "diagnostic.virtualTextPrefix": " ",
-  "diagnostic.virtualTextLines": 3,
-  "diagnostic.virtualTextLineSeparator": " \\ ",
-  "diagnostic.separateRelatedInformationAsDiagnostics": false,
 
   // Signature
   "signature.enable": true,
@@ -122,10 +205,6 @@
   "signature.preferShownAbove": true,
   "signature.hideOnTextChange": false,
 
-  // Multiple cursors
-  /* "cursors.nextKey": "<c-j>", */
-  /* "cursors.previousKey": "<c-k>", */
-
   // Refactor buffer
   "refactor.saveToFile": true,
   "refactor.openCommand": "vsplit",
@@ -133,21 +212,6 @@
   "refactor.afterContext": 3,
   "refactor.showMenu": "<Tab>",
 
-  // Hover
-  "hover.target": "float",
-  "hover.previewMaxHeight": 12,
-  "hover.autoHide": true,
-
-  // Dialog
-  "dialog.maxWidth": 160,
-  "dialog.maxHeight": 30,
-  "dialog.rounded": true,
-  "dialog.confirmKey": "<cr>",
-  "dialog.pickerButtons": true,
-  "dialog.pickerButtonShortcut": true,
-  "dialog.floatHighlight": "CocFloating",
-  "dialog.floatBorderHighlight": "CocFloating",
-  "dialog.shortcutHighlight": "MoreMsg",
 
   // Notification
   "notification.maxWidth": 120,
@@ -159,12 +223,6 @@
   "notification.timeout": 10000,
   "notification.marginRight": 10,
   "notification.focusable": true,
-
-  // CodeLens
-  "codeLens.enable": false,
-  "codeLens.position": "right_align",
-  "codeLens.separator": "‣",
-  "codeLens.subseparator": "/",
 
   //Workspace related
   "workspace.openOutputCommand": "vs",
@@ -211,7 +269,7 @@
     "package.json", "*.pom", "requirements.txt", "Rakefile", "Makefile", "Cargo.toml", "go.mod", ".git"
   ],
 
-  // "npm.binPath": "/Users/xusiyuan/Library/pnpm/pnpm",
+  "npm.binPath": "${env:PNPM_HOME}/pnpm",
 
   // source - file
   "coc.source.file.trimSameExts": ["ts", "js", "tsx", "jsx"],
@@ -815,7 +873,7 @@
           "code": "",
           "color": "#E23237"
         },
-        "publilcToken": {
+        "publicToken": {
           "code": "",
           "color": "#22ff22"
         },
@@ -1128,7 +1186,7 @@
         "apk": "android",
         "exe": "windows",
         "pem": "privateToken",
-        "pub": "publilcToken",
+        "pub": "publicToken",
         "gitconfig": "git",
         "doc": "word",
         "docx": "word",
@@ -1190,6 +1248,7 @@
       "patternMatches": {
         "id_rsa$": "privateToken",
         "id_dsa$": "privateToken",
+        "_ed25519$": "privateToken",
         "^webpack.*\\.config\\.js$": "webpack",
         "^webpack.*\\.config\\.ts$": "webpack",
         "tsconfig\\..*\\.json$": "tsConfig",
@@ -1261,6 +1320,7 @@
   // extensions: coc-git
   "git.addGBlameToVirtualText": true,
   "git.enableGutters": false,
+  "git.signPriority": 10,
 
   // extensions: coc-tsserver
   "tsserver.trace.server": "messages",
@@ -1288,6 +1348,7 @@
   "floatinput.status.enabled": false,
 
   // extensions: coc-json
+  "json.trace.server": "verbose",
   /* "json.schemas": [ */
     /* { */
       /* "fileMatch":[".prettierrc"], */
@@ -1374,12 +1435,17 @@
   // extensions: coc-cspell-dicts
   "cSpell.allowCompoundWords": true,
   "cSpell.fixSpellingWithRenameProvider": true,
+  "cSpell.showCommandsInEditorContextMenu": true,
+  "cSpell.maxDuplicateProblems": 5,
+  "cSpell.maxNumberOfProblems": 100,
+
   "cSpell.userWords": [
     "Fastify",
     "LOONG",
     "SHOPLAZZA",
     "ahooks",
     "airbnb",
+    "chatgpt",
     "esbuild",
     "expl",
     "futu",
@@ -1391,7 +1457,9 @@
     "sonarqube",
     "sortby",
     "tldr",
-    "ttfb"
+    "ttfb",
+    "vsplit",
+    "xusiyuan"
   ],
 
   // coc-sql
@@ -1405,7 +1473,12 @@
     "lineWidth": 120
   },
   // coc-tabnine
-  "tabnine.priority": 999,
+  // "tabnine.priority": 90,
+
+  // coc-copilot
+  "copilot.priority": 90,
+
+  // coc-chatgpt
 
   // coc-marketplace
   "marketplace.npmsio": false

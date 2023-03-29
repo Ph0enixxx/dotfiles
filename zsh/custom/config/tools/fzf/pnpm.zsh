@@ -14,7 +14,7 @@ zpni() {
   local items="-"
   
   while [[ $items ]] {
-    items=$(npm search --searchlimit=200 --searchopts=sortBy=popularity react | awk -F "|" "{print \$1 \$2 \$5 \$6}" | fzf ${=FZF_FULLSCREEN_OPTIONS} --header-lines=1 --nth=1,2,4 --ansi -m --preview "npm view --color {1}") || return
+    items=$(npm search --searchlimit=200 --searchopts=sortBy=popularity $1 | awk -F "|" "{print \$1 \$2 \$5 \$6}" | fzf ${=FZF_FULLSCREEN_OPTIONS} --header-lines=1 --nth=1,2,4 --ansi -m --preview "npm view --color {1}") || return
     local deps=$(echo $items | eval $AWK_TRIM | eval $AWK_JOIN)
 
     local cli="pnpm add"

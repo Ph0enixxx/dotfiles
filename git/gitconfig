@@ -118,3 +118,5 @@
   line-numbers-plus-style = 28
 
 ;# vim: filetype=gitconfig
+[init]
+	defaultBranch = master

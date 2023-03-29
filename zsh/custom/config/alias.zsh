@@ -36,8 +36,7 @@ alias vi='nvim'
 alias vim='nvim'
 
 # Systee Status
-alias ds='du -hs ./*'
-alias das='du -hs ./\.* ./*'
+alias fs='fd_size'
 
 # Git
 alias g='git'

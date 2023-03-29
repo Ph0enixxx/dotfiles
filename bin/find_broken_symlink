@@ -3,4 +3,4 @@
 local files
 files=$(find . -type l -exec sh -c 'file -b "$1" | grep -q "^broken"' sh {} \; -print) || return
 
-echo $files | fzf --preview="readlink -f {}"
+echo $files | fzf --preview="readlink -f {}" --header="Broken symlinks"

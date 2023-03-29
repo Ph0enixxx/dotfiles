@@ -1,5 +1,13 @@
 let g:coc_config_home = '~/.SpaceVim.d'
 
+" let $NVIM_COC_LOG_FILE="/tmp/coc.log"
+" let g:coc_node_args = [
+      " \ '-r', '/Users/xusiyuan/Library/pnpm/global/5/node_modules/source-map-support/register',
+      " \ '--nolazy', '--inspect-brk=5858',
+      " \]
+      " \ '--enable-source-maps',
+
+
 " coc
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -36,6 +44,8 @@ call SpaceVim#custom#SPCGroupName(['o', 'c'], '+Coc Config')
 call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'f'], 'CocConfig', 'open config', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'l'], 'CocLocalConfig', 'open local config', 1)
 
+call SpaceVim#custom#SPC('nnoremap', ['o', 's'], ':CocSearch ', 'Coc Search', 0)
+
 " coc-lists
 call SpaceVim#custom#SPC('nnoremap', ['o', 'L'], 'CocList', 'Coc List', 1)
 call SpaceVim#custom#SPCGroupName(['o', 'l'], '+List')
@@ -44,8 +54,6 @@ call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'd'], 'CocList diagnostics', 'se
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'e'], 'CocList extensions', 'search extensions', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'f'], 'CocList mru', 'search mru files', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'F'], 'CocList buffers', 'search buffers', 1)
-call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'g'], 'CocList --normal gstatus', 'list git status', 1)
-call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'G'], 'CocList --normal gstatus', 'list git status', 1)
 
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', '/'], 'CocList grep', 'grep text from current cwd', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'l'], 'CocList lines', 'search lines by regex patterns', 1)
@@ -57,12 +65,18 @@ call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'B'], 'CocList symbol', 'symbols
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'p'], 'CocList projects', 'list projects', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'r'], 'CocListResume', 'reopen list', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 's'], 'CocList snippets', 'search snippets for current filetype', 1)
+call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'S'], 'CocList sources', 'search sources for current filetype', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 't'], 'CocList todolist', 'list ToDo tasks', 1)
+call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'T'], 'CocList todolist', 'list ToDo tasks', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'v'], 'CocList services', 'list lsp service', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'w'], 'CocList windows', 'list windows of vim', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'y'], 'CocList -A --normal yank', 'list yank', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'j'], 'CocNext', 'Invoke for next item', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'k'], 'CocPrev', 'Invoke for previe item', 1)
+
+" coc-list: git
+call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'gs'], 'CocList --normal gstatus', 'list git status', 1)
+call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'gc'], 'CocList --normal gstatus', 'list git status', 1)
 
 " coc diagnostic
 " call SpaceVim#custom#SPCGroupName(['o', 'd'], '+Diagnostic')

@@ -27,6 +27,8 @@ set nowritebackup
 set updatetime=300
 set signcolumn=auto:3
 
+" set runtimepath^=/Users/xusiyuan/Workspace/coc-chatgpt/
+
 " Use <tab> to show documentation in preview window.
 nnoremap <silent><expr> <TAB> <SID>show_documentation()
 
@@ -49,9 +51,15 @@ let g:coc_snippet_prev = '<S-TAB>'
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
+      \ exists('b:_copilot.suggestions') ? copilot#Accept('<CR>') :
       \ <SID>check_backspace() ? '<TAB>' :
       \ coc#jumpable() ? coc#snippet#next() :
       \ coc#refresh()
+
+function! s:check_backspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~# '\s'
+endfunction
 
 inoremap <silent><expr> <S-TAB>
       \ coc#pum#visible() ? coc#pum#prev(1) :
@@ -64,10 +72,6 @@ inoremap <silent><expr> <DOWN> coc#pum#visible() ? coc#pum#next(1) : '<DOWN>'
 inoremap <silent><expr> zz coc#pum#visible() ? coc#pum#stop() : '<ESC>'
 inoremap <silent><expr> <S-SPACE> coc#refresh()
 
-function! s:check_backspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
 
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin

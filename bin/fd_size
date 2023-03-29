@@ -1,0 +1,42 @@
+#!/usr/bin/env zsh
+
+local check
+local depth=(-d 0)
+local help
+
+zmodload zsh/zutil
+zparseopts -D -F -K -- \
+  {h,-help}=help \
+  {c,-check}=check \
+  {d,--depth}:=depth || return 1
+
+local usage=(
+  "fd_size [-h|--help]"
+  "fd_size [-c|--check] [-d|--depth <depth>]"
+)
+
+[[ -z "$help" ]] || { print -l $usage && return }
+
+if [[ -n "$check" ]] {
+  local file
+  local message
+  local filtered 
+  for file in `ls -A . | tr " " "\?\?"`; do
+    file=`tr "\?\?" " " <<<$file`
+    message=`du -hd ${=depth[-1]} "$file"`
+    filtered=`awk '/^[0-9. ]+G/' <<<$message`
+    if [[ $filtered != "" ]]; then
+      echo "$fg_bold[red]$filtered$reset_color"
+    else
+      filtered=`awk '/^[ ]*[0-9]{3}\.*[0-9]*M/' <<<$message`
+      if [[ $filtered != "" ]]; then
+        echo "$fg_bold[yellow]$filtered$reset_color"
+      fi
+    fi
+  done
+  echo
+  echo "$fg_bold[blue]Total: $(du -hs .)$reset_color"
+} else {
+  du -hcd ${=depth[-1]} (.|*)*
+}
+

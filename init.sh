@@ -58,3 +58,6 @@ mklink $PWD/config/bottom.toml ~/.config/bottom/bottom.toml
 mkdir -p ~/.config/cheat
 mklink $PWD/cheat/conf.yml ~/.config/cheat/conf.yml
 mklink $PWD/cheat/personal ~/.config/cheat/cheatsheets/personal
+
+# npm
+cat $PWD/config/npmrc >> ~/.npmrc

@@ -22,6 +22,11 @@ function try_exec() {
   fi
 }
 
+function get_github_latest_release() {
+  repo=$1
+  eval "gh api repos/${repo}/releases --template '{{range .}}{{.tag_name}}{{\"\\n\"}}{{end}}' | awk '{ if (NR == 1) print \$0 }'"
+}
+
 # Global Variables
 System="$(uname -s)"
 Distribution=Unknown

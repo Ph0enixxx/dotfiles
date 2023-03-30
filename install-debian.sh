@@ -34,7 +34,13 @@ sudo apt-get install \
   python3-venv python3-pip \
   podman
 
+function get_github_latest_release() {
+  repo=$1
+  eval "gh api repos/${repo}/releases --template '{{range .}}{{.tag_name}}{{\"\\n\"}}{{end}}' | awk '{ if (NR == 1) print \$0 }'"
+}
+
 cd ~
+latest_version=`get_github_latest_release "HorlogeSkynet/archey4"`
 curl -L -o archey.deb "https://github.com/HorlogeSkynet/archey4/releases/download/v4.14.1.0/archey4_4.14.1.0-1_all.deb"
 sudo dpkg -i archey.deb
 yes | rm archey.deb
@@ -43,7 +49,7 @@ curl -L -o lsd.deb "https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd
 sudo dpkg -i lsd.deb
 yes | rm lsd.deb
 
-curl -L -o bat.deb "https://github.com/sharkdp/bat/releases/download/v0.22.1/bat-musl_0.22.1_amd64.deb"
+curl -L -o bat.deb "https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-musl_0.23.0_amd64.deb"
 sudo dpkg -i bat.deb
 yes | rm bat.deb
 
@@ -66,3 +72,10 @@ yes | rm fzf.tar.gz
 
 # Python
 curl https://pyenv.run | bash
+
+# Github client
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y

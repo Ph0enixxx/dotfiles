@@ -31,7 +31,27 @@ brew install --cask \
 
 # Install formulae
 brew install \
-  ack archey bat bat-extras certbot cheat clang-format cmake cmake-docs composer ctags deno diff-so-fancy docker entr exa fd fpp gawk git-delta git-extras git-flow-avh git-lfs glances go highlight htop httpd httpie hub jnettop kafka kubernetes-cli lastpass-cli lazygit lsd luajit-openresty mackup make maven mongodb/brew/mongodb-community mysql navi neovim nginx nnn openssl@3 pandoc podman-compose prettier pyenv-virtualenv reattach-to-user-namespace redis ripgrep shadowenv shfmt shopify/shopify/shopify-cli smartmontools tcpdump telnet texlive tmux tree vimpager viu w3m watchman wget zsh
+  ack archey \ 
+  bat bat-extras \ 
+  certbot cheat clang-format cmake cmake-docs composer ctags \ 
+  deno diff-so-fancy docker \ 
+  entr exa \
+  fd fpp \ 
+  gawk gh git-delta git-extras git-flow-avh git-lfs glances go \
+  highlight htop httpd httpie hub \
+  jnettop \
+  kafka kubernetes-cli \
+  lastpass-cli lazygit lsd luajit-openresty \
+  mackup make maven mongodb/brew/mongodb-community mysql \
+  navi neovim nginx nnn \
+  openssl@3 \ 
+  pandoc podman-compose prettier pyenv-virtualenv \
+  reattach-to-user-namespace redis ripgrep \
+  shadowenv shfmt shopify/shopify/shopify-cli smartmontools \
+  tcpdump telnet texlive tmux tree \
+  vimpager viu \
+  w3m watchman wget \
+  zsh
 
 # FZF
 # $(brew --prefix)/opt/fzf/install

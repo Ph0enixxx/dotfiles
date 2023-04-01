@@ -11,7 +11,8 @@ FZF_OPTS="--height=100% --header-lines=1"
 
 # [D]ocker [I]mage
 function zdi() {
-  local packages=$(docker image ls | fzf -m ${(z)FZF_OPTS} --nth=1,2,3 --query="$1" --preview 'docker image inspect {3} | highlight -O ansi -s solarized-dark -S json')
+  local container=$(docker image ls | fzf -m ${(z)FZF_OPTS} --nth=1,2,3 --query="$1" --preview 'docker image inspect {3} | highlight -O ansi -s solarized-dark -S json')
+  echo container
 }
 
 # [D]ocker [C]ontainer

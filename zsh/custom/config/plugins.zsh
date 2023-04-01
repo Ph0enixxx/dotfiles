@@ -22,12 +22,8 @@ zinit light-mode for \
     Aloxaf/fzf-tab \
     zdharma-continuum/fast-syntax-highlighting \
     lukechilds/zsh-nvm \
-    zsh-users/zsh-autosuggestions
-### End of Zinit's installer chunk
-
-if [[ $System == 'Linux' ]] {
-  zinit light-mode for \
+    zsh-users/zsh-autosuggestions \
     zsh-users/zsh-completions
-}
+### End of Zinit's installer chunk
 
 try_source $DOTFILES/zsh/custom/config/plugins_after/*.zsh

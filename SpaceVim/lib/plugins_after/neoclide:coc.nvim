@@ -51,7 +51,7 @@ let g:coc_snippet_prev = '<S-TAB>'
 
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
-      \ exists('b:_copilot.suggestions') ? copilot#Accept('<CR>') :
+      \ exists('b:_copilot.suggestions') && !empty(b:_copilot.suggestions) ? copilot#Accept('<CR>') :
       \ <SID>check_backspace() ? '<TAB>' :
       \ coc#jumpable() ? coc#snippet#next() :
       \ coc#refresh()

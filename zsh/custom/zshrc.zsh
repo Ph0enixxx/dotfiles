@@ -41,13 +41,6 @@ if [[ ! -d $custom_path/plugins/fzf-git.sh ]] {
 }
 source $custom_path/plugins/fzf-git.sh/fzf-git.sh
 
-if [[ ! -d $custom_path/plugins/zsh-completions ]] {
-  echo "$fg[blue]Install Plugin: $fg_bold[green]zsh-users/zsh-completions$reset_color"
-  git clone https://github.com/zsh-users/zsh-completions $custom_path/plugins/zsh-completions
-}
-fpath=("$fpath[@]" $custom_path/plugins/zsh-completions/src)
-
-
 # zinit plugins
 try_source $DOTFILES/zsh/custom/config/plugins.zsh
 

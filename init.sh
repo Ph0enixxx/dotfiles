@@ -63,4 +63,13 @@ mklink $PWD/cheat/conf.yml ~/.config/cheat/conf.yml
 mklink $PWD/cheat/personal ~/.config/cheat/cheatsheets/personal
 
 # npm
-cat $PWD/config/npmrc >> ~/.npmrc
+if [[ $System == "Darwin" ]] {
+  local pnpm_home="$HOME/Library/pnpm"
+} elif [[ $System == "Linux" ]] {
+  local pnpm_home="$HOME/.local/share/pnpm"
+}
+echo "; registry=https://registry.npmmirror.com" >> ~/.npmrc
+echo "coc.nvim:registry=https://registry.npmmirror.com/" >> ~/.npmrc
+echo "global-bin-dir=${pnpm_home}" >> ~/.npmrc
+echo "store-dir=${pnpm_home}/store" >> ~/.npmrc
+

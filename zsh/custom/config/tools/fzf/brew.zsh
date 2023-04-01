@@ -42,25 +42,22 @@ zbu() {
 
 # [B]rew [R]emove
 zbr() {
-  local all=$(brew leaves)
-  local formulae=$(echo $all | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}')
+  local formulae=$(brew leaves | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}')
   while [[ "$formulae" != "" ]] {
     local formulaeStr=$(echo $formulae | eval $AWK_JOIN)
-    echo "brew uninstall $formulaeStr"
+    echo "$fg[red]brew uninstall $fg[green]$formulaeStr$reset_color"
     eval "brew uninstall $formulaeStr"
-    formulae=$(echo $all | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}')
+    formulae=$(brew leaves | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}')
   }
 }
 
 # [B]rew [C]ask [R]emove
 zbcr() {
-  local all=$(brew list --cask)
-  local formulae=$(echo $all | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}')
+  local formulae=$(brew list --cask | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}')
   while [[ -n $formulae ]] {
     local formulaeStr=$(echo $formulae | eval $AWK_JOIN)
-    echo "brew uninstall $formulaeStr"
-    eval "brew uninstall --cask $formulaeStr"
-    formulae=$(echo $all | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}')
+    echo "$fg[red]brew uninstall --cask $fg[green]$formulaeStr$reset_color"
+    formulae=$(brew leaves --cask | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}')
   }
 }
 

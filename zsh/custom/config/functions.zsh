@@ -250,6 +250,18 @@ function mklink() {
   }
 }
 
+#######################################
+# detect the platform: macos, linux, or win
+# Globals:
+#   None
+# Arguments:
+#   None
+# Outputs:
+#   Print the platform name to stdout
+# Usages:
+#   detect_platform
+#   local platform=$(detect_platform)
+#######################################
 function detect_platform() {
   local platform
   platform="$(uname -s | tr '[:upper:]' '[:lower:]')"
@@ -320,11 +332,6 @@ function try_source() {
       debug "   $fg_bold[red] $reset_color $f - $fg[red]os-specified script, IGNORE it!$reset_color"
     fi
   done
-}
-
-function try_hash_directory() {
-  # if [[  ]]
-  echo $#
 }
 
 function try_exec() {

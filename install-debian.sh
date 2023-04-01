@@ -34,39 +34,54 @@ sudo apt-get install \
   python3-venv python3-pip \
   podman
 
+
 function get_github_latest_release() {
   repo=$1
-  eval "gh api repos/${repo}/releases --template '{{range .}}{{.tag_name}}{{\"\\n\"}}{{end}}' | awk '{ if (NR == 1) print \$0 }'"
+  eval "gh api repos/${repo}/releases --template '{{range .}}{{.tag_name}}{{\"\\n\"}}{{end}}' | awk 'BEGIN { latest=\"\" } { if (latest==\"\" && \$0 != \"nightly\") latest=\$0; } END { print latest }'"
 }
+
+
+function remove_v() {
+  local AWK_REMOVE_V_CHAR="awk '{ sub(/^v/, \"\"); print \$0 }'"
+  echo $1 | eval $AWK_REMOVE_V_CHAR
+}
+
+gh auth login
 
 cd ~
 latest_version=`get_github_latest_release "HorlogeSkynet/archey4"`
-curl -L -o archey.deb "https://github.com/HorlogeSkynet/archey4/releases/download/v4.14.1.0/archey4_4.14.1.0-1_all.deb"
+curl -L -o archey.deb "https://github.com/HorlogeSkynet/archey4/releases/download/${latest_version}/archey4_$(remove_v $latest_version)-1_all.deb"
 sudo dpkg -i archey.deb
 yes | rm archey.deb
 
-curl -L -o lsd.deb "https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd_0.23.1_amd64.deb"
+latest_version=`get_github_latest_release "lsd-rs/lsd"`
++curl -L -o lsd.deb "https://github.com/lsd-rs/lsd/releases/download/${latest_version}/lsd_${latest_version}_amd64.deb"
 sudo dpkg -i lsd.deb
 yes | rm lsd.deb
 
-curl -L -o bat.deb "https://github.com/sharkdp/bat/releases/download/v0.23.0/bat-musl_0.23.0_amd64.deb"
+latest_version=`get_github_latest_release "sharkdp/bat"`
+curl -L -o bat.deb "https://github.com/sharkdp/bat/releases/download/${latest_version}/bat_${remove_v $latest_version}.deb"
 sudo dpkg -i bat.deb
 yes | rm bat.deb
 
-curl -L -o nvim.deb "https://github.com/neovim/neovim/releases/download/v0.8.3/nvim-linux64.deb"
+latest_version=`get_github_latest_release "neovim/neovim"`
+curl -L -o nvim.deb "https://github.com/neovim/neovim/releases/download/${latest_version}/nvim-linux64.deb"
 sudo dpkg -i nvim.deb
 yes | rm nvim.deb
 
-curl -L -o git-delta.deb "https://github.com/dandavison/delta/releases/download/0.15.1/git-delta_0.15.1_amd64.deb"
+latest_version=`get_github_latest_release "dandavison/delta"`
+curl -L -o git-delta.deb "https://github.com/dandavison/delta/releases/download/${latest_version}/git-delta_${latest_version}.deb"
 sudo dpkg -i git-delta.deb
 yes | rm git-delta.deb
 
-curl -L -o bottom.deb https://github.com/ClementTsang/bottom/releases/download/0.6.8/bottom_0.6.8_amd64.deb
+latest_version=`get_github_latest_release "ClementTsang/bottom"`
+curl -L -o bottom.deb "https://github.com/ClementTsang/bottom/releases/download/${latest_version}/bottom_${latest_version}_amd64.deb"
 sudo dpkg -i bottom.deb
 yes | rm bottom.deb
 
 mkdir $HOME/bin
-curl -L -o fzf.tar.gz "https://github.com/junegunn/fzf/releases/download/0.38.0/fzf-0.38.0-linux_amd64.tar.gz" && tar -x -f fzf.tar.gz
+latest_version=`get_github_latest_release "junegunn/fzf"`
+curl -L -o fzf.tar.gz "https://github.com/junegunn/fzf/releases/download/${latest_version}/fzf-${latest_version}-linux_amd64.tar.gz" && tar -x -f fzf.tar.gz
 mv fzf bin/
 yes | rm fzf.tar.gz
 

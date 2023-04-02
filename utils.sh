@@ -24,8 +24,14 @@ function try_exec() {
 
 function get_github_latest_release() {
   repo=$1
-  eval "gh api repos/${repo}/releases --template '{{range .}}{{.tag_name}}{{\"\\n\"}}{{end}}' | awk '{ if (NR == 1) print \$0 }'"
+  eval "gh api repos/${repo}/releases --template '{{range .}}{{.tag_name}}{{\"\\n\"}}{{end}}' | awk 'BEGIN { latest=\"\" } { if (latest==\"\" && \$0 != \"nightly\") latest=\$0; } END { print latest }'"
 }
+
+function remove_v() {
+  local AWK_REMOVE_V_CHAR="awk '{ sub(/^v/, \"\"); print \$0 }'"
+  echo $1 | eval $AWK_REMOVE_V_CHAR
+}
+
 
 # Global Variables
 System="$(uname -s)"

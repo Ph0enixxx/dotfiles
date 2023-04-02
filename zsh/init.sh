@@ -32,4 +32,4 @@ echo "source \$DOTFILES/zsh/zlogin" >> ~/.zlogin
 echo "source \$DOTFILES/zsh/zlogout" >> ~/.zlogout
 
 mklink $DIR/zsh/zshrc ~/.zshrc
-mklink $DIR/zsh/autoload $ZSH/autoload
+mklink $DIR/zsh/autoload ~/.oh-my-zsh/autoload

@@ -29,7 +29,7 @@ mklink $PWD/config/bat $(bat --config-dir)
 
 # Neofetch
 echo "Initialize Neofetch config ..."
-mklink $PWD/config/neofetch.conf ~/.config/neofetch/config.conf
+mklink $PWD/config/neofetch ~/.config/neofetch
 
 # Maven
 echo "Initialize Maven config ..."

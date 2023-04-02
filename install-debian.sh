@@ -91,7 +91,7 @@ yes | rm bottom.deb
 mkdir $HOME/bin
 latest_version=`get_github_latest_release "junegunn/fzf"`
 curl -L -o fzf.tar.gz "https://github.com/junegunn/fzf/releases/download/${latest_version}/fzf-${latest_version}-linux_amd64.tar.gz" && tar -x -f fzf.tar.gz
-mv fzf bin/
+mv -f fzf bin/
 yes | rm fzf.tar.gz
 
 # Python

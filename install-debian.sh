@@ -7,6 +7,18 @@ if [[ $Distribution != "Debian" ]]; then
   exit 1
 fi
 
+# minimium installation
+apt-get install \
+  zsh git build-essential \
+  curl \
+  exa \
+  fd-find fzf \
+  highlight htop \
+  lsb-release \
+  man-db manpages-dev manpages-zh \
+  zip
+
+
 # Install zsh & tmux
 apt-get install \
   sudo zsh git build-essential \

@@ -27,6 +27,10 @@ mklink $PWD/git/gitignore ~/.gitignore
 echo "Initialize Bat config ..."
 mklink $PWD/config/bat $(bat --config-dir)
 
+# Neofetch
+echo "Initialize Neofetch config ..."
+mklink $PWD/config/neofetch.conf ~/.config/neofetch/config.conf
+
 # Maven
 echo "Initialize Maven config ..."
 mkdir -p ~/.m2

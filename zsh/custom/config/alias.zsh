@@ -11,9 +11,6 @@ alias tree='exa --tree --all --color=always --group-directories-first -I "node_m
 # exit
 alias q='exit'
 
-# Utilize FZF
-alias lspath='echo $PATH | eval $AWK_SPLIT_COLON | fzf'
-
 # ls
 # alias ls='ls -FG'
 # alias ll='ls -l'

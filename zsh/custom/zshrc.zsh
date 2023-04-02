@@ -22,13 +22,6 @@ try_source ~/.zsh_completion
 # Privates
 try_source ~/.zsh_privates
 
-###-tns-completion-start-###
-# try_source ~/.tnsrc
-###-tns-completion-end-###
-
-# Emscripten
-# try_source ~/Workspace/lib/emsdk/emsdk_env.sh
-
 # tools
 try_source $DOTFILES/zsh/custom/config/tools/*.zsh
 try_source $DOTFILES/zsh/custom/config/tools/fzf/*.zsh
@@ -46,3 +39,6 @@ try_source $DOTFILES/zsh/custom/config/plugins.zsh
 
 # zsh hooks
 try_source $DOTFILES/zsh/custom/config/hooks.zsh
+
+# fpath
+try_source $DOTFILES/zsh/custom/config/fpath.zsh

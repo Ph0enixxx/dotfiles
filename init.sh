@@ -23,6 +23,10 @@ echo "Initialize Git config ..."
 mklink $PWD/git/gitconfig ~/.gitconfig
 mklink $PWD/git/gitignore ~/.gitignore
 
+# Bat
+echo "Initialize Bat config ..."
+mklink $PWD/config/bat $(bat --config-dir)
+
 # Maven
 echo "Initialize Maven config ..."
 mkdir -p ~/.m2

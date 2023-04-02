@@ -217,6 +217,10 @@
 ############################# Plugins #############################
 # ------------ Tools ----------------------------
 [[custom_plugins]]
+  repo = 'diepm/vim-rest-console'
+  merged = false
+
+[[custom_plugins]]
   repo = 'itchyny/calendar.vim'
   merged = false
   on_cmd = 'Calendar'

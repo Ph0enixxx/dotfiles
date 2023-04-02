@@ -1,5 +1,6 @@
 # Utilities
 
+
 # function cd() {
   # builtin cd "$@"
   # fc -W
@@ -401,7 +402,6 @@ function enable_node_pkg_manager() {
   }
 }
 
-function ls_large() {
-}
+try_source $DOTFILES/zsh/custom/config/functions/*.zsh
 
 # vim:ft=zsh:

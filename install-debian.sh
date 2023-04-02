@@ -34,12 +34,19 @@ sudo apt-get install \
   python3-venv python3-pip \
   podman
 
+# Install github cli (gh)
+echo "Install github cli (gh) ..."
+type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
 
 function get_github_latest_release() {
   repo=$1
   eval "gh api repos/${repo}/releases --template '{{range .}}{{.tag_name}}{{\"\\n\"}}{{end}}' | awk 'BEGIN { latest=\"\" } { if (latest==\"\" && \$0 != \"nightly\") latest=\$0; } END { print latest }'"
 }
-
 
 function remove_v() {
   local AWK_REMOVE_V_CHAR="awk '{ sub(/^v/, \"\"); print \$0 }'"
@@ -60,7 +67,7 @@ sudo dpkg -i lsd.deb
 yes | rm lsd.deb
 
 latest_version=`get_github_latest_release "sharkdp/bat"`
-curl -L -o bat.deb "https://github.com/sharkdp/bat/releases/download/${latest_version}/bat_${remove_v $latest_version}.deb"
+curl -L -o bat.deb "https://github.com/sharkdp/bat/releases/download/${latest_version}/bat_$(remove_v $latest_version).deb"
 sudo dpkg -i bat.deb
 yes | rm bat.deb
 

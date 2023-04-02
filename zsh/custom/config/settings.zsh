@@ -20,10 +20,4 @@ bindkey "\e[3~" delete-char
 #以下字符视为单词的一部分
 WORDCHARS='*?_-[]~=&;!#$%^(){}<>'
 
-fpath=($DOTFILES/zsh/custom/completions $fpath)
-
-# if type brew &>/dev/null; then
-  # fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-# fi
-
 autoload -Uz compinit; compinit

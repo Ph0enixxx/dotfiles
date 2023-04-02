@@ -8,10 +8,7 @@ let g:vrc_curl_opts = {
   \ '--ipv4': '',
   \ '-k': '',
 \}
-
 let g:vrc_split_request_body = 1
 
-let s:Keymap = g:VIMRC.Keymap
-
-call s:Keymap.mapNormalCommands('<F5>', ':new ~/.vim/new.rest<cr>', { 'normal': 0 })
+call SpaceVim#custom#SPC('nnoremap', ['a', 'r'], ':new ~/.vim/new.rest', 'REST Console', 1)
 

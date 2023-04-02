@@ -119,3 +119,8 @@ zcdp() {
 }
 
 alias fzfn='fzf --no-preview'
+
+# Utilize FZF
+alias lspath='echo $PATH | eval $AWK_SPLIT_COLON | fzf'
+alias fzfl='fzf --header-lines=1'
+

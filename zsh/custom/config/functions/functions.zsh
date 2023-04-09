@@ -3,6 +3,10 @@ function func_src_path {
 }
 
 function func_src_code {
+
+}
+
+function func_src_file {
   bat $functions_source[$1]
 }
 
@@ -15,3 +19,5 @@ function comp_func_src_path {
   # echo $func
   echo $functions_source[$func]
 }
+
+

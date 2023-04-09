@@ -1,5 +1,28 @@
 " Utility Functions
 
+
+function! api#utils#open_popup() abort 
+popup_menu(['Save', 'Cancel', 'Discard'], {
+	    callback: (_, result) => {
+		echo 'dialog result is' result
+	    },
+	    filter: (id, key) => {
+		# Handle shortcuts
+		if key == 'S' || key == 's'
+		    popup_close(id, 1)
+		elseif key == 'C' || key == 'c'
+		    popup_close(id, 2)
+		elseif key == 'D' || key == 'd'
+		    popup_close(id, 3)
+		else
+		    # No shortcut, pass to generic filter
+		    return popup_filter_menu(id, key)
+		endif
+		return true
+	    },
+	})
+endfunction
+
 function! api#utils#on_term_open() abort
   startinsert
   let &l:statusline = SpaceVim#layers#core#statusline#get(1)
@@ -122,7 +145,7 @@ endfunction
 
 "FUNCTION: api#utils#open_help_tab(){{{1
 function! api#utils#open_help_tab() abort
-  if !(getcmdwintype() == ':' && col('.') <= 2)
+  if !((getcmdwintype() == ':' && col('.') <= 2) || (getcmdtype() == ':' && getcmdpos() <= 2))
     return 'h'
   endif
 
@@ -148,7 +171,6 @@ function! api#utils#open_help_tab() abort
   endif
 endfunction
 "}}}
-
 
 "FUNCTION: api#utils#open_vsplit(file_name: string){{{1
 function! api#utils#open_vsplit(file_name) abort

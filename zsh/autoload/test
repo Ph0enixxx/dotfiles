@@ -1,0 +1,18 @@
+_yarn_commands_scripts() {
+  local -a scripts binaries
+  local packageJson
+
+  if [[ -n $opt_args[--cwd] ]]; then
+    packageJson=$(_yarn_find_package_json $opt_args[--cwd])
+    binaries=($(cd $opt_args[--cwd] && echo node_modules/.bin/*(x:t)))
+  else
+    packageJson=$(_yarn_find_package_json $pwd)
+    binaries=($(echo node_modules/.bin/*(x:t)))
+  fi
+
+  if [[ -n $packageJson ]]; then
+    scripts=($(cat "$packageJson" | perl -0777 -MJSON::PP -n -E '$r=decode_json($_); do{($k=$_)=~s/:/\\:/g;say $k}for sort keys %{$r->{scripts}}'))
+  fi
+
+  _describe 'command or script' _commands -- _global_commands -- scripts -- binaries
+}

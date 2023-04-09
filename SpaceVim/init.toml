@@ -9,7 +9,6 @@
 # All SpaceVim option below [option] section
 [options]
   # colorscheme = 'NeoSolarized'
-
   colorscheme = 'solarized8'
   colorscheme_bg = 'dark'
   enable_guicolors = true
@@ -111,12 +110,13 @@
     'indent-blankline.nvim',
     # 'vim-airline',
     'vim-snippets', 'vnote', 'vimloo',
+    # 'wilder.nvim',
     # 'vim-better-whitespace','vim-jsx-improve', 'vim-matchup', 'vim-bookmarks'
     'tagbar', 'tagbar-makefile.vim', 'tagbar-proto.vim',
     'nerdtree', 'neomake'
   ]
 
-  project_rooter_patterns = ['.git/', 'package.json']
+  project_rooter_patterns = ['.git/', 'package.json', 'dockerfile', 'tsconfig.json', 'Cargo.toml', 'go.mod', 'Makefile', 'build.gradle', 'pom.xml', 'build.sbt', 'build.boot', 'build.xml', 'build.gradle.kts', 'build.sc', 'build.bazel', 'WORKSPACE', 'buildifier', 'WORKSPA']
   project_rooter_outermost = false
   enable_projects_cache = true
   projects_cache_num = 40
@@ -350,7 +350,11 @@
 
 # ------------ UI - Icons -----------------------
 [[custom_plugins]]
-  repo = 'vim-geek/vim-devicons'
+  repo = 'ryanoasis/vim-devicons'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'nvim-tree/nvim-web-devicons'
   merged = false
 
 # ------------ UI - Buffer ----------------------
@@ -388,6 +392,15 @@
   repo = 'mrjones2014/dash.nvim'
   build = "[[ $(uname -s) == 'Darwin' ]] && make install"
   if = "has('macunix')"
+  merged = false
+
+[[custom_plugins]]
+  repo = 'nixprime/cpsm'
+  build = "./install.sh"
+  merged = false
+
+[[custom_plugins]]
+  repo = 'romgrk/fzy-lua-native'
   merged = false
 
 # ------------ Git ------------------------------

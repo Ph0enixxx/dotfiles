@@ -1,1 +1,76 @@
-call wilder#setup({'modes': [':', '/', '?']})
+call wilder#setup({
+      \ 'modes': [':', '/', '?'],
+      \ 'next_key': '<down>',
+      \ 'previous_key': '<up>',
+      \ 'accept_key': '<right>',
+      \ 'reject_key': '<left>',
+      \ })
+
+let step = 5
+cnoremap <expr> <TAB> wilder#in_context() ? wilder#next() : '<TAB>'
+cnoremap <expr> <C-D> wilder#in_context() ? wilder#main#step(step) : '<C-D>'
+cnoremap <expr> <C-U> wilder#in_context() ? wilder#main#step(step * -1) : '<C-U>'
+
+call wilder#set_option('pipeline', [
+      \   wilder#debounce(50),
+      \   wilder#branch(
+      \     [
+      \       wilder#check({_, x -> empty(x)}),
+      \       wilder#history(),
+      \     ],
+      \     wilder#python_file_finder_pipeline({
+      \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-H'] : ['fd', '-tf']},
+      \       'dir_command': ['fd', '-td'],
+      \       'filters': ['cpsm_filter'],
+      \     }),
+      \     wilder#substitute_pipeline({
+      \       'pipeline': wilder#python_search_pipeline({
+      \         'skip_cmdtype_check': 1,
+      \         'pattern': wilder#python_fuzzy_pattern({
+      \           'start_at_boundary': 0,
+      \         }),
+      \       }),
+      \     }),
+      \     wilder#cmdline_pipeline({
+      \       'fuzzy': 2,
+      \       'fuzzy_filter': has('nvim') ? wilder#lua_fzy_filter() : wilder#vim_fuzzy_filter(),
+      \     }),
+      \     wilder#python_search_pipeline({
+      \       'pattern': wilder#python_fuzzy_pattern({
+      \         'start_at_boundary': 0,
+      \       }),
+      \     }),
+      \   ),
+      \ ])
+
+let hl = wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}])
+let s:highlighters = [
+      \ wilder#pcre2_highlighter(),
+      \ has('nvim') ? wilder#lua_fzy_highlighter() : wilder#cpsm_highlighter(),
+      \ ]
+
+" call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
+call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_palette_theme({
+      \ 'highlighter': s:highlighters,
+      \ 'highlights': {
+      \   'accent': hl,
+      \ },
+      \ 'border': 'double',
+      \ 'max_height': '75%',
+      \ 'left': [
+      \   ' ', wilder#popupmenu_devicons({ 'min_width': 2 }),
+      \ ],
+      \ 'right': [
+      \   wilder#popupmenu_buffer_flags({
+      \     'flags': ' a + ',
+      \     'icons': {'+': '', 'a': '', 'h': ''},
+      \   }),
+      \   ' ',
+      \   wilder#popupmenu_scrollbar({
+      \     'thumb_hl': 'PmenuThumbNew',
+      \ })
+      \ ],
+      \ 'min_height': 0,
+      \ 'prompt_position': 'top',
+      \ 'reverse': 0,
+      \ })))

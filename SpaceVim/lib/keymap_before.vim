@@ -1,7 +1,7 @@
 " command line
-call g:api#keymap#map_normal_commands('/', 'q/i', { 'normal': 0 })
-call g:api#keymap#map_normal_commands(':', 'q:i', { 'normal': 0 })
-call g:api#keymap#map_normal_commands('?', 'q?i', { 'normal': 0 })
+" call g:api#keymap#map_normal_commands('/', 'q/i', { 'normal': 0 })
+" call g:api#keymap#map_normal_commands(':', 'q:i', { 'normal': 0 })
+" call g:api#keymap#map_normal_commands('?', 'q?i', { 'normal': 0 })
 call g:api#keymap#map_normal_commands('<m-a>', 'ggVG', { 'normal': 0 })
 
 call g:api#keymap#map_normal_commands('<esc>', ':call coc#float#close_all()<cr>', { 'normal': 0 })

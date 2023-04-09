@@ -24,10 +24,6 @@ augroup CmdWindow
   autocmd CmdwinEnter * call api#utils#use_tool_panel_appearance()
   autocmd CmdwinEnter * hi NonText cterm=bold ctermfg=11            gui=bold guifg=#dc322e guibg=#002b36
   autocmd CmdwinLeave * hi clear NonText
-
-  " disable vim-helptab
-  autocmd CmdwinEnter * inoreabbrev <expr> h g:api#utils#open_help_tab()
-  autocmd CmdwinEnter * cnoreabbrev h h
 augroup END
 
 augroup TermWindow

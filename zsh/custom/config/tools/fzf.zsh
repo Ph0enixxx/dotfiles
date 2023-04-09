@@ -32,7 +32,7 @@ export FZF_FULLSCREEN_OPTIONS="--height=100%"
 export FZF_OPTIONS="--layout=reverse --info=inline --separator='' --border=bold --ansi
   --height=50%
   --cycle --scroll-off=2
-  --color=fg:-1,bg:-1,hl:33
+  --color=fg:-1,bg:-1,hl:#f4468f
   --color=fg+:#ffffff,bg+:#53355E,hl+:37
   --color=info:150,prompt:110,spinner:150,pointer:167,marker:174,gutter:#002B36
 "
@@ -85,11 +85,16 @@ f() {
 }
 
 # fuzzy grep open via ag with line number
-zag() {
+zrg() {
+  local params=$@
+  if [[ -z $params ]] {
+    echo "$fg_bold[magenta]Please input the search pattern and options for ripgrep$reset_color"
+    return
+  }
   local file
   local line
 
-  read -r file line <<<"$(ag --nobreak --noheading $@ | fzf -0 -1 --preview-window up:2:wrap --preview 'print {}' | awk -F: '{print $1, $2}')"
+  read -r file line <<<"$(rg --no-heading $@ | fzf -0 -1 ${(z)FZF_FULLSCREEN_OPTIONS} --preview-window up:2:wrap --preview 'print {}' | awk -F: '{print $1, $2}')"
 
   if [[ -n $file ]]
   then

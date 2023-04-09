@@ -265,7 +265,7 @@
 
   /* "coc.preferences.hoverTarget": "float", */
   "coc.preferences.jumpCommand": "tab drop",
-  "coc.preferences.rootPatterns": [
+  "workspace.rootPatterns": [
     "package.json", "*.pom", "requirements.txt", "Rakefile", "Makefile", "Cargo.toml", "go.mod", ".git"
   ],
 

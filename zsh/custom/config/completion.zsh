@@ -19,6 +19,7 @@ zstyle ':completion::prefix-1:*' completer _complete
 zstyle ':completion:predict:*' completer _complete
 zstyle ':completion:incremental:*' completer _complete _correct
 zstyle ':completion:*' completer _complete _prefix _correct _prefix _match _approximate
+zstyle ':completion:*' group-name ''
 
 # Path Expansion
 zstyle ':completion:*' expand 'yes'

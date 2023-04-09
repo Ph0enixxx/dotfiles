@@ -1,3 +1,3 @@
 inoreabbrev phx Phoenix Xu
 inoreabbrev td TODO:
-inoreabbrev sz Shoplazza
+cnoreabbrev <expr> h g:api#utils#open_help_tab()

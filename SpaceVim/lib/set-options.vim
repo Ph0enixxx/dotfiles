@@ -6,7 +6,7 @@
 
 " PYTHON VIRTUALENVS
 set pyxversion=3
-let g:python3_host_prog = '~/.pyenv/versions/3.10.0/bin/python'
+let g:python3_host_prog = '~/.pyenv/versions/3.11.2/bin/python'
 
 let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0

@@ -51,7 +51,7 @@ mklink $PWD/config/ripgreprc ~/.ripgreprc
 if [[ $System == 'Darwin' ]]; then
   mklink $PWD/config/archey.json ~/.config/archey4/config.json
 elif [[ $Distribution == 'Debian' ]]; then
-  sudo mklink $PWD/config/archey.json /etc/archey4/config.json
+  sudo ln -sf $PWD/config/archey.json /etc/archey4/config.json
 fi
 
 # wego

@@ -14,7 +14,7 @@ if [[ ! -d $HOME/.SpaceVim ]]; then
 fi
 
 # vim config
-mklink $DIR/after $VIMRC/after
+mklink $DIR/after    $VIMRC/after
 mklink $DIR/autoload $VIMRC/autoload
 mklink $DIR/ftdetect $VIMRC/ftdetect
 mklink $DIR/ftplugin $VIMRC/ftplugin
@@ -22,7 +22,8 @@ mklink $DIR/indent   $VIMRC/indent
 mklink $DIR/keymap   $VIMRC/keymap
 mklink $DIR/plugin   $VIMRC/plugin
 mklink $DIR/syntax   $VIMRC/syntax
-mklink $DIR/lib $VIMRC/lib
+mklink $DIR/lib      $VIMRC/lib
+mklink $DIR/lua      $VIMRC/lua
 
 # coc config
 mklink $DIR/coc-settings.json $VIMRC/coc-settings.json

@@ -14,7 +14,7 @@ devicons.setup {
   },
   zsh = {
     icon = "",
-    color = "#89e051",
+    color = "#C1D23C",
     cterm_color = "65",
     name = "Zsh"
   },
@@ -34,7 +34,7 @@ devicons.setup {
  -- different tables, first by filename, and if not found by extension; this
  -- prevents cases when file doesn't have any extension but still gets some icon
  -- because its name happened to match some extension (default to false)
- -- strict = true;
+ strict = true;
 
  -- same as `override` but specifically for overrides by filename
  -- takes effect when `strict` is true
@@ -124,7 +124,21 @@ devicons.setup {
     color = "#f34e32",
     name = "ZshConfig",
   },
-
+  ["package.json"] = {
+    icon = "",
+    color = "#6ace66",
+    name = "PackageJson",
+  },
+  ["tsconfig.json"] = {
+    icon = "ﯤ",
+    color = "#367ac4",
+    name = "TypescriptConfig",
+  },
+  ["makefile"] = {
+    icon = "",
+    color = "#963630",
+    name = "Makefile",
+  },
  };
  -- same as `override` but specifically for overrides by extension
  -- takes effect when `strict` is true
@@ -139,6 +153,11 @@ devicons.setup {
     icon = "ﴬ",
     color = "#6dbfc5",
     name = "Snippet"
+  },
+  ["zsh-theme"] = {
+    icon = "",
+    color = "#ea005a",
+    name = "ZshTheme"
   },
   -- ["log"] = {
     -- icon = "",

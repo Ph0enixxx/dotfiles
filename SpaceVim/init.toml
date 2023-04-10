@@ -301,6 +301,22 @@
   repo = 'tpope/vim-dadbod'
   merged = false
 
+
+[[custom_plugins]]
+  repo = 'nvim-telescope/telescope.nvim'
+  merged = false
+  
+[[custom_plugins]]
+  repo = 'mrjones2014/dash.nvim'
+  build = "[[ $(uname -s) == 'Darwin' ]] && make install"
+  if = "has('macunix')"
+  merged = false
+
+[[custom_plugins]]
+  repo = 'voldikss/vim-browser-search'
+  if = "has('macunix')"
+  merged = false
+
 # ------------ Edit ----------------------------
 [[custom_plugins]]
   repo = 'itchyny/vim-qfedit'
@@ -382,16 +398,6 @@
 
 [[custom_plugins]]
   repo = 'nvim-lua/plenary.nvim'
-  merged = false
-
-[[custom_plugins]]
-  repo = 'nvim-telescope/telescope.nvim'
-  merged = false
-  
-[[custom_plugins]]
-  repo = 'mrjones2014/dash.nvim'
-  build = "[[ $(uname -s) == 'Darwin' ]] && make install"
-  if = "has('macunix')"
   merged = false
 
 [[custom_plugins]]

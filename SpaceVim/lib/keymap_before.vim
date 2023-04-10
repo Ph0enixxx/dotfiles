@@ -13,9 +13,6 @@ call g:api#keymap#map_normal_commands('<esc>', ':call coc#float#close_all()<cr>'
 " Config
 call SpaceVim#custom#SPC('nnoremap', ['f', 'v', 'f'], 'call SpaceVim#custom#load()', 'reload custom configuration', 1)
 
-call SpaceVim#custom#SPCGroupName(['f', 'v', 'c'], '+Config')
-call SpaceVim#custom#SPC('nnoremap', ['f', 'v', 'c', 'c'], 'CocConfig', 'Coc-settings', 1)
-
 " Profile
 call SpaceVim#custom#SPC('nnoremap', ['f', 'v', 's'], 'call g:api#utils#start_profile()', 'start vim performance profile', 1)
 call SpaceVim#custom#SPC('nnoremap', ['f', 'v', 't'], 'call g:api#utils#stop_profile()', 'stop vim performace profile', 1)

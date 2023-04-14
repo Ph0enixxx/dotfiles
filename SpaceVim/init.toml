@@ -116,7 +116,8 @@
     'nerdtree', 'neomake'
   ]
 
-  project_rooter_patterns = ['.git/', 'package.json', 'dockerfile', 'tsconfig.json', 'Cargo.toml', 'go.mod', 'Makefile', 'build.gradle', 'pom.xml', 'build.sbt', 'build.boot', 'build.xml', 'build.gradle.kts', 'build.sc', 'build.bazel', 'WORKSPACE', 'buildifier', 'WORKSPA']
+  # project_rooter_patterns = ['.git/', 'package.json', 'dockerfile']
+  # , 'tsconfig.json', 'Cargo.toml', 'go.mod', 'Makefile', 'build.gradle', 'pom.xml', 'build.sbt', 'build.boot', 'build.xml', 'build.gradle.kts', 'build.sc', 'build.bazel', 'WORKSPACE', 'buildifier', 'WORKSPA']
   project_rooter_outermost = false
   enable_projects_cache = true
   projects_cache_num = 40
@@ -379,10 +380,6 @@
   merged = false
 
 [[custom_plugins]]
-  repo = 'IngoMeyer441/coc_current_word'
-  merged = false
-
-[[custom_plugins]]
   repo = 'nathanaelkane/vim-indent-guides'
   merged = false
 
@@ -402,7 +399,6 @@
 
 [[custom_plugins]]
   repo = 'nixprime/cpsm'
-  build = "./install.sh"
   merged = false
 
 [[custom_plugins]]
@@ -424,6 +420,10 @@
 
 [[custom_plugins]]
   repo = 'christoomey/vim-conflicted'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'tpope/vim-rhubarb'
   merged = false
 
 # ------------ Autocomplete ---------------------
@@ -523,4 +523,9 @@
 [[custom_plugins]]
   repo = 'vim-jp/vital.vim'
   merged = false
+
+[[custom_plugins]]
+  repo = 'stevearc/profile.nvim'
+  merged = false
+
 

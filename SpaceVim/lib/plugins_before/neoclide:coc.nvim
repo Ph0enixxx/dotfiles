@@ -45,6 +45,7 @@ call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'f'], 'CocConfig', 'open config'
 call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'l'], 'CocLocalConfig', 'open local config', 1)
 
 call SpaceVim#custom#SPC('nnoremap', ['o', 's'], ':CocSearch ', 'Coc Search', 0)
+call SpaceVim#custom#SPC('nnoremap', ['o', '/'], 'CocList grep', 'grep text from current cwd', 1)
 
 " coc-lists
 call SpaceVim#custom#SPC('nnoremap', ['o', 'L'], 'CocList', 'Coc List', 1)
@@ -54,7 +55,6 @@ call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'd'], 'CocList diagnostics', 'se
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'e'], 'CocList extensions', 'search extensions', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'f'], 'CocList mru', 'search mru files', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'F'], 'CocList buffers', 'search buffers', 1)
-
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', '/'], 'CocList grep', 'grep text from current cwd', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'l'], 'CocList lines', 'search lines by regex patterns', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'L'], 'CocList location', 'last jump locations', 1)
@@ -74,9 +74,22 @@ call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'y'], 'CocList -A --normal yank'
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'j'], 'CocNext', 'Invoke for next item', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'k'], 'CocPrev', 'Invoke for previe item', 1)
 
-" coc-list: git
-call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'gs'], 'CocList --normal gstatus', 'list git status', 1)
-call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'gc'], 'CocList --normal gstatus', 'list git status', 1)
+" coc-git
+call SpaceVim#custom#SPC('nnoremap', ['g', 'l'], 'CocList --height=20 --normal gstatus', 'list git status', 1)
+call SpaceVim#custom#SPC('nnoremap', ['g', 'j'], '<Plug>(coc-git-nextconflict)', 'Go to next conflict', 0)
+call SpaceVim#custom#SPC('nnoremap', ['g', 'k'], '<Plug>(coc-git-prevconflict)', 'Go to previous conflict', 0)
+call SpaceVim#custom#SPC('nnoremap', ['g', '['], '<Plug>(coc-git-nextchunk)', 'Go to next chunk', 0)
+call SpaceVim#custom#SPC('nnoremap', ['g', ']'], '<Plug>(coc-git-prevchunk)', 'Go to previous chunk', 0)
+call SpaceVim#custom#SPC('nnoremap', ['g', 'i'], '<Plug>(coc-git-chunkinfo)', 'Show chunk diff', 0)
+call SpaceVim#custom#SPC('nnoremap', ['g', 'C'], '<Plug>(coc-git-commit)', 'Show commit of current position', 0)
+call SpaceVim#custom#SPC('nnoremap', ['g', 'a'], 'Git add %', 'Stage current file', 1)
+call SpaceVim#custom#SPC('nnoremap', ['g', 'r'], 'Git reset -q %', 'Unstage current file', 1)
+" call SpaceVim#mapping#space#def('nnoremap', ['g', 'S'], 'Git add %', 'Stage current file', 1)
+
+" omap ig <Plug>(coc-git-chunk-inner)
+" xmap ig <Plug>(coc-git-chunk-inner)
+" omap ag <Plug>(coc-git-chunk-outer)
+" xmap ag <Plug>(coc-git-chunk-outer)
 
 " coc diagnostic
 " call SpaceVim#custom#SPCGroupName(['o', 'd'], '+Diagnostic')
@@ -131,13 +144,6 @@ let g:markdown_fenced_languages = [
       \ 'vim',
       \ 'help'
       \]
-
-" coc-git
-" call SpaceVim#custom#SPCGroupName(['o', 'g'], '+Git')
-call SpaceVim#custom#SPC('nnoremap', ['g', 'j'], '<Plug>(coc-git-nextconflict)', 'Go to next conflict', 0)
-call SpaceVim#custom#SPC('nnoremap', ['g', 'k'], '<Plug>(coc-git-prevconflict)', 'Go to previous conflict', 0)
-call SpaceVim#custom#SPC('nnoremap', ['g', '['], '<Plug>(coc-git-nextchunk)', 'Go to next chunk', 0)
-call SpaceVim#custom#SPC('nnoremap', ['g', ']'], '<Plug>(coc-git-prevchunk)', 'Go to previous chunk', 0)
 
 " coc-project & coc-bookmark
 call SpaceVim#custom#SPCGroupName(['o', 'p'], '+Project & Bookmark')

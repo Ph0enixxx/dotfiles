@@ -145,7 +145,7 @@ devicons.setup {
  override_by_extension = {
   ["nvim"] = {
     icon = "",
-    color = "#52ff52",
+    color = "#61ff00",
     cterm_color = "113",
     name = "Neovim"
   },
@@ -166,3 +166,4 @@ devicons.setup {
   -- }
  };
 }
+

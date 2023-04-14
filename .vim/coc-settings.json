@@ -4,5 +4,6 @@
     "prevchunk",
     "struct",
     "vsplit"
-  ]
+  ],
+  "Lua.diagnostics.globals": ["vim"]
 }

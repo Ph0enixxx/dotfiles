@@ -24,6 +24,8 @@ zinit light-mode for \
     lukechilds/zsh-nvm \
     zsh-users/zsh-autosuggestions \
     zsh-users/zsh-completions
+
+zinit load wfxr/forgit
 ### End of Zinit's installer chunk
 
 try_source $DOTFILES/zsh/custom/config/plugins_after/*.zsh

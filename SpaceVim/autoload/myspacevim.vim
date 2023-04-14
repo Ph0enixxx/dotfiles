@@ -97,7 +97,6 @@ function! myspacevim#after()
       call myspacevim#source_files('lib/plugins_after/*.nvim')
     endif
 
-
   catch
     call s:logger.error('myspace#after: Caught error: ' . v:exception)
   endtry

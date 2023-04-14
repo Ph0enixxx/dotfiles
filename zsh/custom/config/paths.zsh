@@ -27,4 +27,4 @@ hash -d vsp="$HOME/.SpaceVim"
 hash -d vconf="$HOME/.SpaceVim.d"
 
 # zinit
-hash -d zplug="$HOME/.zinit/plugins"
+hash -d zplug="$HOME/.local/share/zinit/plugins"

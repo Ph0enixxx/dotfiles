@@ -253,6 +253,7 @@
   "list.insertMappings": {},
   "list.interactiveDebounceTime": 100,
   "list.previewSplitRight": false,
+  "list.source.gstatus.defaultAction": "add",
 
   // Preferences
   "coc.preferences.enableLinkedEditing": false,
@@ -785,8 +786,8 @@
           "color": "#019833"
         },
         "nvim": {
-          "code": "",
-          "color": "#52ff52"
+          "code": "",
+          "color": "#61ff00"
         },
         "ai": {
           "code": "",
@@ -1492,5 +1493,8 @@
   // coc-chatgpt
 
   // coc-marketplace
-  "marketplace.npmsio": false
+  "marketplace.npmsio": false,
+
+  // coc-lua
+  "Lua.codeLens.enable": true,
 }

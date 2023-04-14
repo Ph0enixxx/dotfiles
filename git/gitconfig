@@ -1,3 +1,4 @@
+; vim: filetype=gitconfig
 [user]
   name = "Phoenix Tsui"
   email = xusiyuan841028@gmail.com
@@ -7,6 +8,9 @@
   clg      = "!f() { git clone \"git@github.com:$1.git\";  }; f"
   co       = checkout
   cft      = !nvim +Conflicted
+  d        = diff
+  dc       = diff --cached
+  dl       = diff HEAD
   lg       = log -p
   graph    = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --graph --abbrev-commit --date=relative
   la       = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --decorate
@@ -18,7 +22,6 @@
   name     = config user.name "Phoenix Tsui"
   pl       = pull --rebase
   st       = status
-  stv      = status -v
   stage    = add
   stat     = "!f() { if [[ $1 ]]; then author=$1 ; else author=$(git config --get user.name); fi; git log --author=\"$author\" --no-merges --pretty=tformat: --numstat \
     | gawk 'BEGIN { printf \"\\033[34m%-25s\t\\033[32m%-10s\t\\033[31m%-10s\t\\033[36m%-10s\\n\", \"AUTHOR\", \"ADD(+)\", \"DELETE(-)\", \"TOTAL\" } { add += $2 ; subs += $2 ; loc += $1 - $2  } END { printf \"\\033[34m%-25s\t\\033[32m%-10s\t\\033[31m%-10s\t\\033[36m%-10s\\n\",author,add,subs,loc }' author=\"$author\" ; }; f"
@@ -62,7 +65,7 @@
   autocrlf = false
   safecrlf = false
   ; pager = diff-so-fancy | less --tab=4 -RFX
-  pager = delta
+  pager = delta -w ${FZF_PREVIEW_COLUMNS:-$COLUMNS}
   editor = nvim
 [credential]
   helper = store
@@ -101,22 +104,22 @@
   features = side-by-side line-numbers decorations
   ; syntax-theme = Dracula
   syntax-theme = Solarized (dark)
+  hyperlinks = true
+  hyperlinks-file-link-format = "file-line://{path}:{line}"
   plus-style = syntax "#003800"
   minus-style = syntax "#3f0001"
 [delta "interactive"]
   keep-plus-minus-markers = false
 [delta "decorations"]
   commit-decoration-style = bold yellow box ul
-  file-style = bold blue ul
-  file-decoration-style = none
-  hunk-header-decoration-style = cyan box ul
+  file-style = bold "#FB2576"
+  file-decoration-style = bold "#FB2576" ul
   hunk-header-style = line-number syntax
+  hunk-header-decoration-style = cyan box ul
 [delta "line-numbers"]
   line-numbers-left-style = cyan
   line-numbers-right-style = cyan
   line-numbers-minus-style = 124
   line-numbers-plus-style = 28
-
-;# vim: filetype=gitconfig
 [init]
 	defaultBranch = master

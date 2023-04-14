@@ -1,0 +1,1 @@
+export DELTA_OPTIONS="" 

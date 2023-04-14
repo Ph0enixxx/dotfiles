@@ -1,0 +1,53 @@
+call SpaceVim#custom#SPC('nnoremap', ['a', 'b'], '<Plug>SearchVisual', 'Browser search', 0)
+call SpaceVim#custom#SPC('nnoremap', ['a', 'B'], ':BrowserSearch ', 'Browser search text ', 0)
+" call SpaceVim#custom#SPC('nnoremap', ['a', 'B'], '<Plug>SearchNormal', 'Browser search', 0)
+
+" call SpaceVim#custom#SPCGroupName(['o', 'c'], '+Coc Config')
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'f'], 'CocConfig', 'open config', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'l'], 'CocLocalConfig', 'open local config', 1)
+"
+" call SpaceVim#custom#SPC('nnoremap', ['o', 's'], ':CocSearch ', 'Coc Search', 0)
+"
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'L'], 'CocList', 'Coc List', 1)
+" call SpaceVim#custom#SPCGroupName(['o', 'l'], '+List')
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'c'], 'CocList commands', 'search commands', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'd'], 'CocList diagnostics', 'search diagnostics', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'e'], 'CocList extensions', 'search extensions', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'f'], 'CocList mru', 'search mru files', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'F'], 'CocList buffers', 'search buffers', 1)
+"
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', '/'], 'CocList grep', 'grep text from current cwd', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'l'], 'CocList lines', 'search lines by regex patterns', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'L'], 'CocList location', 'last jump locations', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'm'], 'CocList marketplace', 'search marketplace', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'O'], 'CocList words', 'search word in current buffer', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'b'], 'CocList outline', 'symbols in the current buffer', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'B'], 'CocList symbol', 'symbols in the workspace', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'p'], 'CocList projects', 'list projects', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'r'], 'CocListResume', 'reopen list', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 's'], 'CocList snippets', 'search snippets for current filetype', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'S'], 'CocList sources', 'search sources for current filetype', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 't'], 'CocList todolist', 'list ToDo tasks', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'T'], 'CocList todolist', 'list ToDo tasks', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'v'], 'CocList services', 'list lsp service', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'w'], 'CocList windows', 'list windows of vim', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'y'], 'CocList -A --normal yank', 'list yank', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'j'], 'CocNext', 'Invoke for next item', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'k'], 'CocPrev', 'Invoke for previe item', 1)
+"
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'gs'], 'CocList --normal gstatus', 'list git status', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'gc'], 'CocList --normal gstatus', 'list git status', 1)
+"
+" call SpaceVim#custom#SPC('nnoremap', ['e', 'l'], 'CocDiagnostics', 'list diagnostics', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['e', 'j'], '<Plug>(coc-diagnostic-next)', 'jump to next position', 0)
+" call SpaceVim#custom#SPC('nnoremap', ['e', 'k'], '<Plug>(coc-diagnostic-prev)', 'jump to previous position', 0)
+" call SpaceVim#custom#SPC('nnoremap', ['e', 'J'], '<Plug>(coc-diagnostic-next-error)', 'jump to next error position', 0)
+" call SpaceVim#custom#SPC('nnoremap', ['e', 'K'], '<Plug>(coc-diagnostic-prev-error)', 'jump to previous error position', 0)
+"
+" call SpaceVim#custom#SPCGroupName(['o', 'e'], '+Explorer')
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'e', 'a'], 'Files', 'Open File Search', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'e', 'c'], 'CocCommand explorer --preset cocConfig', 'Open Coc Config', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'e', 'd'], 'CocCommand explorer --preset dotfiles', 'Open dotfiles', 1)
+" call SpaceVim#custom#SPC('nnoremap', ['o', 'e', 'e'], 'CocCommand explorer', 'Open File Explorer', 1)
+"
+"

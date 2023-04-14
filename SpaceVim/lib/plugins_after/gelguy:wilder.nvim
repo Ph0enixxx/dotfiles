@@ -2,8 +2,8 @@ call wilder#setup({
       \ 'modes': [':', '/', '?'],
       \ 'next_key': '<down>',
       \ 'previous_key': '<up>',
-      \ 'accept_key': '<right>',
-      \ 'reject_key': '<left>',
+      \ 'accept_key': ']',
+      \ 'reject_key': '[',
       \ })
 
 let step = 5

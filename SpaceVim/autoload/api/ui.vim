@@ -8,7 +8,7 @@ function! api#ui#auto_set_font_size() abort
       set guifont=DejaVuSansMono\ Nerd\ Font:h18
     elseif width > 1920
       " 2k screen
-      set guifont=DejaVuSansMono\ Nerd\ Font\ Mono:h16
+      set guifont=DejaVuSansMono\ Nerd\ Font:h16
     elseif width > 1680
       set guifont=DejaVuSansMono\ Nerd\ Font:h15
     else

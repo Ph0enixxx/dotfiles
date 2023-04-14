@@ -8,6 +8,5 @@ try_source ~/.functions.zsh
 debug 'zshenv' '~/.zshenv'
 
 # Common AWK source
-try_source $DOTFILES/zsh/custom/config/export-awk.zsh
 try_source $DOTFILES/zsh/custom/config/export.zsh
 try_source ~/.zsh_export

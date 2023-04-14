@@ -86,40 +86,13 @@ plugins+=(docker docker-compose docker-machine)
 # python
 # plugins+=(pyenv)
 
-typeset -gU path
-if [[ $Distribution == "Debian" ]] {
-  path=(/usr/sbin "$path[@]")
-}
-
-if [[ $System == 'Darwin' ]] {
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-}
-
-path=($DOTFILES/bin "$path[@]")
-path=($HOME/bin "$path[@]")
-
-if [[ -d $HOME/.cargo ]] {
-  path=($HOME/.cargo/bin "$path[@]")
-}
-
 
 source $ZSH/oh-my-zsh.sh
-
-# pnpm
-if [[ $System == "Darwin" ]] {
-  export PNPM_HOME="$HOME/Library/pnpm"
-
-} elif [[ $System == "Linux" ]] {
-  export PNPM_HOME="$HOME/.local/share/pnpm"
-}
-path=($PNPM_HOME "$path[@]")
-# pnpm end
 
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
-path=(./node_modules/.bin "$path[@]")
 
 if [[ $System == 'Darwin' ]] {
   source $(brew --prefix)/opt/zsh-syntax-highlighting/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -129,5 +102,5 @@ if [[ $System == 'Darwin' ]] {
   # fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 # fi
 
-
-test -e /Users/xusiyuan/.iterm2_shell_integration.zsh && source /Users/xusiyuan/.iterm2_shell_integration.zsh || true
+# export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=YES
+# test -e /Users/xusiyuan/.iterm2_shell_integration.zsh && source /Users/xusiyuan/.iterm2_shell_integration.zsh || true

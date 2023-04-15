@@ -1,7 +1,3 @@
-try_source $DOTFILES/zsh/custom/config/env/awk.zsh
-try_source $DOTFILES/zsh/custom/config/env/brew.zsh
-try_source $DOTFILES/zsh/custom/config/env/fzf.zsh
-
 # export SYSTEM_VERSION_COMPAT=1
 export ENABLE_CORRECTION="false"
 
@@ -69,7 +65,7 @@ export RIPGREP_CONFIG_PATH=~/.ripgreprc
 # For pkg-config to find zlib you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 
-
+# add base path into $PATH
 typeset -gU path
 if [[ $Distribution == "Debian" ]] {
   path=(/usr/sbin "$path[@]")
@@ -79,32 +75,7 @@ if [[ $Distribution == "Debian" ]] {
 if [[ $System == 'Darwin' ]] {
   eval "$(/opt/homebrew/bin/brew shellenv)"
 }
-
-# goenv
-path=($GOENV_ROOT/bin "$path[@]")
-path=($GOROOT/bin "$path[@]")
-path=("$path[@]" $GOPATH/bin)
-
-# cargo
-if [[ -d $HOME/.cargo ]] {
-  path=($HOME/.cargo/bin "$path[@]")
-}
-
-# pyenv
-path=($PYENV_ROOT/bin "$path[@]")
-
-# pnpm
-if [[ $System == "Darwin" ]] {
-  export PNPM_HOME="$HOME/Library/pnpm"
-} elif [[ $System == "Linux" ]] {
-  export PNPM_HOME="$HOME/.local/share/pnpm"
-}
-path=($PNPM_HOME "$path[@]")
-# pnpm end
-#
-# user defined
-path=($DOTFILES/bin "$path[@]")
-path=($HOME/bin "$path[@]")
-
-# local folder
-path=(./node_modules/.bin "$path[@]")
+# export all tools env variables
+try_source $DOTFILES/zsh/custom/config/env/*.zsh
+# export $PATH
+try_source $DOTFILES/zsh/custom/config/export-path.zsh

@@ -220,6 +220,10 @@
 [[custom_plugins]]
   repo = 'diepm/vim-rest-console'
   merged = false
+  
+[[custom_plugins]]
+  repo = 'voldikss/vim-floaterm'
+  merged = false
 
 [[custom_plugins]]
   repo = 'itchyny/calendar.vim'
@@ -348,9 +352,9 @@
   merged = false
 
 # ------------ UI - Colorscheme -----------------
-[[custom_plugins]]
-  repo = 'xolox/vim-colorscheme-switcher'
-  merged = false
+# [[custom_plugins]]
+  # repo = 'xolox/vim-colorscheme-switcher'
+  # merged = false
 
 [[custom_plugins]]
   repo = 'lifepillar/vim-solarized8'
@@ -524,8 +528,8 @@
   repo = 'vim-jp/vital.vim'
   merged = false
 
-[[custom_plugins]]
-  repo = 'stevearc/profile.nvim'
-  merged = false
+# [[custom_plugins]]
+  # repo = 'stevearc/profile.nvim'
+  # merged = false
 
 

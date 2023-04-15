@@ -10,4 +10,8 @@ hi PmenuSbar                        ctermbg=0                          guibg=#1C
 hi PmenuThumb                       ctermbg=0            guifg=#2C78BF guibg=#2C78BF
 
 hi ImportCostVirtualText ctermbg=0 guifg=#6B1515
-highlight default CursorWord cterm=reverse ctermfg=136 gui=reverse guifg=#a1cdfa
+
+hi default CursorWord cterm=reverse ctermfg=136 gui=reverse guifg=#a1cdfa
+
+" vim-floaterm
+

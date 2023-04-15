@@ -164,7 +164,6 @@ endfunction
 function! api#utils#start_profile() abort
  profile start ~/.vim/vim.profile
  profile func *
- profile file ~/.vim/plugged/nerdtree/*/*.vim
 endfunction
 "}}}
 

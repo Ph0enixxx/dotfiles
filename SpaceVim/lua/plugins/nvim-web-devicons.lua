@@ -149,6 +149,12 @@ devicons.setup {
     cterm_color = "113",
     name = "Neovim"
   },
+  ["vifm"] = {
+    icon = "",
+    color = "#019833",
+    cterm_color = "113",
+    name = "Neovim"
+  },
   ["snippets"] = {
     icon = "ﴬ",
     color = "#6dbfc5",

@@ -13,6 +13,7 @@ let g:indent_guides_indent_levels = 20
 
 let g:indent_guides_exclude_filetypes = [
       \ 'calendar', 'coc-explorer', 'coc_todolist',
+      \ 'floaterm',
       \ 'help',
       \ 'nerdtree', 'startify', 'fzf',
       \ 'vimfiler', 'vista',

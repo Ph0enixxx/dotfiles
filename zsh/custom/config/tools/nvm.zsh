@@ -4,13 +4,19 @@ if [[ ! -d $NVM_DIR ]] {
   nvm install default
 }
 
-
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+echo "-------------"
+echo $PATH
+echo "-------------"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+echo $PATH
+echo "-------------"
 
 function load-nvmrc() {
+  where node
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
+  local nvm_default_version="$(nvm version default)"
 
   if [ -n "$nvmrc_path" ]; then
     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
@@ -21,8 +27,8 @@ function load-nvmrc() {
       nvm use
     fi
     enable_node_pkg_manager
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
+  elif [ "$node_version" != "$nvm_default_version" ]; then
+    echo "Reverting $node_version to nvm default version $nvm_default_version"
     nvm use default
     enable_node_pkg_manager
   fi

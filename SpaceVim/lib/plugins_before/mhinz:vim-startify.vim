@@ -11,8 +11,6 @@ augroup startify
 augroup END
 
 " Keymap
-call api#keymap#map_normal_commands('<F6>', ':Startify<cr>')
-
 let g:startify_files_number = 15
 " let g:startify_custom_header = [
       "| \'' |

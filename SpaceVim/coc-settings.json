@@ -1140,6 +1140,7 @@
         "exx": "elixir",
         "leex": "elixir",
         "vim": "vim",
+        "vifm": "vim",
         "nvim": "nvim",
         "swp": "fileHidden",
         "ai": "ai",
@@ -1460,6 +1461,7 @@
     "chatgpt",
     "esbuild",
     "expl",
+    "floaterm",
     "futu",
     "gstatus",
     "nestjs",
@@ -1497,4 +1499,11 @@
 
   // coc-lua
   "Lua.codeLens.enable": true,
+
+  // coc-translator
+  "translator.window.maxWidth": 100,
+  "translator.window.maxHeight": 100,
+  "translator.engines": [
+    "haici"
+  ],
 }

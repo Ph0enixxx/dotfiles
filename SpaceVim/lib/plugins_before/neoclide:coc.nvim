@@ -46,6 +46,7 @@ call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'l'], 'CocLocalConfig', 'open lo
 
 call SpaceVim#custom#SPC('nnoremap', ['o', 's'], ':CocSearch ', 'Coc Search', 0)
 call SpaceVim#custom#SPC('nnoremap', ['o', '/'], 'CocList grep', 'grep text from current cwd', 1)
+call SpaceVim#custom#SPC('nmap', ['o', 't'], '<Plug>(coc-translator-p)', 'Coc Translator', 0)
 
 " coc-lists
 call SpaceVim#custom#SPC('nnoremap', ['o', 'L'], 'CocList', 'Coc List', 1)
@@ -71,6 +72,9 @@ call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'T'], 'CocList todolist', 'list 
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'v'], 'CocList services', 'list lsp service', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'w'], 'CocList windows', 'list windows of vim', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'y'], 'CocList -A --normal yank', 'list yank', 1)
+call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'x'], 'CocList translation', 'list translation', 1)
+call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'z'], 'CocList floaterm', 'list opened floaterms', 1)
+
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'j'], 'CocNext', 'Invoke for next item', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'k'], 'CocPrev', 'Invoke for previe item', 1)
 

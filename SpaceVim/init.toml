@@ -38,7 +38,6 @@
   windows_index_type = 3
   # statusline_unicode_symbols = true
 
-
   enable_cursorcolumn = true
   enable_cursorline = true
   commandline_prompt = '➭'
@@ -169,10 +168,10 @@
   enable_indentline = false
   enable_cursorword = true
 
-[[layers]]
-  name = 'shell'
-  default_position = 'bottom'
-  default_height = 30
+# [[layers]]
+  # name = 'shell'
+  # default_position = 'bottom'
+  # default_height = 30
 
 [[layers]]
   name = 'lang#javascript'
@@ -378,6 +377,10 @@
   repo = 'nvim-tree/nvim-web-devicons'
   merged = false
 
+[[custom_plugins]]
+  repo = 'yamatsum/nvim-nonicons'
+  merged = false
+
 # ------------ UI - Buffer ----------------------
 [[custom_plugins]]
   repo = 'azabiong/vim-highlighter'
@@ -511,9 +514,9 @@
   repo = 'stephenway/postcss.vim'
   merged = false
 
-[[custom_plugins]]
-  repo = 'tpope/vim-liquid'
-  merged = false
+# [[custom_plugins]]
+  # repo = 'tpope/vim-liquid'
+  # merged = false
 
 [[custom_plugins]]
   repo = 'iamcco/markdown-preview.nvim'

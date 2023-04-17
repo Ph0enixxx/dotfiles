@@ -45,34 +45,34 @@ let g:vista#renderer#enable_icon = 1
 
 " The default icons can't be suitable for all the filetypes, you can extend it as you wish.
 let g:vista#renderer#icons = {
-\    "func"          : "",
-\    "function"      : "",
-\    "functions"     : "",
-\    "var"           : "",
-\    "variable"      : "",
-\    "variables"     : "",
-\    "const"         : "",
-\    "constant"      : "",
-\    "constructor"   : "",
+\    "func"          : "󰊕",
+\    "function"      : "󰊕",
+\    "functions"     : "󰊕",
+\    "var"           : "",
+\    "variable"      : "",
+\    "variables"     : "",
+\    "const"         : "",
+\    "constant"      : "",
+\    "constructor"   : "",
 \    "method"        : "",
 \    "package"       : "",
 \    "packages"      : "",
-\    "enum"          : "",
-\    "enummember"    : "",
+\    "enum"          : "",
+\    "enummember"    : "",
 \    "enumerator"    : "",
 \    "module"        : "",
 \    "modules"       : "",
-\    "type"          : "",
-\    "typedef"       : "",
-\    "types"         : "",
-\    "field"         : "פּ",
-\    "fields"        : "פּ",
+\    "type"          : "",
+\    "typedef"       : "",
+\    "types"         : "",
+\    "field"         : "",
+\    "fields"        : "",
 \    "macro"         : "",
 \    "macros"        : "",
 \    "map"           : "",
 \    "class"         : "",
 \    "augroup"       : "",
-\    "struct"        : "פּ",
+\    "struct"        : "",
 \    "union"         : "",
 \    "member"        : "פּ",
 \    "target"        : "",
@@ -81,10 +81,14 @@ let g:vista#renderer#icons = {
 \    "namespace"     : "",
 \    "subroutine"    : "",
 \    "implementation": "",
-\    "typeParameter" : "",
+\    "typeParameter" : "",
 \    "default"       : "",
 \  }
 
 let g:vista_sidebar_width = 40
 let g:vista_echo_cursor_strategy = 'floating_win'
 let g:vista_floating_delay = 200
+let g:vista_keep_fzf_colors = 1
+let g:vista_floating_border = "double"
+
+autocmd FileType vista,vista_kind nnoremap <buffer><silent> \/ :<c-u>call vista#finder#fzf#Run()<CR>

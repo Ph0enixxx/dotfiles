@@ -106,5 +106,4 @@ if [[ $System == 'Darwin' ]] {
 # test -e /Users/xusiyuan/.iterm2_shell_integration.zsh && source /Users/xusiyuan/.iterm2_shell_integration.zsh || true
 
 # re-arrange $PATH
-echo '=======\\\\\'
 try_source $DOTFILES/zsh/custom/config/export-path.zsh

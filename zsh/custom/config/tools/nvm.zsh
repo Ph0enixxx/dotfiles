@@ -4,16 +4,10 @@ if [[ ! -d $NVM_DIR ]] {
   nvm install default
 }
 
-echo "-------------"
-echo $PATH
-echo "-------------"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-echo $PATH
-echo "-------------"
 
 function load-nvmrc() {
-  where node
   local node_version="$(nvm version)"
   local nvmrc_path="$(nvm_find_nvmrc)"
   local nvm_default_version="$(nvm version default)"

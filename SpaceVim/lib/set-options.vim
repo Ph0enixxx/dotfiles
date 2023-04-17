@@ -63,6 +63,7 @@ set termguicolors
 set textwidth=120                                          " tw   maxium width of text
 set nowrap                                                 " wrap wrap text
 set nrformats=hex
+set synmaxcol=200
 
 call api#ui#auto_set_font_size()
 
@@ -138,15 +139,3 @@ filetype plugin indent on
 " set guicursor=a:block-blinkon0,i:ver30-blinkon0
 " set splitbelow
 " set splitright
-"
-"
-" echom &tabstop.exists('g:vv')
-if exists('g:vv')
-  VVset fontfamily=DejaVuSansMono\ Nerd\ Font
-  VVset fontsize=14
-  VVset letterspacing=1
-  VVset windowheight=40%
-  VVset windowwidth=100%
-  VVset windowleft=0
-  VVset windowtop=0
-endif

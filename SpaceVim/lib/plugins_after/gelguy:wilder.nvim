@@ -56,6 +56,7 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer(wilder#popupmenu_pa
       \   'accent': hl,
       \   'default': 'Pmenu',
       \   'selected': 'PmenuSel',
+      \   'border': 'FloatBorder',
       \ },
       \ 'border': 'double',
       \ 'max_height': '75%',

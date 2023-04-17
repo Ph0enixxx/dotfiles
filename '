@@ -92,17 +92,7 @@ let g:airline#extensions#coc#warning_symbol        = ' '
 " let airline#extensions#coc#stl_format_warn       = '%W{[%w(#%fw)]}'
 let g:airline#extensions#coc#show_coc_status = 1
 let g:airline#extensions#coc#stl_format_err = '%C(L%L)'
-let g:airline#extensions#coc#stl_format_warn = '%C(L%L)'
-
-let g:airline#extensions#fzf#enabled = 1
-let g:airline#extensions#vista#enabled = 1
-
-let g:airline#extensions#searchcount#enabled = 1
-let g:airline#extensions#searchcount#show_search_term = 1
-let g:airline#extensions#searchcount#search_term_limit = 8
-
-let g:airline#extensions#wordcount#enabled = 1
-let g:airline#extensions#wordcount#filetypes = ['asciidoc', 'help', 'mail', 'markdown', 'rmd', 'nroff', 'org', 'plaintex', 'rst', 'tex', 'text']
+let airline#extensions#coc#stl_format_warn = '%C(L%L)'
 
 " if !exists('g:airline_symbols')
   " let g:airline_symbols = {}

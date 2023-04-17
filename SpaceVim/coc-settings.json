@@ -37,7 +37,7 @@
     "border": true,
     // "rounded": true,
     // "highlight": "CocFloating",
-    // "borderhighlight": "CocFloating",
+    "borderhighlight": "CocFloatingDialog",
     // "close": false,
     // "maxWidth": 160,
     // "maxHeight": 10,
@@ -59,7 +59,7 @@
   "diagnostic.showDeprecated": true,
   "diagnostic.showUnused": true,
   "diagnostic.signLevel": "hint",
-  "diagnostic.signPriority": 0,
+  "diagnostic.signPriority": 10,
   "diagnostic.virtualText": false,
   "diagnostic.virtualTextAlign": "after",
   "diagnostic.virtualTextCurrentLineOnly": true,
@@ -91,7 +91,7 @@
     "border": true,
     "rounded": false,
     "highlight": "CocFloating",
-    "borderhighlight": "CocFloating",
+    "borderhighlight": "CocFloatingBorder",
     "close": false,
     "maxWidth": 160,
     // "maxHeight": 10,
@@ -164,7 +164,10 @@
     "shortcut"
   ],
   "suggest.enablePreselect": true,
-  "suggest.floatConfig": {},
+  "suggest.floatConfig": {
+    "border": true,
+    "borderhighlight": "CocFloatingSuggest",
+  },
   "suggest.labelMaxLength": 200,
   "suggest.detailField": "preview",
   "suggest.languageSourcePriority": 99,
@@ -340,10 +343,11 @@
   },
 
   /* "explorer.floating.width": 400, */
-  // "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS",
+  "explorer.buffer.root.template": "[icon] [title] [hidden & 1]",
+  "explorer.buffer.child.template": "[git | 2] [selection | 1] [bufnr] [name][modified][readonly] [fullpath]",
+  "explorer.buffer.child.labelingTemplate": "[name][bufname][fullpath][modified][readonly][diagnosticError][diagnosticWarning][git]",
   "explorer.file.root.template": "[icon] [title] [hidden & 1][root] [fullpath]",
-  // "explorer.file.root.template": "[icon & 1] PROJECT ([root])",
-  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [link growRight 1 omitCenter 5]",
+  "explorer.file.child.template": " [git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [link growRight 1 omitCenter 5]",
   "explorer.file.showHiddenFiles": false,
   "explorer.file.hiddenRules": {
     "filenames": [
@@ -365,11 +369,12 @@
     "patternMatches": [
     ]
   },
-  "explorer.file.reveal.auto": true,
+  "explorer.file.reveal.auto": false,
   "explorer.file.reveal.whenOpen": true,
-  /* "explorer.floating.border.chars": ["─","│","─","│","┌","┐","┘","└"], */
-  // "explorer.openAction.strategy": "vsplit.intelligent",
-  "explorer.openAction.strategy": "tab",
+  "explorer.floating.border.enable": true,
+  "explorer.floating.border.chars": ["─","│","─","│","┌","┐","┘","└"],
+  "explorer.openAction.strategy": "vsplit.intelligent",
+  // "explorer.openAction.strategy": "tab",
   "explorer.keyMappings.global": {
     "i": false, // cancel default mapkey
 
@@ -456,8 +461,9 @@
   /* "explorer.icon.source": "nerdfont.vim", */
   "explorer.icon.source": "builtin",
 
-  // "explorer.icon.hidden": "﬒",
+  "explorer.icon.hidden": "﬒",
   "explorer.icon.selected": "",
+  "explorer.icon.readonly": "",
   "explorer.icon.customIcons": {
       "icons": {
         "folderClosed": {
@@ -1318,18 +1324,18 @@
   "explorer.git.icon.rootStatus.modified": "",
   "explorer.git.icon.rootStatus.renamed": "",
   "explorer.git.icon.rootStatus.stashed": "󰃨",
-  "explorer.git.icon.rootStatus.untracked": "✚",
+  "explorer.git.icon.rootStatus.untracked": "",
   "explorer.git.icon.rootStatus.ahead": "󰶼",
   "explorer.git.icon.rootStatus.behind": "󰶹",
-  "explorer.git.icon.status.mixed": "✿",
+  "explorer.git.icon.status.mixed": "",
   "explorer.git.icon.status.modified": "",
   "explorer.git.icon.status.added": "",
   "explorer.git.icon.status.deleted": "",
   "explorer.git.icon.status.renamed": "",
   "explorer.git.icon.status.copied": "",
   "explorer.git.icon.status.unmerged": "",
-  "explorer.git.icon.status.untracked": "✚",
-  "explorer.git.icon.status.ignored": "",
+  "explorer.git.icon.status.untracked": "",
+  "explorer.git.icon.status.ignored": "",
 
   // extensions: coc-git
   "git.addGBlameToVirtualText": true,

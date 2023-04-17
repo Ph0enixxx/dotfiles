@@ -40,6 +40,7 @@ call SpaceVim#custom#SPC('nnoremap', ['a', 't', 'a'], 'CocCommand todolist.creat
 
 call SpaceVim#custom#SPCGroupName(['o'], '+Coc')
 
+call SpaceVim#custom#SPC('nnoremap', ['o', 'C'], 'CocCommand', 'Run coc commands', 1)
 call SpaceVim#custom#SPCGroupName(['o', 'c'], '+Coc Config')
 call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'f'], 'CocConfig', 'open config', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'c', 'l'], 'CocLocalConfig', 'open local config', 1)
@@ -88,6 +89,8 @@ call SpaceVim#custom#SPC('nnoremap', ['g', 'i'], '<Plug>(coc-git-chunkinfo)', 'S
 call SpaceVim#custom#SPC('nnoremap', ['g', 'C'], '<Plug>(coc-git-commit)', 'Show commit of current position', 0)
 call SpaceVim#custom#SPC('nnoremap', ['g', 'a'], 'Git add %', 'Stage current file', 1)
 call SpaceVim#custom#SPC('nnoremap', ['g', 'r'], 'Git reset -q %', 'Unstage current file', 1)
+call SpaceVim#custom#SPC('nnoremap', ['g', 'W'], 'Gitsigns toggle_word_diff', 'show word diff', 1)
+call SpaceVim#custom#SPC('nnoremap', ['g', 'L'], 'Gitsigns toggle_linehl', 'highlight line diff', 1)
 " call SpaceVim#mapping#space#def('nnoremap', ['g', 'S'], 'Git add %', 'Stage current file', 1)
 
 " omap ig <Plug>(coc-git-chunk-inner)

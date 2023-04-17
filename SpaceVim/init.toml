@@ -5,7 +5,6 @@
 # URL: https://spacevim.org
 # License: GPLv3
 #=============================================================================
-
 # All SpaceVim option below [option] section
 [options]
   # colorscheme = 'NeoSolarized'
@@ -107,14 +106,14 @@
     'deoplete.nvim', 'deoplete-dictionary', 
     'nvim-typescript', 'typescript-vim', 'vim-jsx-typescript',
     'indent-blankline.nvim',
-    # 'vim-airline',
+    'vim-gitgutter',
     'vim-snippets', 'vnote', 'vimloo',
     # 'wilder.nvim',
     # 'vim-better-whitespace','vim-jsx-improve', 'vim-matchup', 'vim-bookmarks'
     'tagbar', 'tagbar-makefile.vim', 'tagbar-proto.vim',
     'nerdtree', 'neomake'
   ]
-
+  
   # project_rooter_patterns = ['.git/', 'package.json', 'dockerfile']
   # , 'tsconfig.json', 'Cargo.toml', 'go.mod', 'Makefile', 'build.gradle', 'pom.xml', 'build.sbt', 'build.boot', 'build.xml', 'build.gradle.kts', 'build.sc', 'build.bazel', 'WORKSPACE', 'buildifier', 'WORKSPA']
   project_rooter_outermost = false
@@ -216,9 +215,9 @@
 
 ############################# Plugins #############################
 # ------------ Tools ----------------------------
-[[custom_plugins]]
-  repo = 'diepm/vim-rest-console'
-  merged = false
+# [[custom_plugins]]
+  # repo = 'diepm/vim-rest-console'
+  # merged = false
   
 [[custom_plugins]]
   repo = 'voldikss/vim-floaterm'
@@ -350,6 +349,10 @@
   repo = 'vim-airline/vim-airline-themes'
   merged = false
 
+[[custom_plugins]]
+  repo = 'rebelot/heirline.nvim'
+  merged = false
+
 # ------------ UI - Colorscheme -----------------
 # [[custom_plugins]]
   # repo = 'xolox/vim-colorscheme-switcher'
@@ -375,10 +378,6 @@
 
 [[custom_plugins]]
   repo = 'nvim-tree/nvim-web-devicons'
-  merged = false
-
-[[custom_plugins]]
-  repo = 'yamatsum/nvim-nonicons'
   merged = false
 
 # ------------ UI - Buffer ----------------------
@@ -424,6 +423,10 @@
 # [[custom_plugins]]
   # repo = 'rhysd/conflict-marker.vim'
   # merged = false
+
+[[custom_plugins]]
+  repo = 'lewis6991/gitsigns.nvim'
+  merged = false
 
 [[custom_plugins]]
   repo = 'christoomey/vim-conflicted'

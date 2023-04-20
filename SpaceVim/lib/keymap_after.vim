@@ -2,7 +2,7 @@
 call api#keymap#map_normal_commands('<f2>', ':BufExplorer<cr>', { 'normal': 0 })
 call api#keymap#map_normal_commands('<f3>', ':CocCommand explorer<cr>', { 'normal': 0 })
 call api#keymap#map_normal_commands('<f4>', ':Files<cr>', { 'normal': 0 })
-call api#keymap#map_normal_commands('<f5>', ':Vista<cr>', { 'normal': 0 })
+call api#keymap#map_normal_commands('<f5>', ':Vista!!<cr>', { 'normal': 0 })
 call api#keymap#map_normal_commands('<f6>', ':MundoToggle<cr>', { 'normal': 0 })
 
 " visual

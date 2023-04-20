@@ -1,11 +1,11 @@
 require('gitsigns').setup({
   signs = {
-    add          = { text = '▐' },
-    change       = { text = '▐' },
-    untracked    = { text = '▐' },
-    delete       = { text = '_' },
-    topdelete    = { text = '‾' },
-    changedelete = { text = '~' },
+    add          = { text = '█' },
+    change       = { text = '█' },
+    untracked    = { text = '█' },
+    delete       = { text = '█' },
+    topdelete    = { text = '█' },
+    changedelete = { text = '▓' },
   },
   signcolumn = true,  -- Toggle with `:Gitsigns toggle_signs`
   numhl      = false, -- Toggle with `:Gitsigns toggle_numhl`
@@ -20,10 +20,10 @@ require('gitsigns').setup({
   current_line_blame_opts = {
     virt_text = true,
     virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
-    delay = 200,
+    delay = 1000,
     ignore_whitespace = false,
   },
-  current_line_blame_formatter = '<author>, <author_time:%Y-%m-%d> - <summary> [<abbrev_sha>]',
+  current_line_blame_formatter = '<author>, <author_time:%Y%m%d> - <summary> [<abbrev_sha>]',
   sign_priority = 5,
   update_debounce = 100,
   status_formatter = nil, -- Use default

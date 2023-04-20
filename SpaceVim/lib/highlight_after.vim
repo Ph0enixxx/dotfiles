@@ -1,6 +1,6 @@
-set fillchars=vert:▐
 
 " hi VertSplit gui=bold cterm=bold guifg=#00ADFD guibg=##0E2A35
+set fillchars=vert:▐
 hi VertSplit gui=bold cterm=bold guifg=#DFFF00 guibg=##0E2A35
 
 hi Pmenu                 ctermfg=15 ctermbg=236          guifg=#839496 guibg=#002b36
@@ -13,10 +13,9 @@ hi ImportCostVirtualText ctermbg=0 guifg=#6B1515
 
 hi default CursorWord cterm=reverse ctermfg=136 gui=reverse guifg=#a1cdfa
 
-hi CocFloatingBorder guifg=#03C988 guibg=##0E2A35
+hi CocFloatingBorder  guifg=#03C988 guibg=##0E2A35
 hi CocFloatingSuggest guifg=#03C988 guibg=##0E2A35
-hi CocFloatingDialog guifg=#FF6000 guibg=##0E2A35
-hi WilderFloatBorder guifg=#1C82AD guibg=##0E2A35
+hi CocFloatingDialog  guifg=#FF6000 guibg=##0E2A35
+hi WilderFloatBorder  guifg=#1C82AD guibg=##0E2A35
 
-" vim-floaterm
-
+hi FloatermBorder guifg=#00AFFF guibg=#0E2A35

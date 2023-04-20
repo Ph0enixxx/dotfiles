@@ -168,7 +168,7 @@
     "border": true,
     "borderhighlight": "CocFloatingSuggest",
   },
-  "suggest.labelMaxLength": 200,
+  "suggest.labelMaxLength": 300,
   "suggest.detailField": "preview",
   "suggest.languageSourcePriority": 99,
   "suggest.snippetIndicator": " ",

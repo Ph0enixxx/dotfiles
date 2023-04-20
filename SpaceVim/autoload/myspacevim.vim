@@ -38,11 +38,12 @@ function! myspacevim#before()
 
     " Coc extensions
     let g:coc_global_extensions = [
+          \ 'coc-apollo',
           \ 'coc-conventional', 'coc-clangd', 'coc-css', 'coc-calc', 'coc-cmake', 'coc-cssmodules',
           \ 'coc-docker', 'coc-spell-checker', 'coc-cspell-dicts',
           \ 'coc-explorer', 'coc-eslint',
           \ 'coc-floatinput', 'coc-flow', 'coc-flutter', 'coc-fzf-preview',
-          \ 'coc-git', 'coc-go', 'coc-gocode', 'coc-graphql',
+          \ 'coc-git', 'coc-go', 'coc-gocode',
           \ 'coc-highlight', 'coc-html',
           \ 'coc-json', 'coc-jest', 'coc-java', 'coc-just-complete', 
           \ 'coc-lists', 'coc-lua',

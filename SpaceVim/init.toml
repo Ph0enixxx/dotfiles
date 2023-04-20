@@ -29,7 +29,7 @@
   # enable_statusline_mode = true
   # enable_statusline_tag = false
 
-  enable_tabline_ft_icon = true
+  enable_tabline_ft_icon = false
 
   enable_neomake = false
 
@@ -214,6 +214,15 @@
   enable = false
 
 ############################# Plugins #############################
+# ------------ Vimscript --------------
+[[custom_plugins]]
+  repo = 'vim-jp/vital.vim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'nvim-lua/plenary.nvim'
+  merged = false
+
 # ------------ Tools ----------------------------
 # [[custom_plugins]]
   # repo = 'diepm/vim-rest-console'
@@ -400,15 +409,24 @@
   merged = false
 
 [[custom_plugins]]
-  repo = 'nvim-lua/plenary.nvim'
-  merged = false
-
-[[custom_plugins]]
   repo = 'nixprime/cpsm'
   merged = false
 
 [[custom_plugins]]
   repo = 'romgrk/fzy-lua-native'
+  merged = false
+
+# ------------ UI - Tools ----------------------
+[[custom_plugins]]
+  repo = 'folke/noice.nvim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'MunifTanjim/nui.nvim'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'rcarriga/nvim-notify'
   merged = false
 
 # ------------ Git ------------------------------
@@ -476,6 +494,10 @@
   merged = false
 
 [[custom_plugins]]
+  repo = 'jparise/vim-graphql'
+  merged = false
+
+[[custom_plugins]]
   repo = 'gianarb/vim-flux'
   merged = false
 
@@ -529,10 +551,7 @@
   # repo = 'tjdevries/coc-zsh'
   # merged = false
 
-# ------------ Vimscript --------------
-[[custom_plugins]]
-  repo = 'vim-jp/vital.vim'
-  merged = false
+
 
 # [[custom_plugins]]
   # repo = 'stevearc/profile.nvim'

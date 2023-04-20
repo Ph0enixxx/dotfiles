@@ -3,41 +3,39 @@ if ! command -v goenv &> /dev/null; then
 fi
 
 FZF_GOENV_OPTIONS="$FZF_FULLSCREEN_OPTIONS --no-preview --tac"
-AWK_GOENV_FORMAT="awk '{ if (NR >1) print \$0 }'"
 
 function zgoi() {
-  local items=$(goenv install -l | eval $AWK_GOENV_FORMAT | fzf ${=FZF_GOENV_OPTIONS} --query="$1")
-
-  if [[ $items ]] {
-    for version in $(echo $items); do
+  local versions
+  while [[ -n "true" ]] {
+    versions=$(goenv install -l | fzf ${=FZF_GOENV_OPTIONS} --header-lines=1 -m --query="$1") || return
+    for version in $(echo $versions); do
       echo "$fg[blue]Install Go with version$reset_color $fg_bold[green]$version$reset_color"
       goenv install $version
     done
-    zgoi
   }
 }
 
 function zgor() {
-  local item=$(goenv versions | awk '$0 !~ /system/' | FZF_DEFAULT_OPTS="$FZF_GOENV_OPTIONS" fzf ${=FZF_FULLSCREEN_OPTIONS} --query="$1")
-
-  if [[ $item ]] {
-    if [[ $item == '*'* ]] {
-      version=$(echo $item | awk '{ print $2 }')
+  local version
+  while [[ -n "true" ]] {
+    version=$(goenv versions | awk '$0 !~ /system/' | fzf ${=FZF_GOENV_OPTIONS} +m --query="$1") || return
+    if [[ $version == '*'* ]] {
+      version=$(echo $version | awk '{ print $2 }')
       echo "Cannot uninstall currently-active go version: $fg_bold[red]$version$reset_color"
+      read
     } else {
-      version=$(echo $item | eval $AWK_TRIM)
-      echo "$fg[blue]Uninstall Go with version$reset_color $fg_bold[red]=$version=$reset_color"
+      version=$(echo $version | eval $AWK_TRIM)
+      echo "$fg[blue]Uninstall Go with version$reset_color $fg_bold[red]$version$reset_color"
       yes | goenv uninstall $version
     }
-    zgor
   }
 }
 
 function zgo() {
-  local item=$(goenv versions | FZF_DEFAULT_OPTS="$FZF_GOENV_OPTIONS" fzf ${=FZF_FULLSCREEN_OPTIONS} --query="$1")
-
-  if [[ $item ]] {
-    local version=$(echo $item | awk '{ if ($0 ~ /^[*]/) print $2; else print $1 }')
+  local version
+  while [[ -n "true" ]] {
+    version=$(goenv versions | fzf ${=FZF_GOENV_OPTIONS} --query="$1") || return
+    version=$(echo $version | awk '{ if ($0 ~ /^[*]/) print $2; else print $1 }')
     echo "$fg[blue]Select a command:$reset_color"
     select input ("goenv global $version" "goenv shell $version" "goenv local $version") {
       echo $input

@@ -33,7 +33,7 @@ zbci() {
 # [b]rew [u]pdate
 #######################################
 zbu() {
-  local formulae
+  local formulae='-'
   while [[ -n "true" ]] {
     formulae=$(brew leaves | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew list {}') || return
     echo "$fg[megnet]brew uninstall $fg[green]${(f)formulae}$reset_color"
@@ -45,7 +45,7 @@ zbu() {
 # [b]rew [r]emove
 #######################################
 zbr() {
-  local formulae
+  local formulae='-'
   while [[ -n "true" ]] {
     formulae=$(brew leaves | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}') || return
     echo "$fg[red]brew uninstall $fg[green]${(f)formulae}$reset_color"
@@ -57,9 +57,9 @@ zbr() {
 # [b]rew [c]ask [r]emove
 #######################################
 zbcr() {
-  local formulae
+  local formulae='-'
   while [[ -n $formulae ]] {
-    formulae=$(brew list --cask | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}')
+    formulae=$(brew list --cask | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}') || return
     echo "$fg[red]brew uninstall --cask $fg[green]${(f)formulae}$reset_color"
     brew uninstall --cask ${(f)formulae}
   }

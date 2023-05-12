@@ -3,11 +3,15 @@
 # Workspace
 hash -d ws="$HOME/Workspace"
 hash -d dot="$HOME/Workspace/dotfiles"
+hash -d af="$HOME/Workspace/address-form"
+hash -d blog="$HOME/Workspace/xusiyuan841028.github.io"
+hash -d cv="$HOME/Workspace/zurich/pandoc_resume"
 hash -d jg="$HOME/Workspace/js-geek"
 hash -d vg="$HOME/Workspace/vim-geek"
+hash -d study="$HOME/Workspace/programming-language-study"
+hash -d lang="$HOME/Workspace/languages"
 hash -d sl="$HOME/Workspace/sl"
 hash -d q="$HOME/Workspace/OpenQuant/nine-zen"
-# hash -d ad="$HOME/Workspace/VimProjects/Amazon/allbe-diamond"
 
 # node_modules
 hash -d npm="$NVM_BIN/../lib/node_modules"

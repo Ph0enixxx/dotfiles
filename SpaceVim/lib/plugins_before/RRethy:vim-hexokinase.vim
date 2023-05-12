@@ -5,5 +5,12 @@ else
 endif
 
 
-let g:Hexokinase_ftDisabled = ['coc-explorer', 'startify']
+let g:Hexokinase_ftDisabled = [
+      \ 'calendar', 'coc-explorer', 'coc_todolist',
+      \ 'floaterm', 'fzf',
+      \ 'help',
+      \ 'nerdtree', 
+      \ 'startify', 
+      \ 'vimfiler', 'vista',
+      \ ]
 

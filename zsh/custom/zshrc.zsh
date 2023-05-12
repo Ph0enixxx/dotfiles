@@ -4,9 +4,6 @@
 try_source $DOTFILES/zsh/custom/config/settings.zsh
 try_source ~/.zsh_settings
 
-# Vim Keybindings
-try_source $DOTFILES/zsh/custom/config/vim.zsh
-
 # Alias
 try_source $DOTFILES/zsh/custom/config/alias.zsh
 try_source ~/.zsh_alias
@@ -42,3 +39,6 @@ try_source $DOTFILES/zsh/custom/config/hooks.zsh
 
 # fpath
 try_source $DOTFILES/zsh/custom/config/fpath.zsh
+
+# bindkey
+try_source $DOTFILES/zsh/custom/config/bindkey.zsh

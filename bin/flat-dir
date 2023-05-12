@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+
+local debug_level=$DEBUG_LEVEL
+DEBUG_LEVEL=0
+
+local current_dir=$(pwd)
+
+debug "== Try flatting directories =="
+function flat() {
+  local file
+  for file in "$@"; do
+    if [[ -d $file ]]; then
+      if [[ "`ls $file`" != "" ]]; then
+        debug "flat directory: $fg_bold[blue]$file$reset_color"
+        flat $file/*
+      else
+        debug "directory is empty: $fg_bold[blue]$file$reset_color"
+      fi
+    elif [[ -f $file ]]; then
+      debug "link file $fg_bold[blue]$file$reset_color to $fg_bold[green]$current_dir$reset_color"
+      # mv $file $current_dir
+    fi
+  done
+}
+
+local f
+for f in "$@"; do
+  flat $f
+  # if [[ ${f:t:r:r} == ${f:t:r} || -z ${f:t:r:r}  ]]; then
+    # os_file=$(get_os_file $f)
+    # file_status=$(get_file_status $f)
+    # debug "   $file_status $f"
+    # file_status=$(get_file_status $os_file)
+    # debug "   $file_status $os_file"
+#
+    # [ -r $f ] && . $f
+    # [ -r $os_file ] && . $os_file
+  # else
+    # debug "   $fg_bold[red] $reset_color $f - $fg[red]os-specified script, IGNORE it!$reset_color"
+  # fi
+done
+
+export DEBUG_LEVEL=$debug_level

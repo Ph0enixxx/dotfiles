@@ -9,8 +9,9 @@ let s:logger = SpaceVim#logger#derive('coc.nvim:after')
 
 let g:coc_status_error_sign = ''
 let g:coc_status_warning_sign = ''
-" let g:coc_borderchars
-"
+let g:coc_borderchars = ['━', '┃', '━', '┃', '┏', '┓', '┛', '┗']
+
+
 " Use <C-j> for both expand and jump (make expand higher priority.)
 " imap <c-j> <Plug>(coc-snippets-expand-jump)
 " Use <leader>x for convert visual selected code to snippet

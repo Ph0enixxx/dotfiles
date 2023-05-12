@@ -50,18 +50,6 @@
                     # # 本着我不会的就是不需要的原则，不作相应的处理了
 # sed '/^$/d' | sort | uniq -c | sort -nr | head -n 20 }
 
-function user-complete() {
-  if [[ -n $BUFFER ]] ; then     # 如果该行有内容
-    zle expand-or-complete    # 执行 TAB 原来的功能
-  else                                  # 如果没有
-    BUFFER="cd "                 # 填入 cd（空格）
-    zle end-of-line                # 这时光标在行首，移动到行末
-    zle expand-or-complete    # 执行 TAB 原来的功能
-  fi
-}
-
-zle -N user-complete
-bindkey "\t" user-complete
 
 function bcd() {
   pwd | awk -v RS=/ '/\n/ {exit} {p=p $0 "/"; print p}' | tail -r | eval (__fzfcmd) +m --select-1 --exit-0 $FZF_BCD_OPTS | read -l result

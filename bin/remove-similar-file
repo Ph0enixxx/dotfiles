@@ -1,0 +1,77 @@
+#!/usr/bin/env zsh
+
+local debug_level=$DEBUG_LEVEL
+DEBUG_LEVEL=0
+
+zmodload zsh/zutil
+zparseopts -D -F -K -- \
+  {v,-view}=view \
+  {f,-force}=force || return 1
+
+
+local rm_cmd=rm
+if  command -v trash &> /dev/null; then
+  rm_cmd=trash
+elif command -v trash-put &> /dev/null; then
+  rm_cmd=trash-put
+fi
+
+local suffix
+local suffixes=(" ("{1..10}")")
+suffixes+=(" copy")
+
+function _handle_file() {
+  local file=$1
+  local similar_file
+  local name
+  local md5
+  local md5_similar
+  local size
+  local size_similar
+
+  if [[ -f $file ]]; then
+    name=${file:r}
+    for suffix ($suffixes) {
+      similar_file="$name$suffix.${file:e}"
+      if [[ -f $similar_file ]] {
+        md5=`md5 -q $file`
+        md5_similar=`md5 -q $similar_file`
+        if [[ $md5 == $md5_similar ]]; then
+          error remove-copy "$fg_bold[red] $reset_color $fg_bold[blue]$similar_file$reset_color - $fg[red]same as origin file, DELETE it!$reset_color"
+          [[ -z $view ]] && $rm_cmd $similar_file
+        else
+          size=`ls -l $file | awk '{print \$5}'`
+          size_similar=`ls -l $similar_file | awk '{print \$5}'`
+          warn remove-copy "$fg_bold[yellow] $reset_color $fg_bold[blue]$file$reset_color: size: $fg[green]$size$reset_color, md5: $fg[cyan]$md5$reset_color"
+          warn remove-copy "$fg_bold[yellow] $reset_color $fg_bold[blue]$similar_file$reset_color: $fg[green]$size_similar$reset_color, md5: $fg[cyan]$md5_similar$reset_color"
+          if [[ -n $force ]] {
+            if (( size > size_similar )) {
+              error remove-copy "remove smaller file: $similar_file, $fg[green]$size$reset_color > $fg[green]$size_similar$reset_color"
+              [[ -z $view ]] && $rm_cmd $similar_file
+            } else {
+              error remove-copy "remove smaller file: $file, $fg[green]$size$reset_color < $fg[green]$size_similar$reset_color"
+              [[ -z $view ]] && $rm_cmd $file
+              [[ -z $view ]] && mv $similar_file $file
+            }
+          }
+        fi
+      }
+    }
+  fi
+}
+
+info "== Try remove similar files: =="
+info "Delete command: $fg_bold[red]$rm_cmd$reset_color"
+[[ -n $force ]] && echo "$fg_bold[red]Force mode: true$reset_color"
+[[ -n $view ]] && echo "$fg_bold[green]View mode: true$reset_color"
+
+local file
+for file in `ls -1S`*; do
+  echo $file
+  # _handle_file $file
+done
+
+return
+
+unfunction _handle_file
+export DEBUG_LEVEL=$debug_level

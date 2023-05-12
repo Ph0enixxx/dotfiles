@@ -330,6 +330,11 @@
   merged = false
 
 # ------------ Edit ----------------------------
+# ------------ Edit - Format -------------------
+[[custom_plugins]]
+  repo = 'editorconfig/editorconfig-vim'
+  merged = false
+
 [[custom_plugins]]
   repo = 'itchyny/vim-qfedit'
   merged = false
@@ -436,6 +441,10 @@
 
 [[custom_plugins]]
   repo = 'will133/vim-dirdiff'
+  merged = false
+
+[[custom_plugins]]
+  repo = 'sindrets/diffview.nvim'
   merged = false
 
 # [[custom_plugins]]

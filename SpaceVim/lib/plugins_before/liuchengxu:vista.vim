@@ -89,6 +89,7 @@ let g:vista_sidebar_width = 40
 let g:vista_echo_cursor_strategy = 'floating_win'
 let g:vista_floating_delay = 200
 let g:vista_keep_fzf_colors = 1
-let g:vista_floating_border = "double"
+" let g:vista_floating_border = "double"
+let g:vista_floating_border = ['┏', '━', '┓', '┃', '┛', '━', '┗', '┃']
 
 autocmd FileType vista,vista_kind nnoremap <buffer><silent> \/ :<c-u>call vista#finder#fzf#Run()<CR>

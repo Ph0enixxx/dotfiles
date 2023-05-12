@@ -1,3 +1,16 @@
+function user-complete() {
+  if [[ -n $BUFFER ]] ; then     # 如果该行有内容
+    zle expand-or-complete    # 执行 TAB 原来的功能
+  else                                  # 如果没有
+    BUFFER="cd "                 # 填入 cd（空格）
+    zle end-of-line                # 这时光标在行首，移动到行末
+    zle expand-or-complete    # 执行 TAB 原来的功能
+  fi
+}
+
+zle -N user-complete
+bindkey "\t" user-complete
+
 bindkey -v
 
 cursor_mode() {

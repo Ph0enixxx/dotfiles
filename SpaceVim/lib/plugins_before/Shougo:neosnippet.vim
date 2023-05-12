@@ -6,5 +6,5 @@ let g:neosnippet#snippets_directory = ['~/.vim/bundle/vim-snippets/snippets']
 
 " For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+  " set conceallevel=2 concealcursor=niv
 endif

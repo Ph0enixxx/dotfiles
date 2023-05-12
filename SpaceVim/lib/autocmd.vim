@@ -1,6 +1,6 @@
 function! s:LoadFile()
   if getfsize(expand('<afile>')) > 2*1024*1024
-    syntax off
+    " syntax off
     setlocal eventignore=all
   endif
 endfunction

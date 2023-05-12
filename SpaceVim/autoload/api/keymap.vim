@@ -80,6 +80,16 @@ function! s:visual_map(key, commands, commandFragments, options)
   return 'v'.s:map(a:key, a:commands, a:commandFragments, a:options)
 endfunction
 "}}}
+"
+"FUNCTION: api#keymap#map_terminal_commands(key, commands, options){{{1
+function! g:api#keymap#map_terminal_commands(...)
+  call s:map_commands('s:terminal_map', a:000)
+endfunction
+
+function! s:terminal_map(key, commands, commandFragments, options)
+  return 't'.s:map(a:key, a:commands, a:commandFragments, a:options)
+endfunction
+"}}}
 
 "FUNCTION: api#keymap#map_commands(key, commands, options){{{1
 function! g:api#keymap#map_commands(...)

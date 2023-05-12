@@ -68,7 +68,7 @@ call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'p'], 'CocList projects', 'list 
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'r'], 'CocListResume', 'reopen list', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 's'], 'CocList snippets', 'search snippets for current filetype', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'S'], 'CocList sources', 'search sources for current filetype', 1)
-call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 't'], 'CocList todolist', 'list ToDo tasks', 1)
+call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 't'], 'CocList translation', 'list translation hisotry', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'T'], 'CocList todolist', 'list ToDo tasks', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'v'], 'CocList services', 'list lsp service', 1)
 call SpaceVim#custom#SPC('nnoremap', ['o', 'l', 'w'], 'CocList windows', 'list windows of vim', 1)

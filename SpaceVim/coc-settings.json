@@ -238,13 +238,14 @@
   "workspace.workspaceFolderFallbackCwd": true,
 
   // List
-  "list.indicator": ">",
   "list.alignColumns": true,
-  "list.menuAction": false,
+  "list.floatPreview": true,
   "list.height": 20,
+  "list.indicator": ">",
+  "list.maxPreviewHeight": 12,
+  "list.menuAction": false,
   "list.signOffset": 900,
   "list.selectedSignText": "",
-  "list.maxPreviewHeight": 12,
   "list.previewHighlightGroup": "Search",
   "list.previewToplineStyle": "offset",
   "list.previewToplineOffset": 3,
@@ -255,7 +256,6 @@
   "list.insertMappings": {},
   "list.interactiveDebounceTime": 100,
   "list.previewSplitRight": false,
-  "list.source.gstatus.defaultAction": "add",
 
   // Preferences
   "coc.preferences.enableLinkedEditing": false,
@@ -321,6 +321,11 @@
   // extensions: coc-todolist
   "todolist.monitor": true,
 
+  // extension: coc-lists
+  "list.source.files.defaultAction": "vsplit",
+  "list.source.grep.defaultAction": "vsplit",
+  // "list.source.grep.defaultArgs": [""],
+
   // extensions: coc-explorer
   "explorer.sources": [
     {
@@ -372,7 +377,7 @@
   "explorer.file.reveal.auto": false,
   "explorer.file.reveal.whenOpen": true,
   "explorer.floating.border.enable": true,
-  "explorer.floating.border.chars": ["─","│","─","│","┌","┐","┘","└"],
+  "explorer.floating.border.chars": ["━","┃","━","┃","┏","┓","┛","┗"],
   "explorer.openAction.strategy": "vsplit.intelligent",
   // "explorer.openAction.strategy": "tab",
   "explorer.keyMappings.global": {
@@ -1368,7 +1373,7 @@
   "floatinput.status.enabled": false,
 
   // extensions: coc-json
-  "json.trace.server": "verbose",
+  // "json.trace.server": "verbose",
   /* "json.schemas": [ */
     /* { */
       /* "fileMatch":[".prettierrc"], */

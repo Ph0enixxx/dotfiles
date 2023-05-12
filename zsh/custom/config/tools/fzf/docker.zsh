@@ -44,10 +44,10 @@ function zds() {
   }
   local image='-'
   while [[ -n $image ]] {
-    image=$(docker search --limit=100 $input | fzf +m --no-preview --height=100% --nth=1,2 --header-lines=1 \
+    image=$(docker search --no-trunc --limit=100 $input | fzf +m --no-preview --height=100% --nth=1,2 --header-lines=1 \
       --header $'Enter (pull image) ╱ CTRL-O (open in browser)\n\n' \
       --color='header:italic:underline,label:blue' \
-      --bind "ctrl-o:execute-silent:open https://hub.docker.com/_/{1}" \
+      --bind "ctrl-o:execute-silent:if [[ {1} =~ '/' ]]; then open https://hub.docker.com/r/{1}; else open https://hub.docker.com/_/{1}; fi;" \
       --border-label '   Docker Image Search ') || return
     image=$(awk '{print $1}'<<<$image)
     echo "$fg_bold[green]docker pull $fg_bold[blue]$image$reset_color"

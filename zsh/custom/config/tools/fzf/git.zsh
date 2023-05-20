@@ -49,8 +49,8 @@ zgc() {
 zgls() {
   is_in_git_repo || return
   git graph |
-    fzf --no-sort --reverse --tiebreak=index --no-multi \
-      --ansi --preview="$_viewGitLogLine" \
+    fzf --no-sort --reverse --tiebreak=index +m ${=FZF_GIT_OPTIONS} \
+      --preview="$_viewGitLogLine" \
       --header "[Enter] to view, [Alt-Y] to copy hash" \
       --bind "enter:execute:$_viewGitLogLine   | less -R" \
       --bind "alt-y:execute:$_gitLogLineToHash | pbcopy"
@@ -61,7 +61,7 @@ zgls() {
 zgst() {
   is_in_git_repo || return
   local files
-  files=$(git status -s | FZF_DEFAULT_OPTS="$FZF_GIT_OPTIONS -n 2 --preview='git diff -- {2}'" fzf -m "$@") || return
+  files=$(git status -s | fzf -m ${=FZF_GIT_OPTIONS} -n 2 --preview='git diff -- {2} | delta --features line-numbers decorations' "$@") || return
   files=$(echo $files | awk '{print $2}')
   git add ${(f)files}
 }

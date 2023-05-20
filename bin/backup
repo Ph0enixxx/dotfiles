@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+borgmatic --verbosity 1 --stats --progress --config ~/.config/borgmatic/config.yml

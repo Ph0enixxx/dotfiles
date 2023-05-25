@@ -59,7 +59,7 @@ zbr() {
 zbcr() {
   local formulae='-'
   while [[ -n $formulae ]] {
-    formulae=$(brew list --cask | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}') || return
+    formulae=$(brew list --cask | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}; echo "\nInstalled Files:\n"; brew list {}') || return
     echo "$fg[red]brew uninstall --cask $fg[green]${(f)formulae}$reset_color"
     brew uninstall --cask ${(f)formulae}
   }

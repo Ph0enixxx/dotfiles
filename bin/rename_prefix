@@ -1,0 +1,39 @@
+#!/usr/bin/env zsh
+
+local debug_level=$DEBUG_LEVEL
+DEBUG_LEVEL=0
+
+zmodload zsh/zutil
+zparseopts -D -F -K -- \
+  {p,-prefix}:=prefixOpts \
+  {d,-dry-run}=view || return 1
+
+local prefix=$prefixOpts[-1]
+
+function _handle_file() {
+  local file=$1
+  local name
+  local new_file
+
+  if [[ -f $file ]]; then
+    if [[ $file =~ ^$prefix ]]; then
+      warn rename-prefix "skip \"$fg_bold[yellow]$file$reset_color\""
+      return
+    fi
+    name=${file:r}
+    new_file="$prefix$name.${file:e}"
+    warn rename-prefix "rename \"$fg_bold[yellow]$file$reset_color\" to \"$fg_bold[green]$new_file$reset_color\""
+    [[ -z $view ]] && mv $file $new_file
+  fi
+}
+
+info "== Try rename files: =="
+info "add prefix: $fg_bold[blue]$prefix$reset_color"
+
+local file
+for file in $@; do
+  _handle_file $file
+done
+
+unfunction _handle_file
+export DEBUG_LEVEL=$debug_level

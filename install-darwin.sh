@@ -19,8 +19,7 @@ fi
 
 # Tap
 brew tap mongodb/brew
-brew tap cjbassi/ytop
-brew tap shopify/shopify
+# brew tap shopify/shopify
 
 # Upgrade
 brew upgrade
@@ -31,7 +30,7 @@ brew install --cask \
 
 # Install formulae
 brew install \
-  ack archey \ 
+  archey \ 
   bat bat-extras \ 
   certbot cheat clang-format cmake cmake-docs composer ctags \ 
   deno diff-so-fancy docker \ 
@@ -47,7 +46,7 @@ brew install \
   openssl@3 \ 
   pandoc podman-compose prettier pyenv-virtualenv \
   reattach-to-user-namespace redis ripgrep \
-  shadowenv shfmt shopify/shopify/shopify-cli smartmontools \
+  shadowenv shfmt smartmontools \
   tcpdump telnet texlive tmux tree \
   vimpager viu \
   w3m watchman wget \

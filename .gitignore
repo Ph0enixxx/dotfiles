@@ -2,8 +2,6 @@ zsh/custom/plugins/
 zsh/custom/completions/*
 !zsh/custom/completions/.gitkeep
 
-ssh/
-
 .zcache
 
 # Created by https://www.gitignore.io/api/sublimetext,jetbrains,eclipse,visualstudiocode,vim,macos,windows,linux,node,git

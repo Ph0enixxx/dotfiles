@@ -447,9 +447,9 @@
   repo = 'sindrets/diffview.nvim'
   merged = false
 
-# [[custom_plugins]]
-  # repo = 'rhysd/conflict-marker.vim'
-  # merged = false
+[[custom_plugins]]
+  repo = 'rhysd/conflict-marker.vim'
+  merged = false
 
 [[custom_plugins]]
   repo = 'lewis6991/gitsigns.nvim'

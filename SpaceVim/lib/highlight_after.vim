@@ -9,12 +9,17 @@ hi PmenuThumb                                               ctermbg=0           
 
 hi ImportCostVirtualText          ctermbg=0                                         guifg=#6B1515
 
-hi default CursorWord             cterm=reverse ctermfg=136             gui=reverse guifg=#a1cdfa
+hi default CursorWord             cterm=reverse ctermfg=136             gui=reverse guifg=#A1CDFA
 
-hi CocFloatingBorder                                                                guifg=#00F060 guibg=#0E2A35
-hi CocFloatingSuggest                                                               guifg=#00F060 guibg=#0E2A35
+hi CocFloatingBorder                                                                guifg=#62C554 guibg=#0E2A35
+hi CocFloatingSuggest                                                               guifg=#62C554 guibg=#0E2A35
 hi CocFloatingDialog                                                                guifg=#FF6000 guibg=#0E2A35
 hi CocExplorerNormalFloatBorder                                                     guifg=#40C0D0 guibg=#0E2A35
-hi WilderFloatBorder                                                                guifg=#00FFFF guibg=#0E2A35
+hi CocHelperNormalFloatBorder                                                       guifg=#A6EC9A guibg=#0E2A35
+hi CocHelperNormalFloat                                                                           guibg=#0E2A35
+
+hi WilderFloatBorder                                                                guifg=#000FFF guibg=#0E2A35
 
 hi FloatermBorder                                                                   guifg=#FF0060 guibg=#0E2A35
+
+

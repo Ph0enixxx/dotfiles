@@ -1343,7 +1343,7 @@
   "explorer.git.icon.status.ignored": "",
 
   // extensions: coc-git
-  "git.addGBlameToVirtualText": true,
+  "git.addGBlameToVirtualText": false,
   "git.enableGutters": false,
   "git.signPriority": 10,
 

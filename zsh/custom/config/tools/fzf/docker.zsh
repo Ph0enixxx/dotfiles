@@ -7,6 +7,7 @@ AWK_DOCKER_FORMAT="awk '{ if (NR > 1) print \$1\":\"\$2 }'"
 
 # [D]ocker [I]mage
 function zdi() {
+  sudo -b docker version &> /dev/null
   local image='-'
   while [[ -n $image ]] {
     image=$(sudo docker image ls | fzf +m --height=100%  --nth=1,2,3 --query="$1" --header-lines=1 --preview 'sudo docker image inspect {3} | highlight -O ansi -s solarized-dark -S json' \
@@ -30,6 +31,7 @@ function __remove_docker_image() {
 
 # [D]ocker [C]ontainer
 function zdc() {
+  sudo -b docker version &> /dev/null
   local container=$(sudo docker container ls |fzf +m --height=100% --header-lines=1 \
     --query="$1" --preview-window right:50% --preview 'sudo docker container inspect {1} --size | highlight -O ansi -s solarized-dark -S json')
   echo $container
@@ -37,6 +39,7 @@ function zdc() {
 
 # [D]ocker [S]earch
 function zds() {
+  sudo -b docker version &> /dev/null
   local input=$1
   if [[ ! $input ]] {
     echo "$fg_bold[green]Please input the search term:$reset_color"

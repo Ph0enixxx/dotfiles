@@ -9,7 +9,6 @@ zstyle ':fzf-tab:complete:brew-(install|uninstall|search|info):*-argument-rest' 
 #######################################
 zbi() {
   local formulae="-"
-  # while [[ -n $formulae ]] {
   while [[ -n "true" ]] {
     formulae=$(brew formulae | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info {}') || return
     echo "$fg[blue]brew install $fg_bold[green]${(f)formulae}$reset_color"
@@ -22,7 +21,7 @@ zbi() {
 #######################################
 zbci() {
   local formulae="-"
-  while [[ -n $formulae ]] {
+  while [[ -n "true" ]] {
     formulae=$(brew casks | fzf ${=FZF_FULLSCREEN_OPTIONS} -m --query="$1" --preview 'brew info --cask {}') || return
     echo "$fg[blue]brew install --cask $fg_bold[green]${(f)formulae}$reset_color"
     brew install --cask ${(f)formulae}

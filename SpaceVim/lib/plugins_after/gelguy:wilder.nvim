@@ -21,7 +21,7 @@ call wilder#set_option('pipeline', [
       \     wilder#python_file_finder_pipeline({
       \       'file_command': {_, arg -> stridx(arg, '.') != -1 ? ['fd', '-tf', '-L', '-H', '-E.DS_Store'] : ['fd', '-tf', '-L', '-H', '-E.git', '-Enode_modules', '-E.DS_Store']},
       \       'dir_command': ['fd', '-td', '-L'],
-      \       'filters': ['cpsm_filter'],
+      \       'filters': ['fuzzy_filter'],
       \     }),
       \     wilder#substitute_pipeline({
       \       'pipeline': wilder#python_search_pipeline({

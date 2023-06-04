@@ -4,6 +4,9 @@ fi
 
 FZF_GOENV_OPTIONS="$FZF_FULLSCREEN_OPTIONS --no-preview --tac"
 
+#######################################
+# [go]env [i]nstall
+#######################################
 function zgoi() {
   local versions
   while [[ -n "true" ]] {
@@ -15,6 +18,9 @@ function zgoi() {
   }
 }
 
+#######################################
+# [go]env [r]emove (uninstall)
+#######################################
 function zgor() {
   local version
   while [[ -n "true" ]] {
@@ -31,6 +37,9 @@ function zgor() {
   }
 }
 
+#######################################
+# [go]env versions 
+#######################################
 function zgo() {
   local version
   while [[ -n "true" ]] {

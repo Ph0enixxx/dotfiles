@@ -18,7 +18,7 @@ export FZF_DEFAULT_COMMAND="$FD --type f --hidden --no-ignore-vcs --follow -E .g
 
 export FZF_FULLSCREEN_OPTIONS="--height=100%"
 
-export FZF_OPTIONS="--layout=reverse --info=inline --separator='' --border=bold --ansi
+export FZF_OPTIONS="--layout=reverse --info=inline --separator='' --border=double --ansi
   --height=50%
   --cycle --scroll-off=2
   --color=fg:-1,bg:-1,hl:#f4468f
@@ -28,7 +28,7 @@ export FZF_OPTIONS="--layout=reverse --info=inline --separator='' --border=bold 
 
 export FZF_OPTS_HISTORY=""
 export FZF_OPTS_PREVIEW="--preview '([[ \$(file --mime {}) =~ directory ]] && exa --tree --all --color=always --group-directories-first -I \"node_modules|.git|.DS_Store\" --icons {}) ||
-    ([[ \$(file --mime {}) =~ image ]] && echo {} is an image file) ||
+    ([[ \$(file --mime {}) =~ image ]] && chafa -c full --size=80 {} && exiftool {}) ||
     ([[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file) ||
     (highlight -O ansi -s solarized-dark {} 2>/dev/null || cat {}) 2>/dev/null'
 "
@@ -40,6 +40,7 @@ export FZF_DEFAULT_OPTS="$FZF_OPTIONS $FZF_BINDINGS"
 # CTRL-T: list all files & directories
 export FZF_CTRL_T_COMMAND="$FD --hidden --no-ignore-vcs --follow -E .git -E node_modules -E .DS_Store -E tags"
 export FZF_CTRL_T_OPTS="$FZF_OPTS_PREVIEW --select-1 --exit-0 --prompt 'All > '
+  --height=100%
   --header 'ALT-D: Directories / ALT-F: Files\\n'
   --bind 'alt-d:change-prompt(Directories > )+reload(eval $FZF_ALT_C_COMMAND)'
   --bind 'alt-f:change-prompt(Files > )+reload(eval $FZF_DEFAULT_COMMAND)'

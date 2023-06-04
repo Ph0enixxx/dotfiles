@@ -10,7 +10,7 @@ fi
 # minimium installation
 apt-get install \
   zsh git build-essential \
-  curl \
+  curl chafa \
   exa \
   fd-find fzf \
   highlight htop \
@@ -27,18 +27,13 @@ apt-get install \
 # Install tools
 apt-get install \
   bcache-tools  \
-  curl \
-  exa \
-  f2fs-tools fd-find fio fzf \
-  hardinfo hdparm highlight htop \
+  f2fs-tools fio \
+  hardinfo hdparm \
   iotop \
   jnettop \
-  lsb-release \
-  man-db manpages-dev manpages-zh \
   nvme-cli \
   s-tui stress sysstat \
-  toilet tldr \
-  zip
+  toilet tldr
 
 # Install dev tools
 sudo apt-get install \

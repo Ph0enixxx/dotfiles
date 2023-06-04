@@ -32,7 +32,7 @@ brew install --cask \
 brew install \
   archey \ 
   bat bat-extras \ 
-  certbot cheat clang-format cmake cmake-docs composer ctags \ 
+  certbot cheat chafa clang-format cmake cmake-docs composer ctags \ 
   deno diff-so-fancy docker \ 
   entr exa \
   fd fpp \ 

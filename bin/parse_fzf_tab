@@ -19,7 +19,7 @@ if [[ -e $realpath ]] {
       exa --tree --all --color=always --group-directories-first -I "node_modules|.git|.DS_Store" --icons $realpath
     } elif [[ $type =~ image ]] {
       if [[ $System == 'Darwin' ]] {
-        chafa --size=80x25 $realpath
+        chafa -c full --size=80X50 $realpath
         exiftool $realpath
       } else {
         echo $realpath is an image file

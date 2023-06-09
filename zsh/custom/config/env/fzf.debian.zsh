@@ -16,3 +16,10 @@ export FZF_OPTIONS="--layout=reverse --info=inline --ansi --border
   --color=info:150,prompt:110,spinner:150,pointer:167,marker:174,gutter:#002B36
 "
 export FZF_DEFAULT_OPTS="$FZF_OPTIONS $FZF_BINDINGS"
+
+export FZF_CTRL_T_OPTS="$FZF_OPTS_PREVIEW --select-1 --exit-0 --prompt 'All > '
+  --height=100%
+  --header 'ALT-D: Directories / ALT-F: Files\\n'
+  --bind 'alt-d:change-prompt(Directories > )+reload(eval $FZF_ALT_C_COMMAND)'
+  --bind 'alt-f:change-prompt(Files > )+reload(eval $FZF_DEFAULT_COMMAND)'
+"

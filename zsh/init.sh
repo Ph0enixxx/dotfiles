@@ -30,6 +30,6 @@ echo "source \$DOTFILES/zsh/zshenv" >> ~/.zshenv
 echo "source \$DOTFILES/zsh/zprofile" >> ~/.zprofile
 echo "source \$DOTFILES/zsh/zlogin" >> ~/.zlogin
 echo "source \$DOTFILES/zsh/zlogout" >> ~/.zlogout
+echo "source \$DOTFILES/zsh/zshrc" >> ~/.zshrc
 
-mklink $DIR/zsh/zshrc ~/.zshrc
 mklink $DIR/zsh/autoload ~/.oh-my-zsh/autoload

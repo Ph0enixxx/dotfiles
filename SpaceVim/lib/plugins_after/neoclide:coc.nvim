@@ -73,7 +73,6 @@ inoremap <silent><expr> <DOWN> coc#pum#visible() ? coc#pum#next(1) : '<DOWN>'
 inoremap <silent><expr> zz coc#pum#visible() ? coc#pum#stop() : '<ESC>'
 inoremap <silent><expr> <S-SPACE> coc#refresh()
 
-
 " Make <CR> auto-select the first completion item and notify coc.nvim to
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <Plug>CustomCocCR coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"

@@ -1,0 +1,59 @@
+#!/usr/bin/env zsh
+
+local realpath=$1
+#
+# if [[ $FZF_PARSING -ne 1 ]] {
+  # export FZF_PARSING=1
+# } else {
+  # export FZF_PARSE_PENDING_FILE=$realpath
+  # while [[ -n $FZF_PARSING ]] {
+    # sleep 3
+  # }
+  # if [[ $FZF_PARSE_PENDING_FILE != $realpath ]] {
+    # return
+  # }
+  # export FZF_PARSE_PENDING_FILE=
+# }
+
+local catcmd=cat
+local type
+local display=0
+
+if { command -v bat &> /dev/null } {
+  catcmd="bat --style=full --color=always --pager=never"
+}
+
+if [[ -e $realpath ]] {
+  # item is a real path
+  type=$(file -b --mime $realpath)
+  if [[ $type =~ directory ]] {
+    exa --tree --all --color=always --group-directories-first -I "node_modules|.git|.DS_Store" --icons $realpath
+  } elif [[ $type =~ image ]] {
+    if { command -v chafa &> /dev/null } {
+      chafa -c full --size=80 $realpath
+      display=1
+    }
+    if { command -v exiftool &> /dev/null } {
+      exiftool $realpath
+      display=1
+    }
+    if [[ $display -ne 1 ]] {
+      echo $realpath is an image file
+    }
+  } elif [[ $type =~ binary ]] {
+    echo $realpath is a bianry file
+  } else {
+    eval "$catcmd \"$realpath\""
+  }
+} else {
+  echo $realpath is not a real path
+}
+
+# export FZF_PARSING=0
+
+export DEBUG_LEVEL=0
+echo
+echo "=========================================================================================="
+debug "parse sript: $ZSH_ARGZERO"
+debug "realpath: [$realpath]"
+echo "=========================================================================================="

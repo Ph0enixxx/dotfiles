@@ -4,6 +4,7 @@ source ~/.utils.sh
 source $DOTFILES/zsh/custom/config/functions.zsh
 try_source ~/.functions.zsh
 
+# debug() is defined in $DOTFILES/zsh/custom/config/functions.zsh
 debug 'zshenv' '~/.zshenv'
 
 try_source $DOTFILES/zsh/custom/config/export.zsh

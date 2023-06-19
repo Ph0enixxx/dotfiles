@@ -21,7 +21,7 @@ if [[ -n "$check" ]] {
   local file
   local message
   local filtered 
-  for file in `ls -A . | tr " " "\?\?"`; do
+  for file in `sudo ls -A . | tr " " "\?\?"`; do
     file=`tr "\?\?" " " <<<$file`
     message=`du -hd ${=depth[-1]} "$file"`
     filtered=`awk '/^[0-9. ]+G/' <<<$message`

@@ -374,7 +374,7 @@
     "patternMatches": [
     ]
   },
-  "explorer.file.reveal.auto": false,
+  "explorer.file.reveal.auto": true,
   "explorer.file.reveal.whenOpen": true,
   "explorer.floating.border.enable": true,
   "explorer.floating.border.chars": ["━","┃","━","┃","┏","┓","┛","┗"],

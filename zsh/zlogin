@@ -1,1 +1,1 @@
-debug "~/.zlogin"
+debug "source" "\$DOTFIELS/zsh/zlogin"

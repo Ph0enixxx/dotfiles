@@ -1477,6 +1477,7 @@
     "futu",
     "gstatus",
     "nestjs",
+    "nuxt",
     "nvim",
     "onlogin",
     "pnpm",
@@ -1498,8 +1499,10 @@
     "newlineBeforeCloseParen": true,
     "lineWidth": 120
   },
-  // coc-tabnine
-  // "tabnine.priority": 90,
+
+  // coc-flutter
+  "flutter.fvm.enabled": true,
+  "dart.lineLength": 160,
 
   // coc-copilot
   "copilot.priority": 90,
@@ -1517,5 +1520,5 @@
   "translator.window.maxHeight": 100,
   "translator.engines": [
     "haici"
-  ],
+  ]
 }

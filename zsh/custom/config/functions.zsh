@@ -391,5 +391,3 @@ function enable_node_pkg_manager() {
 }
 
 try_source $DOTFILES/zsh/custom/config/functions/*.zsh
-
-# vim:ft=zsh:

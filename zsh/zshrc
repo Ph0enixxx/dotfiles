@@ -1,4 +1,4 @@
-debug 'zshrc' 'source ~/.zshrc'
+debug 'source' '$DOTFILES/zsh/zshrc'
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -86,7 +86,6 @@ plugins+=(docker docker-compose docker-machine)
 # python
 # plugins+=(pyenv)
 
-
 source $ZSH/oh-my-zsh.sh
 
 # tabtab source for packages
@@ -106,4 +105,4 @@ if [[ $System == 'Darwin' ]] {
 # test -e /Users/xusiyuan/.iterm2_shell_integration.zsh && source /Users/xusiyuan/.iterm2_shell_integration.zsh || true
 
 # re-arrange $PATH
-try_source $DOTFILES/zsh/custom/config/export-path.zsh
+# try_source $DOTFILES/zsh/custom/config/export-path.zsh

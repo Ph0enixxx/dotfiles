@@ -1,5 +1,8 @@
 # User configuration
 
+try_source $DOTFILES/zsh/custom/config/export.zsh
+try_source ~/.zsh_export
+
 # Setting
 try_source $DOTFILES/zsh/custom/config/settings.zsh
 try_source ~/.zsh_settings
@@ -42,3 +45,6 @@ try_source $DOTFILES/zsh/custom/config/fpath.zsh
 
 # bindkey
 try_source $DOTFILES/zsh/custom/config/bindkey.zsh
+
+# export $PATH
+try_source $DOTFILES/zsh/custom/config/export-path.zsh

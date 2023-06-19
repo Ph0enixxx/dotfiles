@@ -1,7 +1,11 @@
+typeset -gU path
+
 # goenv
 path=($GOENV_ROOT/bin "$path[@]")
-path=($GOROOT/bin "$path[@]")
+# path=($GOROOT/bin "$path[@]")
 path=("$path[@]" $GOPATH/bin)
+
+eval "$(goenv init -)"
 
 # cargo
 if [[ -d $HOME/.cargo ]] {
@@ -30,4 +34,9 @@ path=($DOTFILES/bin "$path[@]")
 path=($HOME/bin "$path[@]")
 
 # local folder
+if [[ -d $HOME/fvm ]] {
+  path=($HOME/fvm/default/bin "$path[@]")
+  path=(./.fvm/flutter_sdk/bin "$path[@]")
+}
+
 path=(./node_modules/.bin "$path[@]")

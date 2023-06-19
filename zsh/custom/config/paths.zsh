@@ -12,6 +12,8 @@ hash -d study="$HOME/Workspace/programming-language-study"
 hash -d lang="$HOME/Workspace/languages"
 hash -d sl="$HOME/Workspace/sl"
 hash -d q="$HOME/Workspace/OpenQuant/nine-zen"
+hash -d bg="$HOME/Workspace/bitget"
+hash -d bk="$HOME/Workspace/bitkeep"
 
 # node_modules
 hash -d npm="$NVM_BIN/../lib/node_modules"

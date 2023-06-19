@@ -1,5 +1,5 @@
 if [[ $System == 'Darwin' ]]; then
-  local BREW_PATH=$(brew --prefix)
+  local BREW_PATH=$(/opt/homebrew/bin/brew --prefix)
   export FD="$BREW_PATH/bin/fd"
 elif [[ $Distribution == 'Debian' ]]; then
   export FD="/usr/bin/fdfind"

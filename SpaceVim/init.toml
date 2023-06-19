@@ -556,6 +556,10 @@
   repo = 'iamcco/markdown-preview.nvim'
   merged = false
 
+[[custom_plugins]]
+  repo = 'dart-lang/dart-vim-plugin'
+  merged = false
+
 # [[custom_plugins]]
   # repo = 'tjdevries/coc-zsh'
   # merged = false

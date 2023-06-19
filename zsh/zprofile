@@ -1,1 +1,3 @@
-debug "zprofile" "~/.zprofile"
+debug "source" "\$DOTFILES/zsh/zprofile"
+
+# vim:filetype=zsh

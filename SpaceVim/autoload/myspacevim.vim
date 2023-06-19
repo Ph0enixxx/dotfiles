@@ -42,7 +42,7 @@ function! myspacevim#before()
           \ 'coc-conventional', 'coc-clangd', 'coc-css', 'coc-calc', 'coc-cmake', 'coc-cssmodules',
           \ 'coc-docker', 'coc-spell-checker', 'coc-cspell-dicts',
           \ 'coc-explorer', 'coc-eslint',
-          \ 'coc-floatinput', 'coc-flow', 'coc-flutter', 'coc-fzf-preview',
+          \ 'coc-floatinput', 'coc-flow', 'coc-flutter-tools', 'coc-fzf-preview',
           \ 'coc-git', 'coc-go', 'coc-gocode',
           \ 'coc-highlight', 'coc-html',
           \ 'coc-json', 'coc-jest', 'coc-java', 'coc-just-complete', 

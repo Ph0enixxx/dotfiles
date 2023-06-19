@@ -1,1 +1,1 @@
-debug "~/.zlogout"
+debug "source" "\$DOTFIELS/zsh/zlogout"

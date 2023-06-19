@@ -23,7 +23,7 @@ if [[ -n "$check" ]] {
   local filtered 
   for file in `sudo ls -A . | tr " " "\?\?"`; do
     file=`tr "\?\?" " " <<<$file`
-    message=`du -hd ${=depth[-1]} "$file"`
+    message=`sudo du -hd ${=depth[-1]} "$file"`
     filtered=`awk '/^[0-9. ]+G/' <<<$message`
     if [[ $filtered != "" ]]; then
       echo "$fg_bold[red]$filtered$reset_color"

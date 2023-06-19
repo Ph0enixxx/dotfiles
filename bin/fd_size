@@ -35,7 +35,7 @@ if [[ -n "$check" ]] {
     fi
   done
   echo
-  echo "$fg_bold[blue]Total: $(du -hs .)$reset_color"
+  echo "$fg_bold[blue]Total: $(sudo du -hs .)$reset_color"
 } else {
   sudo du -hcd ${=depth[-1]} (.|*)*
 }

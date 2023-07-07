@@ -204,3 +204,6 @@ let g:coc_explorer_global_presets = {
 \     'sources': [{'name': 'buffer', 'expand': v:true}]
 \   },
 \ }
+
+" coc-prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')

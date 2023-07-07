@@ -265,6 +265,7 @@
   "coc.preferences.extensionUpdateCheck": "weekly",
   // "coc.preferences.snippetHighlight": false,
   // "coc.preferences.snippetStatusText": "",
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "json", "graphql", "handlebars", "css", "markdown"],
 
   /* "coc.preferences.hoverTarget": "float", */
   "coc.preferences.jumpCommand": "tab drop",
@@ -1418,7 +1419,7 @@
     "vue",
     "markdown"
   ],
-  "eslint.debug": false,
+  "eslint.debug": true,
   "eslint.codeAction.disableRuleComment": {
     "enable": true,
     "location": "separateLine"
@@ -1430,6 +1431,12 @@
   // "eslint.codeActionsOnSave.rules":
   "eslint.format.enable": true,
   "eslint.lintTask.options": ["."],
+  // "eslint.experimental.useFlatConfig": true,
+
+  // extensions: coc-prettier
+  "prettier.useEditorConfig": true,
+  "prettier.statusItemText": "Prettier",
+  "prettier.ignorePath": "${cwd}/.prettierignore",
 
   // extensions: coc-project
   "project.enable": true,
@@ -1520,5 +1527,6 @@
   "translator.window.maxHeight": 100,
   "translator.engines": [
     "haici"
-  ]
+  ],
+  "snippets.ultisnips.pythonPrompt": false
 }

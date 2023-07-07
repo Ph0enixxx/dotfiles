@@ -63,7 +63,7 @@ set termguicolors
 set textwidth=120                                          " tw   maxium width of text
 set nowrap                                                 " wrap wrap text
 set nrformats=hex
-set synmaxcol=300
+set synmaxcol=400
 
 call api#ui#auto_set_font_size()
 

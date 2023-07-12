@@ -1437,6 +1437,39 @@
   "prettier.useEditorConfig": true,
   "prettier.statusItemText": "Prettier",
   "prettier.ignorePath": "${cwd}/.prettierignore",
+  "prettier.printWidth": 160,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.quoteProps": "as-needed",
+  "prettier.jsxSingleQuote": false,
+  "prettier.trailingComma": "all",
+  "prettier.bracketSpacing": true,
+  "prettier.bracketSameLine": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.parser": "typescript",
+  "prettier.requirePragma": false,
+  "prettier.insertPragma": false,
+  "prettier.proseWrap": "always",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.vueIndentScriptAndStyle": false,
+  "prettier.endOfLine": "lf",
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.overrides": [
+    {
+      "files": ["*.css", "*.less", "*.scss"],
+      "options": {
+        "parser": "less"
+      }
+    },
+    {
+      "files": ["*.json"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
 
   // extensions: coc-project
   "project.enable": true,

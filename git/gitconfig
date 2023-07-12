@@ -18,8 +18,8 @@
   ll       = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --decorate --first-parent --no-merges
   lf       = log --pretty=format:'%C(yellow)%h%Cred%d %Creset%s %Cgreen(%ai) %C(bold blue)[%an]' --decorate --first-parent --no-merges --numstat
   cfg      = config --global
-  mail     = config user.email xusiyuan841028@gmail.com
-  name     = config user.name "Phoenix Tsui"
+  mail     = config user.email phoenix.xu@bitget.com
+  name     = config user.name "Phoenix Xu"
   pl       = pull --rebase
   st       = status
   stage    = add

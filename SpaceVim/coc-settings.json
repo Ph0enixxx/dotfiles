@@ -265,6 +265,7 @@
   "coc.preferences.extensionUpdateCheck": "weekly",
   // "coc.preferences.snippetHighlight": false,
   // "coc.preferences.snippetStatusText": "",
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "json", "graphql", "handlebars", "css", "markdown"],
 
   /* "coc.preferences.hoverTarget": "float", */
   "coc.preferences.jumpCommand": "tab drop",
@@ -1418,7 +1419,7 @@
     "vue",
     "markdown"
   ],
-  "eslint.debug": false,
+  "eslint.debug": true,
   "eslint.codeAction.disableRuleComment": {
     "enable": true,
     "location": "separateLine"
@@ -1430,6 +1431,45 @@
   // "eslint.codeActionsOnSave.rules":
   "eslint.format.enable": true,
   "eslint.lintTask.options": ["."],
+  // "eslint.experimental.useFlatConfig": true,
+
+  // extensions: coc-prettier
+  "prettier.useEditorConfig": true,
+  "prettier.statusItemText": "Prettier",
+  "prettier.ignorePath": "${cwd}/.prettierignore",
+  "prettier.printWidth": 160,
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.quoteProps": "as-needed",
+  "prettier.jsxSingleQuote": false,
+  "prettier.trailingComma": "all",
+  "prettier.bracketSpacing": true,
+  "prettier.bracketSameLine": true,
+  "prettier.arrowParens": "avoid",
+  "prettier.parser": "typescript",
+  "prettier.requirePragma": false,
+  "prettier.insertPragma": false,
+  "prettier.proseWrap": "always",
+  "prettier.htmlWhitespaceSensitivity": "css",
+  "prettier.vueIndentScriptAndStyle": false,
+  "prettier.endOfLine": "lf",
+  "prettier.embeddedLanguageFormatting": "auto",
+  "prettier.overrides": [
+    {
+      "files": ["*.css", "*.less", "*.scss"],
+      "options": {
+        "parser": "less"
+      }
+    },
+    {
+      "files": ["*.json"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ],
 
   // extensions: coc-project
   "project.enable": true,
@@ -1520,5 +1560,6 @@
   "translator.window.maxHeight": 100,
   "translator.engines": [
     "haici"
-  ]
+  ],
+  "snippets.ultisnips.pythonPrompt": false
 }

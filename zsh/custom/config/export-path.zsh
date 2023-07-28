@@ -27,16 +27,17 @@ if [[ $System == "Darwin" ]] {
   export PNPM_HOME="$HOME/.local/share/pnpm"
 }
 path=($PNPM_HOME "$path[@]")
-# pnpm end
-#
+
 # user defined
 path=($DOTFILES/bin "$path[@]")
 path=($HOME/bin "$path[@]")
 
 # local folder
 if [[ -d $HOME/fvm ]] {
-  path=($HOME/fvm/default/bin "$path[@]")
-  path=(./.fvm/flutter_sdk/bin "$path[@]")
+  ((! $path[(Ie)$HOME/fvm/default/bin])) && path=($HOME/fvm/default/bin "$path[@]")
+  ((! $path[(Ie)./.fvm/flutter_sdk/bin])) && path=(./.fvm/flutter_sdk/bin "$path[@]")
 }
 
-path=(./node_modules/.bin "$path[@]")
+if ((! $path[(I)./node_modules/.bin])) {
+  path=(./node_modules/.bin "$path[@]")
+}

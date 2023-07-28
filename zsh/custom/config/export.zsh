@@ -65,16 +65,15 @@ export RIPGREP_CONFIG_PATH=~/.ripgreprc
 # For pkg-config to find zlib you may need to set:
 export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
 
-# export all tools env variables
 try_source $DOTFILES/zsh/custom/config/env/*.zsh
 
 # add base path into $PATH
 if [[ $Distribution == "Debian" ]] && ((! $path[(Ie)/usr/sbin]))  {
-  path=(/usr/sbin "$path[@]")
+  prepend_path /usr/sbin
 }
 
 # homebrew
-if [[ $System == 'Darwin' ]] {
+if [[ $System == 'Darwin' && -z $HOMEBREW_PREFIX ]] {
   eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 

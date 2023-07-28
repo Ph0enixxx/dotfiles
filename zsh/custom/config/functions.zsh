@@ -1,4 +1,4 @@
-# Utilities
+# Utility functions
 
 
 # function cd() {
@@ -264,15 +264,65 @@ function detect_platform() {
   printf '%s' "${platform}"
 }
 
+#######################################
+# detect the shell: zsh bash or others 
+# Globals:
+#   ZSH_VERSION
+#   BASH_VERISON
+# Arguments:
+#   None
+# Outputs:
+#   Print the shell name to stdout
+# Usages:
+#   detect_shell
+#   local platform=$(detect_shell)
+#######################################
 function detect_shell() {
   local shell
   if (($+ZSH_VERSION)) {
     shell="zsh"
   } elif (($+BASH_VERISON)) {
     shell="bash"
+  } else {
+    shell="other"
   }
 
   printf '%s' $shell
+}
+
+#######################################
+# append path to $PATH if not exists 
+# Globals:
+#   PATH
+# Arguments:
+#   $path {string} The path to be appended to $PATH 
+# Outputs:
+#   None
+# Usages:
+#   append_path $path 
+#######################################
+typeset -U path
+functon append_path() {
+  if [[ -n $1 ]] && ((! $path[(Ie)$1])) {
+    path+=($1)
+  }
+}
+
+#######################################
+# prepend path to $PATH if not exists 
+# Globals:
+#   PATH
+# Arguments:
+#   $path {string} The path to be prepended to $PATH 
+# Outputs:
+#   None
+# Usages:
+#   prepend_path $path 
+#######################################
+functon prepend_path() {
+  if [[ -n $1 ]] && ((! $path[(Ie)$1])) {
+    path+=($1 "$path[@]")
+  }
 }
 
 function get_file_status() {

@@ -510,6 +510,10 @@
   repo = 'gianarb/vim-flux'
   merged = false
 
+[[custom_plugins]]
+  repo = 'kristijanhusak/vim-dadbod-ui'
+  merged = false
+
 # [[custom_plugins]]
   # repo = 'yardnsm/vim-import-cost'
   # on_cmd = ['ImportCost', 'ImportCostSingle']
